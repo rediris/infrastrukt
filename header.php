@@ -20,13 +20,10 @@
 	
 	<title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
   
- 	<link rel="icon" type="image/png" href="<?php bloginfo ("template_url"); ?>/images/favicon.ico">
+ 	<link rel="icon" type="image/png" href="<?php bloginfo ("template_url"); ?>/images/misc/favicon.ico">
   
 	<!-- Included CSS Files -->
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
-				
-	<!-- Included JS Plugins  -->
-	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/plugins.js"></script>
 	
 	<?php wp_head(); ?>
 	
