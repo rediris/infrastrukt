@@ -2,6 +2,10 @@
 	
 	</footer>
 	
+	<!-- Fallback to local copy of jQuery if Google's CDN Fails --> 
+	
+	<script type="application/x-javascript">!window.jQuery && document.write('<script src="/wp-includes/js/jquery/jquery.js"><\/script>')</script>
+	
 	<!-- These are your included JS files. I've left them out for ease of modification. Concatenate and minify into one file when done, i.e. plugins.js -->	
 	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.orbit-1.3.0.js"></script>
 	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/app.js"></script>
@@ -10,7 +14,7 @@
 	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.placeholder.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.reveal.js"></script>
 	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/mobile.js"></script>
-	
+		
 	<!-- Change UA-XXXXX-X to be your site's Google Analytics ID (this is an optimised version, see: http://mathiasbynens.be/notes/async-analytics-snippet -->
 	<script>
 		var _gaq = _gaq || [];
