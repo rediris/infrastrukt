@@ -10,8 +10,11 @@ Don't leave me behind!
 
 The current versions of both Foundation and FWP:
 
-ZURB's Foundation: 2.0.1
-Foundation, for WordPress: 1.5
+**ZURB's Foundation**
+* 2.0.1
+
+**Foundation, for WordPress**
+* 1.5
 
 Teach me!
 -----
@@ -39,7 +42,7 @@ Who's behind this?
 -----
 
 **ZURB**
-+ http://www.zurb.com
+* http://www.zurb.com
 
 **Drew Morris**
 
