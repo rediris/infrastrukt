@@ -9,9 +9,9 @@
 	<meta charset="utf-8" />
 	
 	<!--[if lt IE 9]>
-		<link rel="stylesheet" href="public/css/ie.css">
+		<link rel="stylesheet" href="stylesheets/ie.css">
 	<![endif]-->
-	
+		
 	<!-- Uncomment to make IE8 render like IE7 -->
 	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 	
@@ -21,7 +21,9 @@
 	<title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
   
  	<link rel="icon" type="image/png" href="<?php bloginfo ("template_url"); ?>/images/misc/favicon.ico">
-  
+	
+	<?php wp_enqueue_script('jquery'); ?>
+	
 	<!-- Included CSS Files -->
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 	
@@ -31,9 +33,7 @@
 <body>
 
 	<header>
-	
-		<nav class="row">
-		
-		</nav>
+
+		<nav></nav>
 	
 	</header>

@@ -1,3 +1,11 @@
+** Updated to the latest version of Foundation, v 2.0.1 (October 2011) **
+
+Reveal, Orbit and Tabs now work perfectly! - Thanks Vanessa for pointing out this issue!
+
+I'll be updating this README to a more formal version, i.e. using md etc. Struck for time at the moment.
+
+=====
+
 This theme serves as a back-bone for your next WordPress project. It contains a bunch of scripts and CSS sourced from the Foundation framework for rapid prototyping. 
 
 Foundation for WordPress, 1.0

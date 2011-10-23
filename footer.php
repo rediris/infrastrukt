@@ -1,11 +1,15 @@
 	<footer>
-
-	</footer>
-
-	<?php wp_footer(); ?>
 	
-	<!-- Included JS Plugins  -->
-	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/plugins.js"></script>
+	</footer>
+	
+	<!-- These are your included JS files. I've left them out for ease of modification. Concatenate and minify into one file when done, i.e. plugins.js -->	
+	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.orbit-1.3.0.js"></script>
+	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/app.js"></script>
+	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/forms.jquery.js"></script>
+	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.customforms.js"></script>
+	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.reveal.js"></script>
+	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/mobile.js"></script>
 	
 	<!-- Change UA-XXXXX-X to be your site's Google Analytics ID (this is an optimised version, see: http://mathiasbynens.be/notes/async-analytics-snippet -->
 	<script>
@@ -28,6 +32,8 @@
     	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
+	
+	<?php wp_footer(); ?>
 
 </body>
 </html>
