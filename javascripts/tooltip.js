@@ -33,7 +33,7 @@ jQuery(function () {
         // reset position of popup box
         popup.css({
           top: -100,
-          left: 25,
+          left: 28,
           display: 'block' // brings the popup back in to view
         })
 
