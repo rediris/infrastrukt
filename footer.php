@@ -14,7 +14,6 @@
 	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.reveal.js"></script>
 	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/mobile.js"></script>
 	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/tooltip.js"></script>
-
 		
 	<!-- Change UA-XXXXX-X to be your site's Google Analytics ID (this is an optimised version, see: http://mathiasbynens.be/notes/async-analytics-snippet -->
 	<script>
