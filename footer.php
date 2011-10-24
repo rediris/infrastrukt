@@ -3,8 +3,7 @@
 	</footer>
 	
 	<!-- Fallback to local copy of jQuery if Google's CDN Fails --> 
-	
-	<script type="application/x-javascript">!window.jQuery && document.write('<script src="/wp-includes/js/jquery/jquery.js"><\/script>')</script>
+	<script type="text/javascript">!window.jQuery && document.write('<script src="/wp-includes/js/jquery/jquery.js"><\/script>')</script>
 	
 	<!-- These are your included JS files. I've left them out for ease of modification. Concatenate and minify into one file when done, i.e. plugins.js -->	
 	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.orbit-1.3.0.js"></script>
@@ -30,8 +29,7 @@
 		})();
 	</script>
 
-	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-		chromium.org/developers/how-tos/chrome-frame-getting-started -->
+	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6. Chromium.org/developers/how-tos/chrome-frame-getting-started -->
 	<!--[if lt IE 7 ]>
     	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>

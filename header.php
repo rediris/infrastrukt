@@ -15,11 +15,17 @@
 	<!-- Uncomment to make IE8 render like IE7 -->
 	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 	
+	<title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
+	
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width" />
 	
-	<title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
-  
+	<!-- Schema.org Description -->
+	<meta itemprop="name" content="">
+	<meta itemprop="description" content="">
+	  
+  	<!-- Setting favicon and Apple Touch Icon -->
+  	<link rel="apple-touch-icon" href="<?php bloginfo ("template_url"); ?>/images/misc/apple-touch-icon.png">
  	<link rel="icon" type="image/png" href="<?php bloginfo ("template_url"); ?>/images/misc/favicon.ico">
 	
 	<?php wp_enqueue_script('jquery'); ?>
@@ -32,7 +38,7 @@
 </head>
 <body>
 
-	<header>
+	<header role="banner">
 
 		<nav></nav>
 	
