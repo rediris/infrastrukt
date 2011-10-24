@@ -44,17 +44,20 @@
 		-webkit-transition: background-color .15s ease-in-out;
 		-moz-transition: background-color .15s ease-in-out;
 		-o-transition: background-color .15s ease-in-out; 
+		behavior: url(PIE.htc);
 	}
 
 	.button.radius { 
 		-moz-border-radius: 3px;
 		-webkit-border-radius: 3px;
 		border-radius: 3px;
+		behavior: url(PIE.htc);
 	}
 	.button.round { 
 		-moz-border-radius: 1000px;
 		-webkit-border-radius: 1000px;
 		border-radius: 1000px;
+		behavior: url(PIE.htc);
 	}
 	
 	.button.full-width { 
@@ -163,6 +166,7 @@
 	    color: #fff;
 	    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 	    font-weight: bold;
+	    behavior: url(PIE.htc);
 	}
 	.notice>span, .alert>span {
 	    display: block;
@@ -206,6 +210,7 @@
 		-webkit-box-shadow: 0px 2px 5px rgba(0,0,0,0.15);
 		-moz-box-shadow: 0px 2px 5px rgba(0,0,0,0.25);
 		margin: 0 0 20px 0;
+		behavior: url(PIE.htc);
 	}
 	
 	

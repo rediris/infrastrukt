@@ -30,6 +30,7 @@
 		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
 		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
 		box-shadow: 0 0 10px rgba(0,0,0,.4);
+		behavior: url(PIE.htc);
 		}
 		
 	.reveal-modal.small 		{ width: 200px; margin-left: -140px;}

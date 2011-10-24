@@ -6,4 +6,9 @@ function my_scripts_method() {
 }    
  
 add_action('wp_enqueue_scripts', 'my_scripts_method');
+
+show_admin_bar(FALSE);
+
+define('WP_DEBUG', TRUE);
+
 ?>

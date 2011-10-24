@@ -34,6 +34,10 @@ In terms of what Foundation offers, you can view their documentation at this add
 Changelog
 -----
 
+25/10/2011
+
+* Added PIE.htc to make IE6 + render common CSS3 elements. See: http://css3pie.com/
+
 23/10/2011
 
 * Fixed Reveal, Orbit and Tabs not showing up
