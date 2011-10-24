@@ -8,8 +8,8 @@
  * @version 1.0.1
  *
  **/
-new function($) {
-    $.fn.placeholder = function(settings) {
+new function(jQuery) {
+    jQuery.fn.placeholder = function(settings) {
         settings = settings || {};
         var key = settings.dataKey || "placeholderValue";
         var attr = settings.attr || "placeholder";
@@ -23,36 +23,36 @@ new function($) {
 
         
         return this.filter(":input").each(function(index) { 
-            $.data(this, key, values[index] || $(this).attr(attr)); 
+            jQuery.data(this, key, values[index] || jQuery(this).attr(attr)); 
         }).each(function() {
-            if ($.trim($(this).val()) === "")
-                $(this).addClass(className).val($.data(this, key));
+            if (jQuery.trim(jQuery(this).val()) === "")
+                jQuery(this).addClass(className).val(jQuery.data(this, key));
         }).focus(function() {
-            if ($.trim($(this).val()) === $.data(this, key)) 
-                $(this).removeClass(className).val(value)
-                if ($.fn.setCursorPosition) {
-                  $(this).setCursorPosition(position);
+            if (jQuery.trim(jQuery(this).val()) === jQuery.data(this, key)) 
+                jQuery(this).removeClass(className).val(value)
+                if (jQuery.fn.setCursorPosition) {
+                  jQuery(this).setCursorPosition(position);
                 }
         }).blur(function() {
-            if ($.trim($(this).val()) === value)
-                $(this).addClass(className).val($.data(this, key));
+            if (jQuery.trim(jQuery(this).val()) === value)
+                jQuery(this).addClass(className).val(jQuery.data(this, key));
         }).each(function(index, elem) {
             if (block)
                 new function(e) {
-                    $(e.form).submit(function() {
-                        return $.trim($(e).val()) != $.data(e, key)
+                    jQuery(e.form).submit(function() {
+                        return jQuery.trim(jQuery(e).val()) != jQuery.data(e, key)
                     });
                 }(elem);
             else if (blank)
                 new function(e) {
-                    $(e.form).submit(function() {
-                        if ($.trim($(e).val()) == $.data(e, key)) 
-                            $(e).removeClass(className).val("");
+                    jQuery(e.form).submit(function() {
+                        if (jQuery.trim(jQuery(e).val()) == jQuery.data(e, key)) 
+                            jQuery(e).removeClass(className).val("");
                         return true;
                     });
                 }(elem);
             else if (submit)
-                new function(e) { $(e.form).submit(submit); }(elem);
+                new function(e) { jQuery(e.form).submit(submit); }(elem);
         });
     };
 }(jQuery);
