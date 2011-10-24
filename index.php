@@ -59,6 +59,23 @@
 		</div>
 		</div>
 		<!-- End Tabs -->
+		
+		<!-- Begin Tooltip -->
+		<div class="row">
+			<div class="eight columns centered">
+
+			<div class="bubbleInfo">
+  				<a href="#" class="trigger button">Tooltips, anyone?</a>
+  				<div class="popup">
+   					Just a tooltip!
+   					<sub>Description</sub>
+ 				</div>
+			</div>
+			
+			</div>
+		</div>
+		
+		<!-- End Tooltip -->
 				
 	</div>
 	<!-- End Container -->
