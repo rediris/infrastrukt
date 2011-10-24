@@ -14,7 +14,7 @@
 		<!-- Begin Reveal -->
 		<div class="row">
 		
-			<div class="eight columns centered">
+			<div class="eight columns">
 			
 				<a href="#" class="button" data-reveal-id="myModal">Click Me For A Modal</a>
 				<div id="myModal" class="reveal-modal">
@@ -32,10 +32,11 @@
 		<!-- Begin Slider -->
 		<br>
 		<div class="row">
-			<div class="eight columns centered">
+			<div class="eight columns">
 				<div id="featured"> 
     	 			<img src="http://foundation.zurb.com/images/orbit-demo/overflow.jpg" alt="Overflow: Hidden No More" />
      				<img src="http://foundation.zurb.com/images/orbit-demo/captions.jpg"  alt="HTML Captions" />
+     				<div><h4>I'm content, how you like me now?</h4><p>You could put featured posts in here.</p></div>
 				</div>
 			</div>
 		</div>
@@ -43,7 +44,7 @@
 		
 		<!-- Begin Tabs -->
 		<div class="row">
-		<div class="eight columns centered">
+		<div class="eight columns">
 			<br>
 			<dl class="nice contained tabs">
   				<dd><a href="#nice1" class="active">Nice Tab 1</a></dd>
@@ -62,7 +63,7 @@
 		
 		<!-- Begin Tooltip -->
 		<div class="row">
-			<div class="eight columns centered">
+			<div class="eight columns">
 
 			<div class="bubbleInfo">
   				<a href="#" class="trigger button">Tooltips, anyone?</a>
@@ -74,7 +75,6 @@
 			
 			</div>
 		</div>
-		
 		<!-- End Tooltip -->
 				
 	</div>

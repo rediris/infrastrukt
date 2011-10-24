@@ -14,7 +14,7 @@
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-    position: relative;
+    position: absolute;
 	background: #414141;
 	border-bottom:2px solid #2a2a2a;
     width:100px;
