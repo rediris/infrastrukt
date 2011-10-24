@@ -1,9 +1,7 @@
 Foundation, for WordPress
 =================
 
-Foundation, for WordPress, is a blank canvas with the exceptional capabilities of ZURB's Foundation Framework: http://foundation.zurb.com/.
-
-WordPress + HTML5 Boilerplate + Foundation = <3
+Foundation, for WordPress, is a blank canvas with the exceptional capabilities of ZURB's Foundation Framework, and HTML5 Boilerplate. It's killer.
 
 Don't leave me behind!
 -----
@@ -21,7 +19,7 @@ The current versions of both Foundation and FWP:
 Teach me!
 -----
 
-It's literally plug and play. Drop the theme into your wp-content/themes/ directory, along with the kickass .htaccess in your root, and you're good to go - just enable it in your WordPress appearance panel. 
+It's literally plug and play. Drop the theme into your wp-content/themes/ directory, along with the kickass .htaccess in your root, and you're good to go - just enable it in your WordPress appearance panel.
 
 In terms of what Foundation offers, you can view their documentation at this address: http://foundation.zurb.com/docs/.
 
@@ -41,6 +39,7 @@ Changelog
 * Fixed Reveal, Orbit and Tabs not showing up
 * Added more specific media queries for iPhone & iPad (Portrait + Landscape)
 * Added simple jQuery coda-like tooltips
+* Fixed the modal box (Reveal) only appearing relatively, now fixed to 150px from screen height.
 * Added apple-touch-icon support
 * Added Google jQuery CDN with fallback to local copy
 
