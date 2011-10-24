@@ -39,6 +39,10 @@ Changelog
 23/10/2011
 
 * Fixed Reveal, Orbit and Tabs not showing up
+* Added more specific media queries for iPhone & iPad (Portrait + Landscape)
+* Added simple jQuery coda-like tooltips
+* Added apple-touch-icon support
+* Added Google jQuery CDN with fallback to local copy
 
 Who's behind this?
 -----
