@@ -11,13 +11,36 @@
 }
 
 .popup {
+	background: #414141;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
     position: absolute;
-	background: #414141;
 	border-bottom:2px solid #2a2a2a;
     width:100px;
     padding:10px;
     display: none; /* keeps the popup hidden if no JS available */
+}
+
+.popup-arrow-border {
+  border-color: #414141 transparent transparent transparent;
+  border-style: solid;
+  border-width: 8px;
+  height:0;
+  width:0;
+  position:absolute;
+  bottom:-15px;
+  z-index:3000;
+  left:49px;
+}
+
+.popup-arrow {
+  border-color: #2a2a2a transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+  bottom:-20px;
+  left:47px;
 }
