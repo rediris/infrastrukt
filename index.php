@@ -5,12 +5,12 @@
 	<!-- Begin Container -->
 	<div role="main" class="container">
 		<div class="row">
-			<article class="twelve columns">
+			<div class="twelve columns">
 			<h3>This is Foundation for WordPress. Version 2.0</h3>
 			<p>This is version 2.0.1 of the Framework, released on October 21, 2011</p>
 			<p>Remember the docs are at <a href="http://foundation.zurb.com/">http://foundation.zurb.com</a></p>
 			<p>This framework has been converted to WordPress by Drew Morris</p>
-			</article>
+			</div>
 		</div>
 		
 		<!-- Begin Tooltip -->
