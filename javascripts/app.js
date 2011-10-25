@@ -47,7 +47,13 @@ jQuery(document).ready(function() {
 	/* Called from Orbit Slider */
 	
 	jQuery('#featured').orbit();
-
+	
+	/* SlideDown ------------- */
+	$(".slideContent").hide();
+		$(".slideDown").click(function(){
+    	$(this).next(".slideContent").slideToggle("slow");
+  	});
+		
 	
 });
 

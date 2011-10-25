@@ -11,6 +11,7 @@
 :: Pagination
 :: Lists
 :: Panels
+:: SlideDown
 */
 
 
@@ -213,5 +214,14 @@
 		behavior: url(PIE.htc);
 	}
 	
+/*	--------------------------------------------------
+	SlideDown
+	-------------------------------------------------- */
+	
+	.slideContent {
+		background:#F1F1F1;
+		padding:15px;
+		display:none;
+	}
 	
 

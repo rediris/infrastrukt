@@ -73,6 +73,30 @@
 		</div>
 		</div>
 		<!-- End Tabs -->
+		
+		<!-- Begin SlideDown -->
+		<div class="row">
+			<div class="eight columns">
+				<a href="#" class="nice button slideDown">Try me, I slide.</a>
+				
+					<div class="slideContent">
+					I'm the content for the first Slide Down
+					</div>
+					
+				<br>
+				<br>
+				
+				<a href="#" class="nice button slideDown">Try me, I slide.</a>
+				
+					<div class="slideContent">
+					I'm the content for the second Slide Down, independant, FTW.
+					</div>
+				
+				</div>
+			
+			</div>
+		</div>
+		<!-- End Slidedown -->
 				
 	</div>
 	<!-- End Container -->
