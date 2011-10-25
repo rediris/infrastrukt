@@ -15,7 +15,7 @@
 		<div class="row">
 			<div class="eight columns">
 			<div class="bubbleInfo">
-  				<a href="#" class="trigger button">Tooltips, anyone?</a>
+  				<a href="#" class="trigger nice button">Tooltips, anyone?</a>
   				<div class="popup">
    					Just a tooltip!
    					<sub>I'm all CSS3.</sub>
@@ -31,7 +31,7 @@
 		<br>
 		<div class="row">
 			<div class="eight columns">
-				<a href="#" class="button" data-reveal-id="myModal">Click Me For A Modal</a>
+				<a href="#" class="nice button" data-reveal-id="myModal">Click Me For A Modal</a>
 				<div id="myModal" class="reveal-modal">
      				<h2>Awesome. I have it.</h2>
      				<p class="lead">All your Foundation are belong to us.</p>
