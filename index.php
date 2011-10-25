@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 	
+	<!-- You can remove all the content below, it won't affect the theme functionality at all, it's only examples. Just leave the header and footer includes. -->
+	
 	<!-- Begin Container -->
 	<div role="main" class="container">
 		<div class="row">
