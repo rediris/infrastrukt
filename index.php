@@ -86,7 +86,7 @@
 				<br>
 				<br>
 				
-				<a href="#" class="nice button slideDown">Try me, I slide.</a>
+				<a href="#" class="nice button slideDown">Try me, I slide, too!</a>
 				
 					<div class="slideContent">
 					I'm the content for the second Slide Down, independant, FTW.
