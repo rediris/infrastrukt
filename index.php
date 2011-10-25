@@ -76,16 +76,16 @@
 		
 		<!-- Begin SlideDown -->
 		<div class="row">
-			<div class="eight columns">
+			<div class="four columns">
 				<a href="#" class="nice button slideDown">Try me, I slide.</a>
 				
 					<div class="slideContent">
 					I'm the content for the first Slide Down
 					</div>
 					
-				<br>
-				<br>
+				</div>
 				
+				<div class="four columns">
 				<a href="#" class="nice button slideDown">Try me, I slide, too!</a>
 				
 					<div class="slideContent">
@@ -94,7 +94,6 @@
 				
 				</div>
 			
-			</div>
 		</div>
 		<!-- End Slidedown -->
 				
