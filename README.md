@@ -34,6 +34,10 @@ In terms of what Foundation offers, you can view their documentation at this add
 Changelog
 -----
 
+26/10/2011
+
+* Added 'slideDown', essentially, create toggled, sliding content. Just append '.slideDown' to your trigger, and '.slideContent' to the content you want to slide.
+
 25/10/2011
 
 * Added PIE.htc to make IE6 + render common CSS3 elements. See: http://css3pie.com/
