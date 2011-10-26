@@ -317,7 +317,11 @@ FileETag None
   RewriteEngine On
 </IfModule>
 
+# ----------------------------------------------------------------------
+# Add support for HTC filetypes, used in PIE.htc
+# ----------------------------------------------------------------------
 
+AddType text/x-component .htc
 
 # ----------------------------------------------------------------------
 # Suppress or force the "www." at the beginning of URLs
