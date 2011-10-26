@@ -6,9 +6,8 @@
 		position: fixed; 
 		height: 100%;
 		width: 100%;
-		background: #000;
-		background: rgba(0,0,0,.8);
-		z-index: 100;
+		background: url(../images/misc/reveal-bg.png);
+		z-index: 2000;
 		display: none;
 		top: 0;
 		left: 0; 
@@ -29,7 +28,7 @@
 		border-radius: 5px;
 		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
 		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
-		box-shadow: 0 0 10px rgba(0,0,0,.4);
+		box-shadow: 0 0 10px rgba(0,0,0,.6);
 		behavior: url(PIE.htc);
 		}
 		
