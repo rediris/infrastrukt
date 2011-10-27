@@ -1,6 +1,6 @@
 (http://pallas.com.au/gh-pages/fwp_logo.png)
 
-[![Rack::Bug](http://pallas.com.au/gh-pages/fwp_logo.png)]
+![Rack::Bug](http://pallas.com.au/gh-pages/fwp_logo.png)
 
 # Foundation, for WordPress
 
