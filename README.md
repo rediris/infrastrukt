@@ -1,6 +1,9 @@
 # Foundation, for WordPress
 
 Foundation, for WordPress, is a blank starter theme with the exceptional capabilities of [ZURB's Foundation Framework](http://foundation.zurb.com/) and [HTML5 Boilerplate](http://html5boilerplate.com/).
+
+"The ability to simplify means to eliminate the unnecessary so that the necessary may speak. ~ Hans Hofmann, Introduction to the Bootstrap, 1993"
+
 ## Features
 
 Foundation, for WordPress, features everything ZURB's Foundation Framework and HTML5 Boilerplate have to offer, however, some changes have been made to tailer it to WordPress, these include:
@@ -45,6 +48,23 @@ It'd be great if users could contribute to this project, I'm constantly striving
 * State any issues you have
 * Tag a feature you may like to see
 * Send us what you've made
+
+## Snippets
+
+### Orbit
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
+### Slider
+
+### Tooltips
+
+### SlideDown
+
 
 ## Authors
 
