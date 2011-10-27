@@ -4,6 +4,10 @@ Foundation, for WordPress, is a blank canvas with the exceptional capabilities o
 
 ## Features
 
+## Download
+
+Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, [download the archive](https://github.com/drewsymo/Foundation/zipball/master). 
+
 ## Contribute
 
 ## Authors
