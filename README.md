@@ -1,9 +1,19 @@
-Foundation, for WordPress
-=================
+# Foundation, for WordPress
 
-Foundation, for WordPress, is a blank canvas with the exceptional capabilities of ZURB's Foundation Framework and HTML5 Boilerplate. It's killer.
+Foundation, for WordPress, is a blank canvas with the exceptional capabilities of ZURB's Foundation Framework and HTML5 Boilerplate.
 
-Don't leave me behind!
+## Features
+
+## Contribute
+
+## Authors
+
+## License
+
+### Major Components
+
+### Foundation, for WordPress
+
 -----
 
 The current versions of both Foundation and FWP:
