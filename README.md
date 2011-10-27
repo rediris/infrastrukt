@@ -49,38 +49,42 @@ It'd be great if users could contribute to this project, I'm constantly striving
 * Tag a feature you may like to see
 * Send us what you've made
 
+## Precautions
+
+Make sure you do not replace elements of this starter theme with elements from ZURB's Foundation Framework, as it will break. Modifications have been made to allow such elements as Orbit, Reveal, Tabs, etc to work within WordPress.
+
+This theme is constantly being updated in relation to ZURB's Foundation.
+
 ## Snippets
-
-### Orbit
-
-Simply append #features to the sliders containing element, and the slider is created.
-
-```HTML
-<div id="featured"> 
-	<img src="http://foundation.zurb.com/images/orbit-demo/overflow.jpg" alt="Overflow: Hidden No More" />
-	<img src="http://foundation.zurb.com/images/orbit-demo/captions.jpg"  alt="HTML Captions" />
-	<div><p>I'm content inside a slider.</p></div>
-</div>
-```
-
-### Reveal
-
-Just create a trigger, in this case, the anchor, and append '''#my-modal''' to your content. Note that the trigger needs to have a '''data-reveal-id''' id that matches the contents #id.
-
-```HTML
-<a href="#" class="nice button" data-reveal-id="myModal">Click Me For A Modal</a>
-	<div id="myModal" class="reveal-modal">
-     	<h2>Awesome. I have it.</h2>
-     	<p class="lead">All your Foundation are belong to us.</p>
-     	<p>Im a cool paragraph that lives inside of an even cooler modal. Wins.</p>
-     	<a class="close-reveal-modal">&#215;</a>
-	</div>
-```
 
 ### Tooltips
 
+Tooltips require a trigger and a data container. Just wrap your entire tooltip, including its trigger, in a class called `bubbleInfo`, and create a trigger with a class of `trigger`. 
+
+```HTML
+<div class="bubbleInfo">
+  	<a href="#" class="trigger nice button">Tooltips, anyone?</a>
+  		<div class="popup">
+   			Just a tooltip!
+   			<sub>I'm all CSS3.</sub>
+   			<div class="popup-arrow-border"></div>
+   			<div class="popup-arrow"></div>
+ 		</div>
+</div>
+```
+
 ### SlideDown
 
+SlideDown is just a simple way to create sliding content. It uses jQueries 'slideToggle', and can run independantly to other SlideDown's. Give your trigger a class of `slideDown` and your content a class of `slideContent`. 
+
+```HTML
+<a href="#" class="nice button slideDown">Try me, I slide.</a>
+<div class="slideContent">
+	I'm the content for the first Slide Down
+</div>
+```
+
+You can view elements of ZURB's Foundation in their [documentation section](http://foundation.zurb.com/docs/). This includes Orbit, Reveal, Tabs etc.
 
 ## Authors
 
