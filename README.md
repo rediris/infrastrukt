@@ -1,7 +1,3 @@
-(http://pallas.com.au/gh-pages/fwp_logo.png)
-
-![Rack::Bug](http://pallas.com.au/gh-pages/fwp_logo.png)
-
 # Foundation, for WordPress
 
 Foundation, for WordPress, is a blank starter theme with the exceptional capabilities of [ZURB's Foundation Framework](http://foundation.zurb.com/) and [HTML5 Boilerplate](http://html5boilerplate.com/).
@@ -112,4 +108,7 @@ For more information about the licensing involved with Foundation, for WordPress
 
 * [ZURB's Foundation Framework](http://foundation.zurb.com/) (MIT Open License)
 * [HTML5 Boilerplate](http://html5boilerplate.com/) (The Unlicense (a.k.a, Public Domain))
+
+![Foundation, For WordPress Logo](http://pallas.com.au/gh-pages/fwp_logo.png)
+
 
