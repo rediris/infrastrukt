@@ -1,3 +1,5 @@
+(http://pallas.com.au/gh-pages/fwp_logo.png)
+
 # Foundation, for WordPress
 
 Foundation, for WordPress, is a blank starter theme with the exceptional capabilities of [ZURB's Foundation Framework](http://foundation.zurb.com/) and [HTML5 Boilerplate](http://html5boilerplate.com/).
