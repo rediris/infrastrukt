@@ -102,12 +102,12 @@ You can view elements of ZURB's Foundation in their [documentation section](http
 
 ### Foundation, for WordPress
 
-Foundation, for WordPress, is listed as Public Domain.
+Foundation, for WordPress, is listed under Public Domain.
 
 ### Major Components
 
 For more information about the licensing involved with Foundation, for WordPress' major components, please see:
 
 * [ZURB's Foundation Framework](http://foundation.zurb.com/) (MIT Open License)
-* [HTML5 Boilerplate](http://html5boilerplate.com/) (The Unlicense (a.k.a, Public Domain))
+* [HTML5 Boilerplate](http://html5boilerplate.com/) (Public Domain)
 
