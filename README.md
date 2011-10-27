@@ -1,7 +1,7 @@
 Foundation, for WordPress
 =================
 
-Foundation, for WordPress, is a blank canvas with the exceptional capabilities of ZURB's Foundation Framework, and HTML5 Boilerplate. It's killer.
+Foundation, for WordPress, is a blank canvas with the exceptional capabilities of ZURB's Foundation Framework and HTML5 Boilerplate. It's killer.
 
 Don't leave me behind!
 -----
@@ -34,6 +34,10 @@ In terms of what Foundation offers, you can view their documentation at this add
 Changelog
 -----
 
+27/10/2011
+
+* Updated to latest version of Foundation, 2.0.2 - all changes are documented here: https://github.com/zurb/foundation
+
 26/10/2011
 
 * Added 'slideDown', essentially, create toggled, sliding content. Just append '.slideDown' to your trigger, and '.slideContent' to the content you want to slide.
@@ -59,7 +63,7 @@ Who's behind this?
 LAWYERED, kidding. 
 -----
 
-For information on the licensing for ZURB, please visit this address: http://foundation.zurb.com/about.php (MIT License)
+For information on the licensing for ZURB's Foundation, please visit this address: http://foundation.zurb.com/about.php (MIT License)
 
 Feel free to do what you want with the theme. It'd be nice to see someone create a full website off it!
 

@@ -6,7 +6,7 @@
 		position: fixed; 
 		height: 100%;
 		width: 100%;
-		background: url(../images/misc/reveal-bg.png);
+		background: url('../images/misc/reveal-bg.png');
 		z-index: 2000;
 		display: none;
 		top: 0;
@@ -15,20 +15,20 @@
 	
 	.reveal-modal {
 		visibility: hidden;
+		top: 100px; 
+		left: 50%;
 		margin-left: -300px;
 		width: 520px;
 		background: #eee url(../images/misc/modal-gloss.png) no-repeat -200px -80px;
 		position: fixed;
-		top: 150px; 
-		left: 50%;
-		z-index: 3000;
+		z-index: 2001;
 		padding: 30px 40px 34px;
 		-moz-border-radius: 5px;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
 		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
-		box-shadow: 0 0 10px rgba(0,0,0,.6);
+		box-shadow: 0 0 10px rgba(0,0,0,.4);
 		}
 		
 	.reveal-modal.small 		{ width: 200px; margin-left: -140px;}

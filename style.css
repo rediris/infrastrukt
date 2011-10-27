@@ -1,13 +1,12 @@
 /* 
 Theme Name: Foundation
-Theme URI: http://foundation.zurb.com/index.php
-Description: A bare-bone theme built on ZURB's Foundation
+Theme URI:
+Description: Foundation for WordPress, a Starter Theme.
 Author: Drew Morris & ZURB
 Author URI:
-Version: 1.0
+Version: 1.6
 License: MIT License
 License URI: http://www.opensource.org/licenses/mit-license.php
-Tags: black, white, one-column, two-columns, three-columns, four-columns, flexible-width
 */
 
 @import url("stylesheets/globals.css");
@@ -18,4 +17,5 @@ Tags: black, white, one-column, two-columns, three-columns, four-columns, flexib
 @import url("stylesheets/app.css");
 @import url("stylesheets/mobile.css");
 @import url("stylesheets/ie.css");
-@import url("stylesheets/tooltip.css");
+@import url("stylesheets/grid.css");
+@import url("stylesheets/typography.css");

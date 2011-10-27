@@ -6,8 +6,8 @@
 	<div role="main" class="container">
 		<div class="row">
 			<div class="twelve columns">
-			<h3>This is Foundation for WordPress. Version 2.0</h3>
-			<p>This is version 2.0.1 of the Framework, released on October 21, 2011</p>
+			<h3>This is Foundation for WordPress. Version 1.6</h3>
+			<p>This is version 2.0.2 of the Framework, released on October 27, 2011</p>
 			<p>Remember the docs are at <a href="http://foundation.zurb.com/">http://foundation.zurb.com</a></p>
 			<p>This framework has been converted to WordPress by Drew Morris</p>
 			</div>
@@ -80,22 +80,16 @@
 		<div class="row">
 			<div class="four columns">
 				<a href="#" class="nice button slideDown">Try me, I slide.</a>
-				
-					<div class="slideContent">
-					I'm the content for the first Slide Down
-					</div>
-					
-				</div>
-				
-				<div class="four columns">
-				<a href="#" class="nice button slideDown">Try me, I slide, too!</a>
-				
-					<div class="slideContent">
-					I'm the content for the second Slide Down, independant, FTW.
-					</div>
-				
-				</div>
-			
+				<div class="slideContent">
+				I'm the content for the first Slide Down
+				</div>		
+			</div>
+			<div class="four columns">
+				<a href="#" class="nice button slideDown">Try me, I slide.</a>
+				<div class="slideContent">
+				I'm the content for the second Slide Down, I'm indepandent, FTW!
+				</div>		
+			</div>
 		</div>
 		<!-- End Slidedown -->
 				
