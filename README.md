@@ -23,11 +23,19 @@ Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, 
 
 ## Authors
 
+* ZURB
+** Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA.
+
+* Drew Morris
+
+
 ## License
 
-### Major Components
+### Foundation, for WordPress
 
-You are free to do as wish with this theme, so long as it complies with licensing information below.
+Foundation, for WordPress, is listed as Public Domain.
+
+### Major Components
 
 For more information about the licensing involved with Foundation, for WordPress' major components, please see:
 
