@@ -38,10 +38,6 @@ Changelog
 
 * Added 'slideDown', essentially, create toggled, sliding content. Just append '.slideDown' to your trigger, and '.slideContent' to the content you want to slide.
 
-25/10/2011
-
-* Added PIE.htc to make IE6 + render common CSS3 elements. See: http://css3pie.com/
-
 23/10/2011
 
 * Fixed Reveal, Orbit and Tabs not showing up
