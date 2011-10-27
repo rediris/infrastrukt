@@ -50,9 +50,11 @@ It'd be great if users could contribute to this project, I'm constantly striving
 ## Authors
 
 **ZURB**
+
 + Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA.
 
 **Drew Morris**
+
 + Drew Morris is a Website Development student currently studying at the Central Institute of Technology in Perth, W.A.
 
 ## License
