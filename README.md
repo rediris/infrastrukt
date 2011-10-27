@@ -14,7 +14,7 @@ The current versions of both Foundation and FWP:
 
 **Foundation, for WordPress**
 
-+ 1.5
++ 1.6
 
 Teach me!
 -----
