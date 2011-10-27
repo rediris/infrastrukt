@@ -53,10 +53,12 @@ It'd be great if users could contribute to this project, I'm constantly striving
 
 ### Orbit
 
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
+```HTML
+<div id="featured"> 
+	<img src="http://foundation.zurb.com/images/orbit-demo/overflow.jpg" alt="Overflow: Hidden No More" />
+	<img src="http://foundation.zurb.com/images/orbit-demo/captions.jpg"  alt="HTML Captions" />
+	<div><p>I'm content inside a slider.</p></div>
+</div>
 ```
 
 ### Slider

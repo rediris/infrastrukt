@@ -51,7 +51,7 @@
 				<div id="featured"> 
     	 			<img src="http://foundation.zurb.com/images/orbit-demo/overflow.jpg" alt="Overflow: Hidden No More" />
      				<img src="http://foundation.zurb.com/images/orbit-demo/captions.jpg"  alt="HTML Captions" />
-     				<div><h4>I'm content, how you like me now?</h4><p>You could put featured posts in here.</p></div>
+     				<div><p>I'm content inside a slider.</p></div>
 				</div>
 			</div>
 		</div>
