@@ -2,7 +2,7 @@
 
 Foundation, for WordPress, is a blank starter theme with the exceptional capabilities of [ZURB's Foundation Framework](http://foundation.zurb.com/) and [HTML5 Boilerplate](http://html5boilerplate.com/).
 
-"The ability to simplify means to eliminate the unnecessary so that the necessary may speak. ~ Hans Hofmann, Introduction to the Bootstrap, 1993"
+"The ability to simplify means to eliminate the unnecessary so that the necessary may speak." ~ Hans Hofmann, Introduction to the Bootstrap, 1993
 
 ## Features
 
@@ -91,10 +91,12 @@ You can view elements of ZURB's Foundation in their [documentation section](http
 **ZURB**
 
 + Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA.
++ Follow [ZURB on Twitter](http://twitter.com/#!/foundationzurb)
 
 **Drew Morris**
 
 + Drew Morris is a Website Development student currently studying at the Central Institute of Technology in Perth, W.A.
++ Follow [Drew on Google +](https://plus.google.com/114153589610660530694?rel=author)
 
 ## License
 
