@@ -1,8 +1,19 @@
 # Foundation, for WordPress
 
-Foundation, for WordPress, is a blank canvas with the exceptional capabilities of ZURB's Foundation Framework and HTML5 Boilerplate.
+Foundation, for WordPress, is a blank starter theme with the exceptional capabilities of [ZURB's Foundation Framework](http://foundation.zurb.com/) and [HTML5 Boilerplate](http://html5boilerplate.com/).
 
 ## Features
+
+Foundation, for WordPress, features everything ZURB's Foundation Framework and HTML5 Boilerplate have to offer, however, some changes have been made to tailer it to WordPress, these include:
+
+* A ySlow score of 95 (in regards to 'Small Site or Blog')
+* SEO features such as an optomised Google Analytics snippet, robots.txt and Schema.org attributes
+* Beautiful, coda-style tooltips
+* SlideDown, a simple way to incorporate sliding content
+* Reveal for WordPress, a simple modal box by ZURB made to work in WordPress
+* Orbit for WordPress, ZURB's image and content slider tailored for WordPress
+* A function to provide Google's jQuery CDN over WordPress' local copy
+* Failsafe jQuery, with a fallback to WordPress' local copy
 
 ## Download
 
@@ -16,7 +27,12 @@ Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, 
 
 ### Major Components
 
-### Foundation, for WordPress
+You are free to do as wish with this theme, so long as it complies with licensing information below.
+
+For more information about the licensing involved with Foundation, for WordPress' major components, please see:
+
+* [ZURB's Foundation Framework](http://foundation.zurb.com/) (MIT Open License)
+* [HTML5 Boilerplate](http://html5boilerplate.com/) (The Unlicense (a.k.a, Public Domain))
 
 -----
 
