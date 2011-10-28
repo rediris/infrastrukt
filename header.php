@@ -25,13 +25,13 @@
 	<meta itemprop="description" content="">
 	  
   	<!-- Setting favicon and Apple Touch Icon -->
-  	<link rel="apple-touch-icon" href="<?php bloginfo ("template_url"); ?>/images/misc/apple-touch-icon.png">
+  	<link rel="apple-touch-icon" href="<?php bloginfo ("template_url");?>/images/misc/apple-touch-icon.png">
  	<link rel="icon" type="image/png" href="<?php bloginfo ("template_url"); ?>/images/misc/favicon.ico">
 	
 	<?php wp_enqueue_script('jquery'); ?>
 	
 	<!-- Included CSS Files -->
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?v=1">
 	
 	<?php wp_head(); ?>
 	
