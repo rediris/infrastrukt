@@ -9,6 +9,7 @@
 	<script src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.customforms.js"></script>
 	<script src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.placeholder.min.js"></script>
 	<script src="<?php bloginfo ("template_url"); ?>/javascripts/jswipe.js"></script>
+	<script src="<?php bloginfo ("template_url"); ?>/javascripts/tooltip.js"></script>
 	<!-- End Combine and Compress These JS Files -->
 	<script src="<?php bloginfo ("template_url"); ?>/javascripts/app.js"></script>
 	
