@@ -1,20 +1,16 @@
-	<footer>
-	
-	</footer>
-	
 	<!-- Fallback to local copy of jQuery if Google's CDN Fails --> 
-	<script type="text/javascript">!window.jQuery && document.write('<script src="<?php bloginfo ("template_url"); ?>/javascripts/libs/jquery-1.6.4.min.js"><\/script>')</script>
+	<script type="text/javascript">!window.jQuery && document.write('<script src="<?php bloginfo ("template_url"); ?>/javascripts/libs/jquery.min.js"><\/script>')</script>
 	
-	<!-- scripts concatenated and minified via ant build script-->
-	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/jquery.orbit-1.3.0.js"></script>
-	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/app.js"></script>
-	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/forms.jquery.js"></script>
-	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/jquery.customforms.js"></script>
-	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/jquery.placeholder.min.js"></script>
-	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/jquery.reveal.js"></script>
-	<script type="text/javascript" src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/tooltip.js"></script>
-	<!-- end scripts-->
-		
+	<!-- Included JS Files -->
+	<!-- Combine and Compress These JS Files -->
+	<script src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/jquery.reveal.js"></script>
+	<script src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/jquery.orbit-1.3.0.js"></script>
+	<script src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/forms.jquery.js"></script>
+	<script src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/jquery.customforms.js"></script>
+	<script src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/jquery.placeholder.min.js"></script>
+	<!-- End Combine and Compress These JS Files -->
+	<script src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/app.js"></script>
+	
 	<!-- Change UA-XXXXX-X to be your site's Google Analytics ID (this is an optimised version, see: http://mathiasbynens.be/notes/async-analytics-snippet -->
 	<script>
 		var _gaq = _gaq || [];
@@ -37,6 +33,6 @@
 	<![endif]-->
 	
 	<?php wp_footer(); ?>
-
+	
 </body>
 </html>

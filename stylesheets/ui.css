@@ -12,8 +12,6 @@
 :: Pagination
 :: Lists
 :: Panels
-:: Tooltips
-:: SlideDown
 */
 
 
@@ -32,8 +30,10 @@
 		text-decoration: none;
 		font-weight: bold;
 		line-height: 1;
+		font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
 		position: relative;
 		cursor: pointer;
+		border: none;
 	}
 	
 	.button.nice { 
@@ -75,9 +75,9 @@
 	.button:active {}
 	
 	/* Sizes ---------- */
-	.small.button 			{ font-size: 11px; padding: 8px 20px 10px; }
-	.medium.button 			{ font-size: 13px; }
-	.large.button 			{ font-size: 18px; padding: 11px 48px 13px; }
+	.small.button 			{ font-size: 11px; padding: 8px 20px 10px; width: auto; }
+	.medium.button 			{ font-size: 13px; width: auto; }
+	.large.button 			{ font-size: 18px; padding: 11px 48px 13px; width: auto; }
 	
 	/* Nice Sizes ---------- */
 	.nice.small.button 		{ background-position: 0 -36px; }
@@ -224,64 +224,6 @@
 		-moz-box-shadow: 0px 2px 5px rgba(0,0,0,0.25);
 		margin: 0 0 20px 0;
 	}
-	
-/*	--------------------------------------------------
-	SlideDown
-	-------------------------------------------------- */
-	
-	.slideContent {background: #F1F1F1; padding:10px;}
-	
-/*	--------------------------------------------------
-	Tooltips
-	-------------------------------------------------- */
-	
-	/* Modify the positioning settings within Tooltip.js */
-
-	.bubbleInfo {
-    	position: relative;
-    	font-weight: bold;
-    	color:#FFF;
-	}
-
-	.bubbleInfo sub {
-		font-weight:normal;
-	}
-
-	.popup {
-		background: #414141;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		border-radius: 4px;
-    	position: absolute;
-		border-bottom:2px solid #393939;
-    	width:100px;
-    	padding:10px;
-    	display: none; /* keeps the popup hidden if no JS available */
-	}
-
-	.popup-arrow-border {
- 		border-color: #414141 transparent transparent transparent;
-		border-style: solid;
-		border-width: 8px;
-		height:0;
-		width:0;
-		position:absolute;
-		bottom:-16px;
-		z-index:3000;
-		left:49px;
-	}
-
-	.popup-arrow {
-		border-color: #393939 transparent transparent transparent;
-		border-style: solid;
-		border-width: 10px;
-		height:0;
-		width:0;
-		position:absolute;
-		bottom:-20px;
-		left:47px;
-	}
-	
 	
 	
 

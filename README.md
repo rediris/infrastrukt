@@ -23,6 +23,11 @@ Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, 
 
 ## Changelog
 
+**1/11/2011**
+
++ Fixed a responsive issue. Foundation, for Wordpress, now scales to mobile devices
++ Updated to Foundation 2.0.3
+
 **27/10/2011**
 
 + Updated to latest version of Foundation, 2.0.2 - all changes are documented here: https://github.com/zurb/foundation

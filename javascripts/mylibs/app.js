@@ -1,8 +1,9 @@
-/* Make sure you remember to put jQuery into 'no-conflict' mode. This means replacing '$' with 'jQuery'. */
-
 jQuery(document).ready(function() {
 
 	/* Use this js doc for all application specific JS */
+  jQuery(window).resize(function() {
+    console.log(jQuery(window).width());
+  });
 
 	/* TABS --------------------------------- */
 	/* Remove if you don't need :) */
@@ -42,23 +43,6 @@ jQuery(document).ready(function() {
 	
 	jQuery('input, textarea').placeholder();
 	
-	
-	/* Initialise Orbit ------------- */
-	/* Called from Orbit Slider */
-	
 	jQuery('#featured').orbit();
 	
-	/* SlideDown ------------- */
-	$(".slideContent").hide();
-		$(".slideDown").click(function(){
-    	$(this).next(".slideContent").slideToggle("slow");
-  	});
-		
-	
 });
-
-
-
-
-
- 

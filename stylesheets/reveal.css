@@ -6,7 +6,7 @@
 		position: fixed; 
 		height: 100%;
 		width: 100%;
-		background: url('../images/misc/reveal-bg.png');
+		background: #000;
 		z-index: 2000;
 		display: none;
 		top: 0;
@@ -20,7 +20,7 @@
 		margin-left: -300px;
 		width: 520px;
 		background: #eee url(../images/misc/modal-gloss.png) no-repeat -200px -80px;
-		position: fixed;
+		position: absolute;
 		z-index: 2001;
 		padding: 30px 40px 34px;
 		-moz-border-radius: 5px;
