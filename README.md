@@ -101,6 +101,7 @@ You can view elements of ZURB's Foundation in their [documentation section](http
 **Drew Morris**
 
 + Drew Morris is a Website Development student currently studying at the Central Institute of Technology in Perth, W.A.
++ Follow [Drew on Twitter](http://www.twitter.com/drewsymo)
 + Follow [Drew on Google +](https://plus.google.com/114153589610660530694?rel=author)
 
 ## License
