@@ -8,7 +8,7 @@ Foundation, for WordPress, is a blank starter theme with the exceptional capabil
 
 Foundation, for WordPress, features everything ZURB's Foundation Framework and HTML5 Boilerplate have to offer, however, some changes have been made to tailer it to WordPress, these include:
 
-* A ySlow score of 95 (in regards to 'Small Site or Blog')
+* A ySlow score of 95 (in regards to 'Small Site or Blog') & without a build script
 * SEO features such as an optomised Google Analytics snippet, robots.txt and Schema.org attributes
 * Beautiful, coda-style tooltips
 * SlideDown, a simple way to incorporate sliding content
@@ -27,6 +27,7 @@ Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, 
 
 + Fixed a responsive issue. Foundation, for Wordpress, now scales to mobile devices
 + Updated to Foundation 2.0.3
++ Slowly started to add support for Jammit Build Script
 
 **27/10/2011**
 
