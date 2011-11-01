@@ -1,7 +1,6 @@
 	<!-- Fallback to local copy of jQuery if Google's CDN Fails --> 
 	<script type="text/javascript">!window.jQuery && document.write('<script src="<?php bloginfo ("template_url"); ?>/javascripts/libs/jquery.min.js"><\/script>')</script>
 	
-	<!-- Included JS Files -->
 	<!-- Combine and Compress These JS Files -->
 	<script src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/jquery.reveal.js"></script>
 	<script src="<?php bloginfo ("template_url"); ?>/javascripts/mylibs/jquery.orbit-1.3.0.js"></script>

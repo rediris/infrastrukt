@@ -9,13 +9,13 @@
    ================================================== */
 
 div.orbit-wrapper {
-    width: 100%;
-    height: 100%;
+    width: 1px;
+    height: 1px;
     position: relative; }
 
 div.orbit {
-    width: 100%;
-    height: 100%;
+    width: 1px;
+    height: 1px;
     position: relative;
     overflow: hidden }
 
