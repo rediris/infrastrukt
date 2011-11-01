@@ -11,7 +11,7 @@
 				<hr />
 			</div>
 		</div>
-		
+
 		<div class="row">
 			<div class="eight columns">
 				<h3>The Grid</h3>
