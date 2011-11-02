@@ -22,16 +22,7 @@
 	<title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
   
 	<!-- Included CSS Files -->
-	<link rel="stylesheet" href="<?php bloginfo ("template_url"); ?>/stylesheets/globals.css">
-	<link rel="stylesheet" href="<?php bloginfo ("template_url"); ?>/stylesheets/app.css">
-	<link rel="stylesheet" href="<?php bloginfo ("template_url"); ?>/stylesheets/forms.css">
-	<link rel="stylesheet" href="<?php bloginfo ("template_url"); ?>/stylesheets/grid.css">
-	<link rel="stylesheet" href="<?php bloginfo ("template_url"); ?>/stylesheets/orbit.css">
-	<link rel="stylesheet" href="<?php bloginfo ("template_url"); ?>/stylesheets/reveal.css">
-	<link rel="stylesheet" href="<?php bloginfo ("template_url"); ?>/stylesheets/typography.css">
-	<link rel="stylesheet" href="<?php bloginfo ("template_url"); ?>/stylesheets/ui.css">
-	<link rel="stylesheet" href="<?php bloginfo ("template_url"); ?>/stylesheets/mobile.css">
-
+	<link rel="stylesheet" href="<?php bloginfo ("stylesheet_url"); ?>">
 
 	<!--[if lt IE 9]>
 		<link rel="stylesheet" href="stylesheets/ie.css">
