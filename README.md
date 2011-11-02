@@ -27,8 +27,9 @@ Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, 
 **2/11/2011**
 
 + Updated jQuery.forms plugin
-+ Added Normalize.css
++ Added Normalize.css, see: http://necolas.github.com/normalize.css/
 + Reverted back to old CSS concatenation
++ Removed support for Jammit
 
 **1/11/2011**
 
@@ -88,7 +89,7 @@ Tooltips require a trigger and a data container. Just wrap your entire tooltip, 
 
 ### SlideDown
 
-SlideDown is just a simple way to create sliding content. It uses jQueries 'slideToggle', and can run independantly to other SlideDown's. Give your trigger a class of `slideDown` and your content a class of `slideContent`. 
+SlideDown is just a simple way to create sliding content. It uses jQueries 'slideToggle', and can run independently to other SlideDown's. Give your trigger a class of `slideDown` and your content a class of `slideContent`. 
 
 ```HTML
 <a href="#" class="nice button slideDown">Try me, I slide.</a>
