@@ -11,6 +11,7 @@ Foundation, for WordPress, features everything ZURB's Foundation Framework and H
 * A ySlow score of 95 (in regards to 'Small Site or Blog') & without a build script
 * SEO features such as an optomised Google Analytics snippet, robots.txt and Schema.org attributes
 * Beautiful, coda-style tooltips
+* Normalize.css, you'll never go wrong with this dynamic reset
 * SlideDown, a simple way to incorporate sliding content
 * Reveal for WordPress, a simple modal box by ZURB made to work in WordPress
 * Orbit for WordPress, ZURB's image and content slider tailored for WordPress
@@ -22,6 +23,12 @@ Foundation, for WordPress, features everything ZURB's Foundation Framework and H
 Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, [download the archive](https://github.com/drewsymo/Foundation/zipball/master). 
 
 ## Changelog
+
+**2/11/2011**
+
++ Updated jQuery.forms plugin
++ Added Normalize.css
++ Reverted back to old CSS concatenation
 
 **1/11/2011**
 
