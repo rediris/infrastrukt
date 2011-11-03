@@ -12,11 +12,13 @@
 :: Pagination
 :: Lists
 :: Panels
+:: SlideDown
+:: Tooltips
 */
 
 
 
-	
+
 /*	--------------------------------------------------
 	Buttons
 	-------------------------------------------------- */
@@ -35,7 +37,7 @@
 		cursor: pointer;
 		border: none;
 	}
-	
+
 	.button.nice { 
 		background: #00a6fc url(../images/misc/button-gloss.png) repeat-x 0 -34px;
 		-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
@@ -59,49 +61,49 @@
 		-webkit-border-radius: 1000px;
 		border-radius: 1000px;
 	}
-	
+
 	.button.full-width { 
 		width: 100%;
 		padding-left: 0 !important;
 		padding-right: 0 !important;
 		text-align: center; 
 	}
-	
+
 	.button.left-align { 
 		text-align: left; 
 		text-indent: 12px;
 	}
-	
+
 	.button:active {}
-	
+
 	/* Sizes ---------- */
 	.small.button 			{ font-size: 11px; padding: 8px 20px 10px; width: auto; }
 	.medium.button 			{ font-size: 13px; width: auto; }
 	.large.button 			{ font-size: 18px; padding: 11px 48px 13px; width: auto; }
-	
+
 	/* Nice Sizes ---------- */
 	.nice.small.button 		{ background-position: 0 -36px; }
 	.nice.large.button 		{ background-position: 0 -30px; }
-	 
+
 	/* Colors ---------- */
 	.blue.button			{ background-color: #00a6fc;  }
 	.red.button				{ background-color: #e91c21; }
 	.white.button			{ background-color: #e9e9e9; color: #333; }
 	.black.button		{ background-color: #141414; }
-	
+
 	/* Nice Colors ---------- */
 	.nice.blue.button		{ border: 1px solid #0593dc;  }
 	.nice.red.button		{ border: 1px solid #b90b0b;  }
 	.nice.white.button		{ border: 1px solid #cacaca; text-shadow: none !important; }
 	.nice.black.button	{ border: 1px solid #000; }
-	
+
 	/* Hovers ---------- */
 	.button:hover 			{ background-color: #0192dd; color: #fff; }
 	.blue.button:hover		{ background-color: #0192dd; 	}
 	.red.button:hover 		{ background-color: #d01217; 	}
 	.white.button:hover		{ background-color: #dadada; color: #333; }
 	.black.button:hover	{ background-color: #000; }
-	
+
 
 
 /*	--------------------------------------------------
@@ -112,10 +114,10 @@
 	.alert-box.success { background-color: #7fae00; color: #fff; text-shadow: 0px -1px rgba(0,0,0,0.3); }
 	.alert-box.warning { background-color: #c08c00; color: #fff; text-shadow: 0px -1px rgba(0,0,0,0.3); }
 	.alert-box.error { background-color: #c00000; color: #fff; text-shadow: 0px -1px rgba(0,0,0,0.3); }
-	
+
 	.alert-box a.close { color: #000; position: absolute; right: 4px; top: 0px; font-size: 18px; opacity: 0.2; padding: 4px; }
 	.alert-box a.close:hover { opacity: 0.4; }
-	
+
 
 
 /*    --------------------------------------------------
@@ -162,53 +164,7 @@
     ul.nice, ol.nice { list-style: none; margin: 0; }
     ul.nice li, ol.nice li { padding-left: 13px; position: relative }
     ul.nice li span.bullet, ol.nice li span.number { position: absolute; left: 0px; top: 0px; color: #ccc; }
-    
-
-/* -------------------------------------------------- 
-   Notices/Alerts
----------------------------------------------------*/
-/* Alerts cannot be closed and notices can */
-
-	.notice, .alert { 
-		position: relative;
-	    background: #222 url(../images/misc/button-overlay.png) repeat-x bottom;
-	    width: 100%;
-	    margin: 10px 0;
-	    -moz-border-radius: 3px;
-	    -webkit-border-radius: 3px;
-	    border-radius: 3px;
-	    color: #fff;
-	    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-	    font-weight: bold;
-	}
-	.notice>span, .alert>span {
-	    display: block;
-	    padding: 5px 10px 6px;
-	}
-	.notice a.close {
-	    font-size: 20px;
-	    line-height: .5;
-	    color: #fff;
-	    text-shadow: 0 -1px 1px rbga(0,0,0,.25);
-	    font-weight: bold; 
-	    cursor: pointer;
-	    position: absolute; 
-	    right: 10px; 
-	    top: 6px; 
-	} 
-	
-	/*  NOTES
-	
-	Close button entity is &#215; 
-	Sample Markup: 
-	<div class="notice"><span>
-		This is awesome
-		<a class="close" href="#">&#215;</a>
-	</span></div>
-
-*/
-
-
+   
 
 /*	--------------------------------------------------
 	Panels
@@ -224,6 +180,7 @@
 		-moz-box-shadow: 0px 2px 5px rgba(0,0,0,0.25);
 		margin: 0 0 20px 0;
 	}
+
 	
 /*	--------------------------------------------------
 	SlideDown

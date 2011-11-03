@@ -2,6 +2,8 @@
 
 Foundation, for WordPress, is a blank starter theme with the exceptional capabilities of [ZURB's Foundation Framework](http://foundation.zurb.com/) and [HTML5 Boilerplate](http://html5boilerplate.com/).
 
+As a neat-freak designer, it's sometimes intimidating and frustrating looking at a WordPress theme framework that's jam-packed with unnecessary extras and bloated code. This doesn't include your common templates such as comments.php etc, it's the bare-minimum, allowing you to start from ground-zero and build a perfect website - keeping organisation and cleanliness in mind.
+
 "The ability to simplify means to eliminate the unnecessary so that the necessary may speak." ~ Hans Hofmann, Introduction to the Bootstrap, 1993
 
 ## Features
@@ -23,6 +25,10 @@ Foundation, for WordPress, features everything ZURB's Foundation Framework and H
 Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, [download the archive](https://github.com/drewsymo/Foundation/zipball/master). 
 
 ## Changelog
+
+**3/11/2011**
+
++ Added multiple fixes from Foundation's Repo
 
 **2/11/2011**
 

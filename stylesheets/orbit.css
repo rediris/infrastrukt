@@ -3,6 +3,21 @@
  * Copyright 2010, ZURB
  * Free to use under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
+ 
+ 
+ 
+/* PUT IN YOUR SLIDER ID AND SIZE TO MAKE LOAD BEAUTIFULLY
+   ================================================== */
+#caseStudies { 
+	width: 1000px;
+	height: 210px;
+	background: #fff url('../images/orbit/loading.gif') no-repeat center center;
+	overflow: hidden; }
+#caseStudies>img,  
+#caseStudies>div,
+#caseStudies>a { display: none; }
+
+
 
 
 /* CONTAINER
@@ -18,6 +33,10 @@ div.orbit {
     height: 1px;
     position: relative;
     overflow: hidden }
+    
+div.orbit.with-bullets {
+    margin-bottom: 40px;
+}
 
 div.orbit>img {
     position: absolute;
@@ -200,7 +219,7 @@ div.slider-nav span.left {
     position: absolute;
     z-index: 1000;
     list-style: none;
-    bottom: -40px;
+    bottom: -50px;
     left: 50%;
 	margin-left: -50px;
     padding: 0; }
@@ -211,7 +230,7 @@ div.slider-nav span.left {
     cursor: pointer;
     color: #999;
     text-indent: -9999px;
-    background: url(../images/orbit/orbit/bullets.jpg) no-repeat 4px 0;
+    background: url(../images/orbit/bullets.jpg) no-repeat 4px 0;
     width: 13px;
     height: 12px;
     overflow: hidden; }
