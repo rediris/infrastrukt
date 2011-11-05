@@ -5,5 +5,4 @@ ehthumbs.db
 Icon?
 Thumbs.db
 .espressostorage
-.esproj*
-Foundation.esproj*
+*.esproj
