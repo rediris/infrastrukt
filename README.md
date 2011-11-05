@@ -26,6 +26,10 @@ Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, 
 
 ## Changelog
 
+**5/11/2011**
+
++ Added Orbit, for WordPress functionality - manage your slider through the backend.
+
 **3/11/2011**
 
 + Added multiple fixes from Foundation's Repo
@@ -77,11 +81,29 @@ This theme is constantly being updated in relation to ZURB's Foundation.
 
 ## Snippets
 
+### Orbit, for WordPress
+
+Orbit, for WordPress, is Foundation's awesome slider built to work in WordPress. It allows you to manage your slider images through the backend. Neat, right? 
+
+Just head into your admin panel, click the link named 'Orbit', select 'Featured Image' on the right, upload the image you'd like to appear in the slider (making sure to select 'Full Size') and select apply. O-FWP does not currently support multiple sliders or text content. It's still a WIP.
+
+```HTML
+<h3>Orbit, for WordPress</h3>
+	<div class="row">
+		<div class="twelve columns">
+			<div id="featured"> 
+				<?php sliderContent(); ?>
+			</div>
+		</div>
+	</div>
+```
+
 ### Tooltips
 
 Tooltips require a trigger and a data container. Just wrap your entire tooltip, including its trigger, in a class called `bubbleInfo`, and create a trigger with a class of `trigger`. 
 
 ```HTML
+<h3>Tooltips</h3>
 <div class="bubbleInfo">
   	<a href="#" class="trigger nice button">Tooltips, anyone?</a>
   		<div class="popup">
@@ -90,17 +112,6 @@ Tooltips require a trigger and a data container. Just wrap your entire tooltip, 
    			<div class="popup-arrow-border"></div>
    			<div class="popup-arrow"></div>
  		</div>
-</div>
-```
-
-### SlideDown
-
-SlideDown is just a simple way to create sliding content. It uses jQueries 'slideToggle', and can run independently to other SlideDown's. Give your trigger a class of `slideDown` and your content a class of `slideContent`. 
-
-```HTML
-<a href="#" class="nice button slideDown">Try me, I slide.</a>
-<div class="slideContent">
-	I'm the content for the first Slide Down
 </div>
 ```
 
