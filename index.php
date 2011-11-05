@@ -2,6 +2,8 @@
 
 	<!-- container -->
 	<div class="container">
+
+
 		
 		<div class="row">
 			<div class="twelve columns">
@@ -58,12 +60,11 @@
 				<div class="row">
 				<div class="twelve columns">
 					<div id="featured"> 
-    	 				<img src="http://foundation.zurb.com/images/orbit-demo/overflow.jpg" alt="Overflow: Hidden No More" />
-     					<img src="http://foundation.zurb.com/images/orbit-demo/captions.jpg"  alt="HTML Captions" />
-     					<div><p>I'm content inside a slider.</p></div>
+						<?php sliderContent(); ?>
 					</div>
 				</div>
 				</div>
+				
 				
 				<h3>Tabs</h3>
 				<dl class="tabs">
