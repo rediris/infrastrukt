@@ -56,16 +56,17 @@
 					</div>
 				</div>
 				
+				
 				<h3>Orbit, for WordPress</h3>
 				<div class="row">
 				<div class="twelve columns">
-					<div id="featured"> 
+					<div id="featured">
 						<?php sliderContent(); ?>
 					</div>
 				</div>
 				</div>
 				
-				
+
 				<h3>Tabs</h3>
 				<dl class="tabs">
 					<dd><a href="#simple1" class="active">Simple Tab 1</a></dd>

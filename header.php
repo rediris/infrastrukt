@@ -8,6 +8,8 @@
 <head>
 	<meta charset="utf-8" />
 	
+	<title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
+	
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
@@ -18,9 +20,11 @@
   	<!-- Setting favicon and Apple Touch Icon -->
   	<link rel="apple-touch-icon" href="<?php bloginfo ("template_url");?>/images/misc/apple-touch-icon.png">
  	<link rel="icon" type="image/png" href="<?php bloginfo ("template_url"); ?>/images/misc/favicon.ico">
-	
-	<title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
-  
+ 	
+ 	<!-- Apple Developer Options -->
+ 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+ 	<meta name="apple-mobile-web-app-capable" content="yes">
+ 	  
 	<!-- Included CSS Files -->
 	<link rel="stylesheet" href="<?php bloginfo ("stylesheet_url"); ?>">
 
@@ -33,6 +37,7 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	
+	<!-- Orbit IE Settings -->
 	<!--[if IE]>
     <style type="text/css">
          .timer { display: none !important; }

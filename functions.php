@@ -39,11 +39,11 @@ function Orbit(){
 
 function SliderContent(){
 
-	$args = array( 'post_type' => 'Orbit' );
+	$args = array( 'post_type' => 'Orbit');
 	$loop = new WP_Query( $args );
 		while ( $loop->have_posts() ) : $loop->the_post();
-			the_post_thumbnail();
-	endwhile;
+						the_post_thumbnail();
+		endwhile;
 
 }
 ?>

@@ -10,13 +10,12 @@ As a neat-freak designer, it's sometimes intimidating and frustrating looking at
 
 Foundation, for WordPress, features everything ZURB's Foundation Framework and HTML5 Boilerplate have to offer, however, some changes have been made to tailer it to WordPress, these include:
 
+* Orbit for WordPress, ZURB's image and content slider tailored for WordPress
 * A ySlow score of 95 (in regards to 'Small Site or Blog') & without a build script
 * SEO features such as an optomised Google Analytics snippet, robots.txt and Schema.org attributes
 * Beautiful, coda-style tooltips
 * Normalize.css, you'll never go wrong with this dynamic reset
-* SlideDown, a simple way to incorporate sliding content
 * Reveal for WordPress, a simple modal box by ZURB made to work in WordPress
-* Orbit for WordPress, ZURB's image and content slider tailored for WordPress
 * A function to provide Google's jQuery CDN over WordPress' local copy
 * Failsafe jQuery, with a fallback to WordPress' local copy
 
@@ -64,21 +63,6 @@ Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, 
 + Added apple-touch-icon support
 + Added Google jQuery CDN with fallback to local copy
 
-## Contribute
-
-It'd be great if users could contribute to this project, I'm constantly striving to make improvements, to help, you could:
-
-* Fork us
-* State any issues you have
-* Tag a feature you may like to see
-* Send us what you've made
-
-## Precautions
-
-Make sure you do not replace elements of this starter theme with elements from ZURB's Foundation Framework, as it will break. Modifications have been made to allow such elements as Orbit, Reveal, Tabs, etc to work within WordPress.
-
-This theme is constantly being updated in relation to ZURB's Foundation.
-
 ## Snippets
 
 ### Orbit, for WordPress
@@ -116,6 +100,22 @@ Tooltips require a trigger and a data container. Just wrap your entire tooltip, 
 ```
 
 You can view elements of ZURB's Foundation in their [documentation section](http://foundation.zurb.com/docs/). This includes Orbit, Reveal, Tabs etc.
+
+
+## Contribute
+
+It'd be great if users could contribute to this project, I'm constantly striving to make improvements, to help, you could:
+
+* Fork us
+* State any issues you have
+* Tag a feature you may like to see
+* Send us what you've made
+
+## Precautions
+
+Make sure you do not replace elements of this starter theme with elements from ZURB's Foundation Framework, as it will break. Modifications have been made to allow such elements as Orbit, Reveal, Tabs, etc to work within WordPress.
+
+This theme is constantly being updated in relation to ZURB's Foundation.
 
 ## Authors
 
