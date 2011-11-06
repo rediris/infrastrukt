@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="twelve columns">
 				<h2>Welcome to Foundation for WordPress</h2>
-				<p>This is version 2.0 released on November 1, 2011</p>
+				<p>You're running version 2.0 released on November 1, 2011</p>
 				<p>We're running Foundation, version 2.0.3, released on October 31, 2011</p>
 				<hr />
 			</div>
