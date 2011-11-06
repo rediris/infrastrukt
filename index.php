@@ -68,7 +68,7 @@
 				
 
 				<h3>Tabs</h3>
-				<dl class="tabs">
+				<dl class="dl nice tabs mobile">
 					<dd><a href="#simple1" class="active">Simple Tab 1</a></dd>
 					<dd><a href="#simple2">Simple Tab 2</a></dd>
 					<dd><a href="#simple3">Simple Tab 3</a></dd>
