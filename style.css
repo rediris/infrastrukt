@@ -9,7 +9,6 @@ License: MIT License
 License URI: http://www.opensource.org/licenses/mit-license.php
 */
 
-@import url("stylesheets/normalize.css");
 @import url("stylesheets/globals.css");
 @import url("stylesheets/app.css");
 @import url("stylesheets/forms.css");
