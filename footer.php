@@ -1,3 +1,6 @@
+	</div>
+	<!-- End Container -->
+	
 	<!-- Fallback to local copy of jQuery if Google's CDN Fails --> 
 	<script type="text/javascript">!window.jQuery && document.write('<script src="<?php bloginfo ("template_url"); ?>/javascripts/jquery.min.js"><\/script>')</script>
 	

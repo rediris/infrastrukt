@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"<?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
@@ -49,3 +49,27 @@
 
 </head>
 <body>
+
+<!-- Begin Container -->
+<div class="container" role="main">
+
+	<!-- Begin Header -->
+	<header class="row">
+			<hgroup class="twelve columns">
+				<h1><a href="<?php echo home_url( '/' ); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+				<h4 class="subheader"><?php bloginfo('description'); ?></h4>
+			</hgroup>
+	</header>
+	<!-- End Header -->
+	
+	<!-- Begin Navigation -->
+	<div class="row">
+		<nav class="twelve columns">
+			<?php wp_nav_menu( array( 'theme_location' => 'header-menu') ); ?>
+			<hr>
+		</nav>
+	</div>
+	<!-- End Navigation -->
+	
+	
+	

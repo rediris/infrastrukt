@@ -30,7 +30,7 @@
 	input.large, textarea.large { width: 434px; }
 
 	/* Fieldsets */
-	form fieldset { padding: 9px 9px 2px 9px; border: solid 1px #ddd; margin: 18px 0; }
+	fieldset { padding: 9px 9px 2px 9px; border: solid 1px #ddd; margin: 18px 0px; margin-bottom: 20px; }
 
 	/* Inlined Radio & Checkbox */
 	div.form-field input[type=radio], div.form-field input[type=checkbox] { display: inline; width:auto; margin-bottom:0; }
@@ -47,9 +47,12 @@
 	/* -----------------------------------------
 	   Nicer Forms
 	----------------------------------------- */
-	form.nice div.form-field input, form.nice input.input-text, form.nice textarea { border: solid 1px #bbb; border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; }
-	form.nice div.form-field input, form.nice input.input-text, form.nice textarea { font-size: 13px; padding: 6px 3px 4px; outline: none !important; background: url(../images/misc/input-bg.png) #fff; }
-	form.nice div.form-field input:focus, form.nice input.input-text:focus, form.nice textarea:focus { background-color: #f9f9f9; }
+	 input[type="text"].nice {
+	 	margin-bottom: 7px;
+	 }
+	form.nice div.form-field input, form.nice input.input-text, form.nice textarea, input[type="text"].nice { border: solid 1px #bbb; border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; }
+	form.nice div.form-field input, form.nice input.input-text, form.nice textarea, input[type="text"].nice { font-size: 13px; padding: 6px 3px 4px; outline: none !important; background: url(../images/misc/input-bg.png) #fff; }
+	form.nice div.form-field input:focus, form.nice input.input-text:focus, form.nice textarea:focus, input[type="text"].nice { background-color: #f9f9f9; }
 
 	form.nice fieldset { border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; }
 

@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Sample
+*/
+?>
+
 <?php get_header(); ?>
 
 		<div class="row">
@@ -75,12 +81,17 @@
 				<p><a href="#" class="nice radius small blue button">Nice Blue Button</a></p>
 				<p><a href="#" class="nice radius blue button">Nice Blue Button</a></p>
 				<p><a href="#" class="nice radius large blue button">Nice Blue Button</a></p>
+				
+				<hr>
 
 			</div>
+		
 
 			<!-- Begin Sidebar -->
 			<?php get_sidebar(); ?>
 			<!-- End Sidebar -->
+			
+			
 
 		</div>
 		

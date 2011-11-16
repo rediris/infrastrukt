@@ -118,6 +118,8 @@
 
 	.alert-box a.close { color: #000; position: absolute; right: 4px; top: 0px; font-size: 18px; opacity: 0.2; padding: 4px; }
 	.alert-box a.close:hover { opacity: 0.4; }
+	.required {color: red; font-weight: bold;
+	}
 
 
 
@@ -152,21 +154,16 @@
     Navigation
     -------------------------------------------------- */ 
     
-    .menu li {
-    	float: left;
-    	display: block;
-    	padding-right: 10px;
-    	margin-right: 5px;
+    nav {
+    	border-top: 1px solid #F1f1f1;
     }
-   	.menu li a {
-   		background-color: #00a6fc;
-   		padding: 10px;
-   		display: block;
-   		width: 100px;
-   		color: #FFF;
-   		font-size: 15px;
-   		font-weight: bold;
-   	}
+    
+	nav ul li {
+		display: block;
+		float: left;
+		margin-right: 20px;
+	}
+
     
 /*  --------------------------------------------------
     Pagination

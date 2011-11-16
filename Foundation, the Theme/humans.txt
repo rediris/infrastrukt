@@ -1,8 +1,0 @@
-/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA. Happily converted to WordPress by Drew Morris*/
-/* zurb.com & Drew Morris*/
-/* humanstxt.org */
-
-/* SITE */
-  Standards: HTML5, CSS3
-  Components: jQuery, Orbit, Reveal
-  Software: Coda, Textmate, Git
