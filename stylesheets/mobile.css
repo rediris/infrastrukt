@@ -88,6 +88,27 @@
 	:: UI
 ---------------------------------------------------*/	
 
+	/* Navigation */
+	@media only screen and (max-width: 767px) {
+		.menu li {
+			width: 100%;
+			color: black;
+		}
+		.menu li a {
+			float: left;
+			display: block;
+			width: 100%;
+			text-align: center;
+			line-height: 1;
+			background: #F1F1F1;
+			margin-left:-20px;
+			padding: 18px 20px;
+		}
+		.menu li a:hover {
+			background: silver;
+		}
+	}
+
 	/* Buttons */
 	@media only screen and (max-width: 767px) {
 		.button { display: block; }

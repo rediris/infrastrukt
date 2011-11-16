@@ -12,7 +12,7 @@
 :: Pagination
 :: Lists
 :: Panels
-:: SlideDown
+:: Navigaton
 :: Tooltips
 */
 
@@ -147,6 +147,26 @@
     ul.contained.tabs-content { padding: 0; }
     ul.contained.tabs-content li { padding: 20px; border: solid 0px #ddd; border-width: 0px 1px 1px 1px; }
     ul.nice.contained.tabs-content li { border-color: #eee; }
+    
+/*  --------------------------------------------------
+    Navigation
+    -------------------------------------------------- */ 
+    
+    .menu li {
+    	float: left;
+    	display: block;
+    	padding-right: 10px;
+    	margin-right: 5px;
+    }
+   	.menu li a {
+   		background-color: #00a6fc;
+   		padding: 10px;
+   		display: block;
+   		width: 100px;
+   		color: #FFF;
+   		font-size: 15px;
+   		font-weight: bold;
+   	}
     
 /*  --------------------------------------------------
     Pagination
