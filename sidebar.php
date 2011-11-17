@@ -1,3 +1,5 @@
+<a class="hide-on-desktops" id="skipcontent"></a>
+
 <aside class="three columns">
 <ul>
 	<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Sidebar')) : ?>

@@ -53,6 +53,10 @@
 <!-- Begin Container -->
 <div class="container" role="main">
 
+	<nav class="hide-on-desktops row">
+		<div class="twelve columns"><a href="#skipcontent">Skip Content? &darr;</a></div>
+	</nav>
+
 	<!-- Begin Header -->
 	<header class="row">
 			<hgroup class="twelve columns">

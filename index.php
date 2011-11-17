@@ -2,6 +2,9 @@
 
 		<div class="row">
 					
+					<?php get_template_part( 'loop', 'index' ); ?>
+					
+					
 			<!-- Begin Post Loop, includes: date, author, category, comment, edit & post -->
 			
 				<!-- Begin Error Message, display if no posts are found -->
