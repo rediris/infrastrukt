@@ -26,12 +26,6 @@ Template Name: Archives
 				
 				</div>
 	        	
-	        	<!-- Begin Pagination -->
-	        	<?php if (function_exists("emm_paginate")) {
-	        	    emm_paginate();
-	        	} ?>
-	        	<!-- End Pagination -->
-	        	
         		</article>
         		
         		<!-- Begin Sidebar -->

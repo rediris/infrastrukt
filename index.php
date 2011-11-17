@@ -38,7 +38,9 @@
 	            	<?php the_excerpt(); ?>  
 	        			<?php else : ?>  
 	            		<?php the_content('Read More'); ?>  
+	            		<hr>
 	        		<?php endif; ?>
+	        		
 	        		
 	        		<!-- End Looping Through Posts -->
 	        		
