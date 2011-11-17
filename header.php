@@ -11,7 +11,7 @@
 	<title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
 	
 	<!-- Set the viewport width to device width for mobile -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.6; maximum-scale=1.0; width=device-width; "/>
 	
 	<!-- Schema.org Description -->
 	<meta itemprop="name" content="">
