@@ -238,12 +238,11 @@ function commenter_link() {
         $commenter = ereg_replace( '(<a )/', '\\1class="url "' , $commenter );
     }
     $avatar_email = get_comment_author_email();
-    $avatar = str_replace( "class='avatar", "class='photo avatar", get_avatar( $avatar_email, 80 ) );
-    echo $avatar . ' <span class="fn n">' . $commenter . '</span>';
+    $avatar = str_replace( "class='avatar", "class='hide-on-phones photo avatar", get_avatar( $avatar_email, 80 ) );
+    echo $avatar . ' <span class="hide-on-phones fn n">' . $commenter . '</span>';
 } // end commenter_link
 
 // Orbit, for WordPress
-
 add_theme_support( 'post-thumbnails' );
 
 add_action('init', 'Orbit');
@@ -264,7 +263,6 @@ function Orbit(){
 
 // Orbit, for WordPress
 // Call this where you want the slider
-
 function SliderContent(){
 
 	$args = array( 'post_type' => 'Orbit');

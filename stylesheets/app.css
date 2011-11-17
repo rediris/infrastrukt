@@ -13,6 +13,13 @@
    Shared Styles
 ----------------------------------------- */
 
+ul.children {
+	margin-left: 1em;
+	margin-top: 1em;
+	padding-left: 1em;
+	border-left: 2px solid #F1F1F1;
+}
+
 
 /* -----------------------------------------
    Page Name 1
