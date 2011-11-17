@@ -53,9 +53,11 @@
 <!-- Begin Container -->
 <div class="container" role="main">
 
-	<nav class="hide-on-desktops row">
-		<div class="twelve columns"><a href="#skipcontent">Skip Content? &darr;</a></div>
+	<!-- Begin Skip Content -->
+	<nav class="row">
+		<div class="twelve columns hide-on-desktops"><a href="#skipcontent">Skip Content? &darr;</a></div>
 	</nav>
+	<!-- End Skip Content -->
 
 	<!-- Begin Header -->
 	<header class="row">
@@ -68,7 +70,7 @@
 	
 	<!-- Begin Navigation -->
 	<div class="row">
-		<nav class="twelve columns">
+		<nav class="menu twelve columns">
 			<?php wp_nav_menu( array( 'theme_location' => 'header-menu') ); ?>
 			<hr>
 		</nav>
