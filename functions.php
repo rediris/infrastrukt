@@ -1,11 +1,5 @@
 <?php
 
-// Table of Contents
-// * jQuery CDN
-// * Enable / Disable Admin Bar
-// * Registering Navigation Menus
-// * Adding support for custom comments.php template
-
 // Load a copy of jQuery from Google's CDN instead of the local copy.
 
 function my_scripts_method() {
@@ -16,13 +10,26 @@ function my_scripts_method() {
  
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 
+// Disable WordPress version reporting as a basic protection against automatic attacks
+function remove_generators() {
+	return '';
+}		
+
+add_filter('the_generator','remove_generators');
+
 // Disable the admin bar, set to true if you want it to be visible.
 
 show_admin_bar(FALSE);
 
 // Function to create a custom comments.php template, for modification, refer to 'comments.php'.
 
+// Add theme support for Automatic Feed Links
+
+add_theme_support( 'automatic-feed-links' );
+
 // Register Navigation Menus - you can add more if you like!
+
+add_theme_support('nav-menus');
 
 if ( function_exists( 'register_nav_menus' ) ) {
 	register_nav_menus(
@@ -263,6 +270,7 @@ function Orbit(){
 
 // Orbit, for WordPress
 // Call this where you want the slider
+
 function SliderContent(){
 
 	$args = array( 'post_type' => 'Orbit');
