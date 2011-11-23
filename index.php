@@ -1,9 +1,6 @@
 <?php get_header(); ?>
 
-		<div class="row">
-					
-					<?php get_template_part( 'loop', 'index' ); ?>
-					
+		<div class="row">					
 					
 			<!-- Begin Post Loop, includes: date, author, category, comment, edit & post -->
 			
@@ -15,13 +12,15 @@
             		</div>
 				<?php endif; ?>
 				<!-- End Error Message -->
-			
-				<article class="nine columns">
-				
+					
+					<div class="nine columns">
+					
 					<!-- Loop Through Posts -->
 					<?php query_posts( 'posts_per_page=2' ); ?>
 				
 					<?php while ( have_posts() ) : the_post(); ?>
+					
+					<article>
 					
 						<a href="#" class="hide-on-desktops" style="float: right;" alt="Back to Top">Top &uarr;</a>
 						
@@ -44,6 +43,8 @@
 		            		<?php the_content('Read More'); ?>  
 		            		<hr>
 		        		<?php endif; ?>
+		        		
+		        	</article>
 	     
 	        		<?php endwhile; ?>
 	        		<!-- End Looping Through Posts -->  	        		
@@ -58,7 +59,7 @@
 		        	<?php wp_reset_query(); ?>
 		        	<!-- End Reset Query -->
 	        	
-        		</article>
+        		</div>
         		
         		<!-- Begin Sidebar -->
         		<?php get_sidebar(); ?>
