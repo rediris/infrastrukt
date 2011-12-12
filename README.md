@@ -1,5 +1,7 @@
 # Foundation, for WordPress
 
+# New FWP Coming Soon, view a demonstration here: http://fwp.drewsymo.com/ (Currently in Beta)
+
 Foundation, for WordPress, is a blank starter theme with the exceptional capabilities of [ZURB's Foundation Framework](http://foundation.zurb.com/) and [HTML5 Boilerplate](http://html5boilerplate.com/).
 
 As a neat-freak designer, it's sometimes intimidating and frustrating looking at a WordPress theme framework that's jam-packed with unnecessary extras and bloated code. That's why I created Foundation, for WordPress, which offers only the necessary essentials to get your site running, with all the jazz of responsive web-design.
