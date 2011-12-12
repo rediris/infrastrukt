@@ -32,7 +32,7 @@ endif;
  
  <!-- Begin Comments List -->
 <div id="comments-list" class="comments">
-	<h3><?php printf($comment_count > 1 ? __('<span>%d</span> Comments', 'Foundation') : __('<span>One</span> Comment', 'Foundation'), $comment_count) ?></h3>
+	<h4 class="subheader"><?php printf($comment_count > 1 ? __('<span>%d</span> Comments', 'Foundation') : __('<span>One</span> Comment', 'Foundation'), $comment_count) ?></h4>
  
 	<!-- Begin Navigation (Above) -->
 	<?php $total_pages = get_comment_pages_count(); if ( $total_pages > 1 ) : ?>
@@ -81,9 +81,9 @@ endif;
                 <div>
                 <fieldset>
                 <legend>
-                <h3>
+                <h4 class="subheader">
                 	<?php comment_form_title( __('Post a Comment', 'Foundation'), __('Post a Reply to %s', 'Foundation') ); ?>
-                </h3>
+                </h4>
                 </legend>
                  
  
@@ -98,7 +98,7 @@ endif;
                     <div class="formcontainer">   
  
 
-                        <form class="nice" id="commentform" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
+                        <form class="nice" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
  
 <?php if ( $user_ID ) : ?>
                             <p id="login"><?php printf(__('<span class="loggedin">Logged in as <a href="%1$s" title="Logged in as %2$s">%2$s</a>.</span> <span class="logout"><a href="%3$s" title="Log out of this account">Log out?</a></span>', 'Foundation'),
@@ -117,7 +117,7 @@ endif;
  
               <div id="form-section-email" class="form-section">
                                 <div class="form-label"><label for="email"><?php _e('Email', 'Foundation') ?><?php if ($req) _e('<span class="required">*</span>', 'Foundation') ?></label></div>
-                                <div class="form-input"><input class="nice" id="email" name="email" type="text" value="<?php echo $comment_author_email ?>" size="30" maxlength="50" tabindex="4" /></div>
+                                <div class="form-input"><input id="email" name="email" type="text" value="<?php echo $comment_author_email ?>" size="30" maxlength="50" tabindex="4" /></div>
               </div><!-- #form-section-email .form-section -->
  
               <div id="form-section-url" class="form-section">
@@ -138,7 +138,7 @@ endif;
  
 <?php do_action('comment_form', $post->ID); ?>
  
-                            <div class="form-submit"><input class="nice button" name="submit" type="submit" value="<?php _e('Post Comment', 'Foundation') ?>" tabindex="7" /><input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" /></div>
+                            <div class="form-submit"><button class="nice button" name="submit" tabindex="7"><?php _e('Post Comment', 'Foundation') ?></button><input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" /></div>
  
 <?php comment_id_fields(); ?>  
  

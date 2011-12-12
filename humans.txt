@@ -1,5 +1,5 @@
-/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA. Happily converted to WordPress by Drew Morris*/
-/* zurb.com & Drew Morris*/
+/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
+/* zurb.com */
 /* humanstxt.org */
 
 /* SITE */

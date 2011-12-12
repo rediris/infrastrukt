@@ -1,10 +1,12 @@
-<a class="hide-on-desktops" id="skipcontent"></a>
+<!-- sidebar -->
+<aside class="four columns">
 
-<aside class="three columns">
-<ul>
-	<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Sidebar')) : ?>
-	<li><h4>Hey! You!</h4></li>
-	<li>You should like, so test out this dynamic sidebar. Check it out in Appearance > Widgets!</li>
-	<?php endif; ?>
-</ul>
+	<ul>
+		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Sidebar')) : ?>
+		<li><h4>Hey! You!</h4></li>
+		<li>You should like, so test out this dynamic sidebar. Check it out in Appearance > Widgets!</li>
+		<?php endif; ?>
+	</ul>
+
 </aside>
+<!-- sidebar -->

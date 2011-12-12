@@ -1,41 +1,36 @@
-<?php
+<?php 
 /*
 Template Name: Archives
 */
+
+get_header();
+
 ?>
 
-<?php get_header(); ?>
+<!-- archives -->
 
-		<div class="row">
-			
-				<div class="nine columns">
+<div class="eight columns">
+
+<!-- Skip Nav -->
+<a id="content"></a>
+
+	<?php the_post(); ?>
+	<h2 class="entry-title"><?php the_title(); ?></h2>
 				
-				<?php the_post(); ?>
-												
-						<h3>Archives</h3>
-						<h4 class="subheader"> by Month:</h4>
-						<ul>
-							<?php wp_get_archives('type=monthly'); ?>
-						</ul>
-						
-						<h3>Archives</h3>
-						<h4 class="subheader"> by Subject:</h4>
-						<ul>
-							 <?php wp_list_categories(); ?>
-						</ul>
-				
-				</div>
-	        	
-        		</article>
-        		
-        		<!-- Begin Sidebar -->
-        		<?php get_sidebar(); ?>
-        		<!-- End Sidebar -->
-        		
-        		<hr>
-        		        	
-        	<!-- End Post Loop -->
-			
-		</div>
+	<h4 class="subheader">Archives by Month:</h4>
+	<ul>
+		<?php wp_get_archives('type=monthly'); ?>
+	</ul>
 		
+	<h4 class="subheader">Archives by Subject:</h4>
+	<ul>
+		 <?php wp_list_categories(); ?>
+	</ul>
+
+</div>
+
+<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
+
+<!-- archives -->

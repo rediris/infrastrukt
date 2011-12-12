@@ -1,33 +1,25 @@
 <?php
 
-// Load a copy of jQuery from Google's CDN instead of the local copy.
-
-function my_scripts_method() {
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js');
-    wp_enqueue_script( 'jquery' );
-}    
- 
-add_action('wp_enqueue_scripts', 'my_scripts_method');
-
-// Disable WordPress version reporting as a basic protection against automatic attacks
+// Disable WordPress version reporting as a basic protection against attacks
 function remove_generators() {
 	return '';
 }		
 
 add_filter('the_generator','remove_generators');
 
+// Add thumbnail support
+
+add_theme_support( 'post-thumbnails' );
+
 // Disable the admin bar, set to true if you want it to be visible.
 
 show_admin_bar(FALSE);
-
-// Function to create a custom comments.php template, for modification, refer to 'comments.php'.
 
 // Add theme support for Automatic Feed Links
 
 add_theme_support( 'automatic-feed-links' );
 
-// Register Navigation Menus - you can add more if you like!
+// Custom Navigation
 
 add_theme_support('nav-menus');
 
@@ -36,13 +28,12 @@ if ( function_exists( 'register_nav_menus' ) ) {
 		array(
 		  // - Header Navigation
 		  'header-menu' => 'Header Navigation',
-		  // - Footer Navigation
-		  'footer-menu' => 'Footer Navigation'
 		)
 	);
 }
 
 // Sidebars
+
 if (function_exists('register_sidebar')) {
 	register_sidebar(array(
 		'name'=> 'Right Sidebar',
@@ -54,6 +45,94 @@ if (function_exists('register_sidebar')) {
 	));
 }
 
+// Comments
+
+// Custom callback to list comments in the Foundation style
+function custom_comments($comment, $args, $depth) {
+  $GLOBALS['comment'] = $comment;
+    $GLOBALS['comment_depth'] = $depth;
+  ?>
+    <li id="comment-<?php comment_ID() ?>" <?php comment_class() ?>>
+        <div class="comment-author vcard"><?php commenter_link() ?></div>
+        <div class="comment-meta"><?php printf(__('Posted %1$s at %2$s <span class="meta-sep">|</span> <a href="%3$s" title="Permalink to this comment">Permalink</a>', 'Foundation'),
+                    get_comment_date(),
+                    get_comment_time(),
+                    '#comment-' . get_comment_ID() );
+                    edit_comment_link(__('Edit', 'Foundation'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>'); ?></div>
+  <?php if ($comment->comment_approved == '0') _e("\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n", 'Foundation') ?>
+          <div class="comment-content">
+            <?php comment_text() ?>
+        </div>
+        <?php // echo the comment reply link
+            if($args['type'] == 'all' || get_comment_type() == 'comment') :
+                comment_reply_link(array_merge($args, array(
+                    'reply_text' => __('Reply','Foundation'),
+                    'login_text' => __('Log in to reply.','Foundation'),
+                    'depth' => $depth,
+                    'before' => '<div class="comment-reply-link">',
+                    'after' => '</div>'
+                )));
+            endif;
+        ?>
+<?php } // end custom_comments
+
+// Custom callback to list pings
+function custom_pings($comment, $args, $depth) {
+       $GLOBALS['comment'] = $comment;
+        ?>
+            <li id="comment-<?php comment_ID() ?>" <?php comment_class() ?>>
+                <div class="comment-author"><?php printf(__('By %1$s on %2$s at %3$s', 'Foundation'),
+                        get_comment_author_link(),
+                        get_comment_date(),
+                        get_comment_time() );
+                        edit_comment_link(__('Edit', 'Foundation'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>'); ?></div>
+    <?php if ($comment->comment_approved == '0') _e('\t\t\t\t\t<span class="unapproved">Your trackback is awaiting moderation.</span>\n', 'Foundation') ?>
+            <div class="comment-content">
+                <?php comment_text() ?>
+            </div>
+<?php } // end custom_pings
+
+// Produces an avatar image with the hCard-compliant photo class
+function commenter_link() {
+    $commenter = get_comment_author_link();
+    if ( ereg( '<a[^>]* class=[^>]+>', $commenter ) ) {
+        $commenter = ereg_replace( '(<a[^>]* class=[\'"]?)', '\\1url ' , $commenter );
+    } else {
+        $commenter = ereg_replace( '(<a )/', '\\1class="url "' , $commenter );
+    }
+    $avatar_email = get_comment_author_email();
+    $avatar = str_replace( "class='avatar", "class='photo avatar", get_avatar( $avatar_email, 35 ) );
+    echo $avatar . ' <span class="fn n">' . $commenter . '</span>';
+} // end commenter_link
+
+add_action('init', 'Orbit');
+
+function Orbit(){
+	$Orbit_args = array(
+		'label'	=> __('Orbit'),
+		'singular_label' =>	__('Orbit'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'editor','page-attributes','thumbnail')
+		);
+		register_post_type('Orbit', $Orbit_args);
+}
+
+// Orbit, for WordPress
+// Call this where you want the slider
+
+function SliderContent(){
+
+	$args = array( 'post_type' => 'Orbit');
+	$loop = new WP_Query( $args );
+		while ( $loop->have_posts() ) : $loop->the_post();
+					the_post_thumbnail();
+		endwhile;
+
+}
 
 
 // Custom Pagination
@@ -191,94 +270,5 @@ function emm_paginate_loop($start, $max, $page = 0) {
 	return $output;
 } 
 
-// Custom callback to list comments in the Foundation style
-function custom_comments($comment, $args, $depth) {
-  $GLOBALS['comment'] = $comment;
-    $GLOBALS['comment_depth'] = $depth;
-  ?>
-    <li id="comment-<?php comment_ID() ?>" <?php comment_class() ?>>
-        <div class="comment-author vcard"><?php commenter_link() ?></div>
-        <div class="comment-meta"><?php printf(__('Posted %1$s at %2$s <span class="meta-sep">|</span> <a href="%3$s" title="Permalink to this comment">Permalink</a>', 'Foundation'),
-                    get_comment_date(),
-                    get_comment_time(),
-                    '#comment-' . get_comment_ID() );
-                    edit_comment_link(__('Edit', 'Foundation'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>'); ?></div>
-  <?php if ($comment->comment_approved == '0') _e("\t\t\t\t\t<span class='alert-box warning'>Your comment is awaiting moderation.</span>\n", 'Foundation') ?>
-          <div class="comment-content">
-            <?php comment_text() ?>
-        </div>
-        <?php // echo the comment reply link
-            if($args['type'] == 'all' || get_comment_type() == 'comment') :
-                comment_reply_link(array_merge($args, array(
-                    'reply_text' => __('Reply','Foundation'),
-                    'login_text' => __('Log in to reply.','Foundation'),
-                    'depth' => $depth,
-                    'before' => '<div class="comment-reply-link">',
-                    'after' => '</div>'
-                )));
-            endif;
-        ?>
-<?php } // end custom_comments
-
-// Custom callback to list pings
-function custom_pings($comment, $args, $depth) {
-       $GLOBALS['comment'] = $comment;
-        ?>
-            <li id="comment-<?php comment_ID() ?>" <?php comment_class() ?>>
-                <div class="comment-author"><?php printf(__('By %1$s on %2$s at %3$s', 'Foundation'),
-                        get_comment_author_link(),
-                        get_comment_date(),
-                        get_comment_time() );
-                        edit_comment_link(__('Edit', 'Foundation'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>'); ?></div>
-    <?php if ($comment->comment_approved == '0') _e('\t\t\t\t\t<span class="alert-box warning">Your trackback is awaiting moderation.</span>\n', 'Foundation') ?>
-            <div class="comment-content">
-                <?php comment_text() ?>
-            </div>
-<?php } // end custom_pings
-
-// Produces an avatar image with the hCard-compliant photo class
-function commenter_link() {
-    $commenter = get_comment_author_link();
-    if ( ereg( '<a[^>]* class=[^>]+>', $commenter ) ) {
-        $commenter = ereg_replace( '(<a[^>]* class=[\'"]?)', '\\1url ' , $commenter );
-    } else {
-        $commenter = ereg_replace( '(<a )/', '\\1class="url "' , $commenter );
-    }
-    $avatar_email = get_comment_author_email();
-    $avatar = str_replace( "class='avatar", "class='hide-on-phones photo avatar", get_avatar( $avatar_email, 80 ) );
-    echo $avatar . ' <span class="hide-on-phones fn n">' . $commenter . '</span>';
-} // end commenter_link
-
-// Orbit, for WordPress
-add_theme_support( 'post-thumbnails' );
-
-add_action('init', 'Orbit');
-
-function Orbit(){
-	$Orbit_args = array(
-		'label'	=> __('Orbit'),
-		'singular_label' =>	__('Orbit'),
-		'public'	=>	true,
-		'show_ui'	=>	true,
-		'capability_type'	=>	'post',
-		'hierarchical'	=>	false,
-		'rewrite'	=>	true,
-		'supports'	=>	array('title', 'editor','page-attributes','thumbnail')
-		);
-		register_post_type('Orbit', $Orbit_args);
-}
-
-// Orbit, for WordPress
-// Call this where you want the slider
-
-function SliderContent(){
-
-	$args = array( 'post_type' => 'Orbit');
-	$loop = new WP_Query( $args );
-		while ( $loop->have_posts() ) : $loop->the_post();
-						the_post_thumbnail();
-		endwhile;
-
-}
 
 ?>

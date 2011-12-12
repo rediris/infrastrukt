@@ -1,68 +1,88 @@
-jQuery(document).ready(function() {
+/* Foundation v2.1.3 http://foundation.zurb.com */
+$(document).ready(function () {
 
 	/* Use this js doc for all application specific JS */
+    
+    /* HIDE ADDRESS BAR ON IPHONE */
+    
+    window.scrollTo(0,1);
+	
+	/* WORDPRESS NAV-BAR SUPPORT ------------- */
+	/* Adds support for the nav-bar with flyouts in WordPress */
+	
+	$('.nav-bar li').has('ul').addClass("has-flyout");
+	$('.nav-bar li ul').addClass("flyout");	
 
 	/* TABS --------------------------------- */
 	/* Remove if you don't need :) */
 
-	var tabs = jQuery('dl.tabs');
-		tabsContent = jQuery('ul.tabs-content')
+	function activateTab($tab) {
+	  var $activeTab = $tab.closest('dl').find('a.active'),
+	      contentLocation = $tab.attr("href") + 'Tab';
 
-	tabs.each(function(i) {
+	  //Make Tab Active
+	  $activeTab.removeClass('active');
+	  $tab.addClass('active');
+
+    //Show Tab Content
+		$(contentLocation).closest('.tabs-content').find('li').hide();
+		$(contentLocation).show();
+	}
+
+	$('dl.tabs').each(function () {
 		//Get all tabs
-		var tab = jQuery(this).children('dd').children('a');
-		tab.click(function(e) {
-
-			//Get Location of tab's content
-			var contentLocation = jQuery(this).attr("href")
-			contentLocation = contentLocation + "Tab";
-
-			//Let go if not a hashed one
-			if(contentLocation.charAt(0)=="#") {
-
-				e.preventDefault();
-
-				//Make Tab Active
-				tab.removeClass('active');
-				jQuery(this).addClass('active');
-
-				//Show Tab Content
-				jQuery(contentLocation).parent('.tabs-content').children('li').css({"display":"none"});
-				jQuery(contentLocation).css({"display":"block"});
-
-			} 
+		var tabs = $(this).children('dd').children('a');
+		tabs.click(function (e) {
+		  activateTab($(this));
 		});
 	});
 
+	if (window.location.hash) {
+    activateTab($('a[href="' + window.location.hash + '"]'));
+  }
 
 	/* PLACEHOLDER FOR FORMS ------------- */
 	/* Remove this and jquery.placeholder.min.js if you don't need :) */
 
-	jQuery('input, textarea').placeholder();
+	$('input, textarea').placeholder();
 
+	/* DROPDOWN NAV ------------- */
+	/*
+	$('.nav-bar li a, .nav-bar li a:after').each(function() {
+		$(this).data('clicks', 0);
+	});
+	$('.nav-bar li a, .nav-bar li a:after').bind('touchend click', function(e){
+		e.stopPropagation();
+		e.preventDefault();
+		var f = $(this).siblings('.flyout');
+		$(this).data('clicks', ($(this).data('clicks') + 1));
+		if (!f.is(':visible') && f.length > 0) {
+			$('.nav-bar li .flyout').hide();
+			f.show();
+		}
+	});
+	$('.nav-bar li a, .nav-bar li a:after').bind(' touchend click', function(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		if ($(this).data('clicks') > 1) {
+			window.location = $(this).attr('href');
+		}
+	});
+	$('.nav-bar').bind('touchend click', function(e) {
+		e.stopPropagation();
+		if (!$(e.target).parents('.nav-bar li .flyout') || $(e.target) != $('.nav-bar li .flyout')) {
+			e.preventDefault();
+		}
+	});
+	$('body').bind('touchend', function(e) {
+		if (!$(e.target).parents('.nav-bar li .flyout') || $(e.target) != $('.nav-bar li .flyout')) {
+			$('.nav-bar li .flyout').hide();
+		}
+	});
+	*/
 
 	/* DISABLED BUTTONS ------------- */
 	/* Gives elements with a class of 'disabled' a return: false; */
-	
-	jQuery('#featured').orbit({
-     	animation: 'horizontal-push',                  // fade, horizontal-slide, vertical-slide, horizontal-push
-	     animationSpeed: 800,                // how fast animtions are
-	     timer: true, 			 // true or false to have the timer
-	     advanceSpeed: 4000, 		 // if timer is enabled, time between transitions 
-	     pauseOnHover: false, 		 // if you hover pauses the slider
-	     startClockOnMouseOut: false, 	 // if clock should start on MouseOut
-	     startClockOnMouseOutAfter: 1000, 	 // how long after MouseOut should the timer start again
-	     directionalNav: true, 		 // manual advancing directional navs
-	     captions: true, 			 // do you want captions?
-	     captionAnimation: 'fade', 		 // fade, slideOpen, none
-	     captionAnimationSpeed: 800, 	 // if so how quickly should they animate in
-	     bullets: true,			 // true or false to activate the bullet navigation
-	     bulletThumbs: true,		 // thumbnails for the bullets
-	     bulletThumbLocation: '',		 // location from this file where thumbs will be
-	     afterSlideChange: function(){} 	 // empty function 
-	
-	});
-
 
 
 });

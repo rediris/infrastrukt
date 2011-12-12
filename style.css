@@ -1,21 +1,14 @@
 /* 
-Theme Name: Foundation
-Theme URI:
-Description: Foundation for WordPress, a Starter Theme.
-Author: Drew Morris & ZURB
-Author URI:
-Version: 2.0
+Theme Name: Foundation, for WordPress
+Theme URI: http://www.drewsymo.com
+Description: A Responsive Starter Theme
+Author: @FoundationZURB, @drewsymo
+Author URI: 
+Version: 3.0
 License: MIT License
 License URI: http://www.opensource.org/licenses/mit-license.php
 */
 
-@import url("stylesheets/globals.css");
+@import url("stylesheets/foundation.css");
 @import url("stylesheets/app.css");
-@import url("stylesheets/forms.css");
-@import url("stylesheets/grid.css");
-@import url("stylesheets/orbit.css");
-@import url("stylesheets/reveal.css");
-@import url("stylesheets/typography.css");
-@import url("stylesheets/ui.css");
-@import url("stylesheets/mobile.css"); /* Must be kept at the bottom! */
-
+[if lt IE 9] @import url("stylesheets/ie.css");
