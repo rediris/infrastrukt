@@ -31,7 +31,7 @@ Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, 
 
 Demonstration: [http://fwp.drewsymo.com/orbit](http://fwp.drewsymo.com/orbit)
 
-Orbit, for WordPress, is Foundation's awesome slider built to work in WordPress. It allows you to manage your slider images through the backend. Neat, right? 
+Orbit, for WordPress, is Foundation's awesome slider built to work in WordPress. It allows you to manage your slider images and content through the backend. Neat, right? 
 
 Just head into your admin panel, and:
 
