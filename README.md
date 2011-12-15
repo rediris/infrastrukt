@@ -8,8 +8,7 @@ As a neat-freak designer, it's sometimes intimidating and frustrating looking at
 
 ## Demonstration
 
-You can view Foundation, for WordPress (FWP) online at this address: http://fwp.drewsymo.com. 
-
+You can view Foundation, for WordPress (FWP) online at this address: [http://fwp.drewsymo.com](http://fwp.drewsymo.com)
 ## Features
 
 Foundation, for WordPress, features everything ZURB's Foundation Framework and HTML5 Boilerplate have to offer, however, some changes have been made to tailer it to WordPress, these include:
@@ -20,7 +19,6 @@ Foundation, for WordPress, features everything ZURB's Foundation Framework and H
 * A little snippet that 'hides' the address bar on the iPhone
 * An extremely awesome pagination script by @ericmartin, using Foundations pagination CSS
 * A ySlow score of 95 (in regards to 'Small Site or Blog')
-* SEO features such as an optimised Google Analytics snippet, robots.txt and Schema.org attributes
 * An improved viewport snippet, allowing the same scale over horizontal and portrait orientations
 
 ## Download
@@ -30,6 +28,8 @@ Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, 
 ## Snippets
 
 ### Orbit, for WordPress
+
+Demonstration: [http://fwp.drewsymo.com/orbit](http://fwp.drewsymo.com/orbit)
 
 Orbit, for WordPress, is Foundation's awesome slider built to work in WordPress. It allows you to manage your slider images through the backend. Neat, right? 
 
@@ -46,11 +46,22 @@ Just head into your admin panel, and:
 	<div class="row">
 		<div class="twelve columns">
 			<div id="featured"> 
-				<?php sliderContent(); ?>
+				<?php SliderContent(); ?>
 			</div>
 		</div>
 	</div>
 ```
+
+When using Orbit, it's best to upload an image to it as the height is inherited - that, or - change the min-height of Orbit within app.css (if your only using text), like so:
+
+``` 
+.orbit-wrapper {
+	min-height:400px;
+}
+```
+
+You can manage Orbit's options through app.js (don't worry, theres an options page coming shortly)
+
 ## Authors
 
 **ZURB**
