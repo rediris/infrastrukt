@@ -8,7 +8,7 @@ As a neat-freak designer, it's sometimes intimidating and frustrating looking at
 
 ## Demonstration
 
-You can view Foundation, for WordPress (FWP) online at this address: [http://fwp.drewsymo.com](http://fwp.drewsymo.com).
+You can view Foundation, for WordPress (FWP) online at this address: http://fwp.drewsymo.com. 
 
 ## Features
 

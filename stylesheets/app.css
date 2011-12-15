@@ -15,15 +15,14 @@
 ----------------------------------------- */
 
 input[type="Search"] {
-	font-size: 12px;
-	font-size: 1.2em;
+	font-size: 16px;
+	font-size: 1.6em;
 }
 
 .container {
 	padding-top: 15px;
 	padding-top: 1.5em;
 }
-
 
 /* -----------------------------------------
    Page Name 1

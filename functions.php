@@ -105,6 +105,9 @@ function commenter_link() {
     echo $avatar . ' <span class="fn n">' . $commenter . '</span>';
 } // end commenter_link
 
+
+// Orbit, for WordPress
+
 add_action('init', 'Orbit');
 
 function Orbit(){
@@ -121,18 +124,31 @@ function Orbit(){
 		register_post_type('Orbit', $Orbit_args);
 }
 
-// Orbit, for WordPress
-// Call this where you want the slider
-
 function SliderContent(){
 
 	$args = array( 'post_type' => 'Orbit');
 	$loop = new WP_Query( $args );
+	
 		while ( $loop->have_posts() ) : $loop->the_post();
-					the_post_thumbnail();
+		
+			if(has_post_thumbnail()) {
+			
+				the_post_thumbnail();
+				
+			} else {
+			
+				echo '<div class="content" style="background:#FFF;">';
+			
+					the_content();
+					
+				echo '</div>';
+			
+			}
+		
 		endwhile;
-
+		
 }
+
 
 
 // Custom Pagination

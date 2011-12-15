@@ -28,16 +28,10 @@
 	</div>
 	<!-- container -->
 
-	<!-- Included JS Files -->
+	<!-- Included JS Files -->	
 	<script src="<?php bloginfo('template_url'); ?>/javascripts/foundation.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/javascripts/orbit-1.3.0.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/javascripts/app.js"></script>
-	<script src="<?php bloginfo('template_url'); ?>/javascripts/orbit.js"></script>	
-	
-	<script type="text/javascript">
-	     $(window).load(function() {
-	         $('#featured').orbit();
-	     });
-	</script>
 
 	<?php wp_footer(); ?>
 	

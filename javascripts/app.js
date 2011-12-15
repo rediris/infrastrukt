@@ -3,6 +3,11 @@ $(document).ready(function () {
 
 	/* Use this js doc for all application specific JS */
     
+    /* ORBIT */
+     $(window).load(function() {
+         $('#featured').orbit();
+     });
+    
     /* HIDE ADDRESS BAR ON IPHONE */
     
     window.scrollTo(0,1);

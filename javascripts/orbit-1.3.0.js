@@ -561,11 +561,11 @@
     setup: function (data, namespaces, eventHandle) {
       options = data || options;
     },
-		
+
 		add: function (handleObj) {
 		  var $this = $(this),
 		      src;
-		      
+
 	    if ( this.nodeType === 1 && this.tagName.toLowerCase() === 'img' && this.src !== '' ) {
   			if (options.forceLoad) {
   			  src = $this.attr('src');
@@ -579,12 +579,12 @@
   			}
   		}
 		},
-		
+
 		teardown: function (namespaces) {
 		  $(this).unbind('.imageready');
 		}
 	};
-	
+
 	function bindToLoad(element, callback) {
 	  var $this = $(element);
 
