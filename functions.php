@@ -139,6 +139,7 @@ function SliderContent(){
 			
 				echo '<div class="content" style="background:#FFF;">';
 			
+					the_title();
 					the_content();
 					
 				echo '</div>';
