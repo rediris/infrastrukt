@@ -7,18 +7,11 @@
 		<div class="twelve columns"><hr></div>
 	
 			<div class="row">
-				
-				<div class="four columns">
-				<?php wp_list_bookmarks('title_li=&category_before=&category_after=&title_before=<h6>&title_after=</h6><br>&category_name=Footer Links 1'); ?>
-				</div>
-				
-				<div class="four columns">
-				<?php wp_list_bookmarks('title_li=&category_before=&category_after=&title_before=<h6>&title_after=</h6><br>&category_name=Footer Links 2'); ?>
-				</div>
-				
-				<div class="four columns">
-				<?php wp_list_bookmarks('title_li=&category_before=&category_after=&title_before=<h6>&title_after=</h6><br>&category_name=Footer Links 3'); ?>
-				</div>
+			
+					<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Sidebar')) : ?>
+					<h4>Hey! You!</h4>
+					<p>You should like, so test out this dynamic footer sidebar. Check it out in Appearance > Widgets!</p>
+					<?php endif; ?>
 				
 			</div>
 	
