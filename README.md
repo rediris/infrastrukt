@@ -15,10 +15,11 @@ Foundation, for WordPress, features everything ZURB's Foundation Framework and H
 
 * All your common WordPress template files
 * Orbit for WordPress, ZURB's image and content slider tailored for WordPress, with the ability to manage your slider through WordPress
+* A ySlow score of 99 (in regards to 'Small Site or Blog')
 * Clean, validated code
+* Two sidebars (one on the right & one on the footer)
 * A little snippet that 'hides' the address bar on the iPhone
 * An extremely awesome pagination script by @ericmartin, using Foundations pagination CSS
-* A ySlow score of 95 (in regards to 'Small Site or Blog')
 * An improved viewport snippet, allowing the same scale over horizontal and portrait orientations
 
 ## Download
