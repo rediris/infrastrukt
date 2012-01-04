@@ -29,5 +29,3 @@ Allow: /*
 # digg mirror
 User-agent: duggmirror
 Disallow: /
-
-Sitemap: http://drewsymo.com/post-sitemap.xml
