@@ -65,6 +65,7 @@ add_action( 'wp_enqueue_scripts', 'foundation_assets' );
  * Register Navigation Menus
  */
 
+// Register wp_nav_menus
 function foundation_menus() {
 
 	register_nav_menus(
@@ -75,6 +76,24 @@ function foundation_menus() {
 	
 }
 add_action( 'init', 'foundation_menus' );
+
+// Create a graceful fallback to wp_page_menu
+function foundation_page_menu() {
+
+	$args = array(
+	'sort_column' => 'menu_order, post_title',
+	'menu_class'  => 'twelve columns',
+	'include'     => '',
+	'exclude'     => '',
+	'echo'        => true,
+	'show_home'   => false,
+	'link_before' => '',
+	'link_after'  => ''
+	);
+
+	wp_page_menu($args);
+
+}
 
 /**
  * Navigation Menu Adjustments
@@ -106,6 +125,13 @@ class foundation_navigation extends Walker_Nav_Menu {
     $output .= "\n$indent<ul class=\"flyout\">\n";
   }
 }
+
+// Add a class to the wp_page_menu fallback
+function foundation_page_menu_class($ulclass) {
+	return preg_replace('/<ul>/', '<ul class="nav-bar">', $ulclass, 1);
+}
+
+add_filter('wp_page_menu','foundation_page_menu_class');
 
 /**
  * Create pagination
