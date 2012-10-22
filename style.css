@@ -1,14 +1,77 @@
-/* 
+/*
 Theme Name: Foundation, for WordPress
-Theme URI: http://www.drewsymo.com
-Description: A Responsive Starter Theme
-Author: @FoundationZURB, @drewsymo
-Author URI: 
+Theme URI: http://fwp.drewsymo.com
+Author: Drew Morris
+Author URI: http://drewsymo.com
 Version: 3.0
-License: MIT License
-License URI: http://www.opensource.org/licenses/mit-license.php
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: foundation
 */
 
-@import url("stylesheets/foundation.css");
-@import url("stylesheets/app.css");
-[if lt IE 9] @import url("stylesheets/ie.css");
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Images
+:: Posts
+:: Typography
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+/* -----------------------------------------
+   Images
+----------------------------------------- */
+
+.widget img {
+    max-width: 97.5%; /* Fluid images for posts, comments, and widgets */
+}
+img[class*="align"],
+img[class*="wp-image-"] {
+    height: auto; /* Make sure images with WordPress-added height and width >attributes are scaled correctly */
+}
+img.size-full {
+    max-width: 97.5%;
+    width: auto; /* Prevent stretching of full-size images with height and >>width attributes in IE8 */
+}
+
+.wp-caption { max-width: 100%; }
+
+/* -----------------------------------------
+   Posts
+----------------------------------------- */
+
+.author-box h5 {margin-top:0px;}
+.author-box .author_gravatar {margin-right:10px;}
+.author-box p {font-size:14px; font-size:1.4rem;}
+
+article .th {margin-bottom:10px; margin-bottom:1rem;}
+
+.alignleft {float:left;}
+.alignright {float:right;}
+
+/* -----------------------------------------
+   Typography
+----------------------------------------- */
+
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans', sans-serif;}
+h1,h2,h3,h4,h5,h6 {font-weight:300;}
+
+.site-title .subheader {margin-bottom:0;}
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+

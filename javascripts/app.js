@@ -1,93 +1,48 @@
-/* Foundation v2.1.3 http://foundation.zurb.com */
-$(document).ready(function () {
+;(function ($, window, undefined) {
+  'use strict';
 
-	/* Use this js doc for all application specific JS */
+  var $doc = $(document),
+      Modernizr = window.Modernizr;
+
+  
+  $.fn.foundationAlerts           ? $doc.foundationAlerts() : null;
+  $.fn.foundationAccordion        ? $doc.foundationAccordion() : null;
+  $.fn.foundationTooltips         ? $doc.foundationTooltips() : null;
+  $('input, textarea').placeholder();
+  
+  
+  $.fn.foundationButtons          ? $doc.foundationButtons() : null;
+  
+  
+  $.fn.foundationNavigation       ? $doc.foundationNavigation() : null;
+  
+  
+  $.fn.foundationTopBar           ? $doc.foundationTopBar() : null;
+  
+  $.fn.foundationCustomForms      ? $doc.foundationCustomForms() : null;
+  $.fn.foundationMediaQueryViewer ? $doc.foundationMediaQueryViewer() : null;
+  
     
-    /* ORBIT */
-     $(window).load(function() {
-         $('#featured').orbit();
-     });
+    $.fn.foundationTabs             ? $doc.foundationTabs() : null;
     
-    /* HIDE ADDRESS BAR ON IPHONE */
-    
-    window.scrollTo(0,1);
-	
-	/* WORDPRESS NAV-BAR SUPPORT ------------- */
-	/* Adds support for the nav-bar with flyouts in WordPress */
-	
-	$('.nav-bar li').has('ul').addClass("has-flyout");
-	$('.nav-bar li ul').addClass("flyout");	
+  
+  
+    $("#featured").orbit();
+  
 
-	/* TABS --------------------------------- */
-	/* Remove if you don't need :) */
+  // UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE8 SUPPORT AND ARE USING .block-grids
+  // $('.block-grid.two-up>li:nth-child(2n+1)').css({clear: 'both'});
+  // $('.block-grid.three-up>li:nth-child(3n+1)').css({clear: 'both'});
+  // $('.block-grid.four-up>li:nth-child(4n+1)').css({clear: 'both'});
+  // $('.block-grid.five-up>li:nth-child(5n+1)').css({clear: 'both'});
 
-	function activateTab($tab) {
-	  var $activeTab = $tab.closest('dl').find('a.active'),
-	      contentLocation = $tab.attr("href") + 'Tab';
-
-	  //Make Tab Active
-	  $activeTab.removeClass('active');
-	  $tab.addClass('active');
-
-    //Show Tab Content
-		$(contentLocation).closest('.tabs-content').find('li').hide();
-		$(contentLocation).show();
-	}
-
-	$('dl.tabs').each(function () {
-		//Get all tabs
-		var tabs = $(this).children('dd').children('a');
-		tabs.click(function (e) {
-		  activateTab($(this));
-		});
-	});
-
-	if (window.location.hash) {
-    activateTab($('a[href="' + window.location.hash + '"]'));
+  // Hide address bar on mobile devices
+  if (Modernizr.touch) {
+    $(window).load(function () {
+      setTimeout(function () {
+        window.scrollTo(0, 1);
+      }, 0);
+    });
   }
 
-	/* PLACEHOLDER FOR FORMS ------------- */
-	/* Remove this and jquery.placeholder.min.js if you don't need :) */
-
-	$('input, textarea').placeholder();
-
-	/* DROPDOWN NAV ------------- */
-	/*
-	$('.nav-bar li a, .nav-bar li a:after').each(function() {
-		$(this).data('clicks', 0);
-	});
-	$('.nav-bar li a, .nav-bar li a:after').bind('touchend click', function(e){
-		e.stopPropagation();
-		e.preventDefault();
-		var f = $(this).siblings('.flyout');
-		$(this).data('clicks', ($(this).data('clicks') + 1));
-		if (!f.is(':visible') && f.length > 0) {
-			$('.nav-bar li .flyout').hide();
-			f.show();
-		}
-	});
-	$('.nav-bar li a, .nav-bar li a:after').bind(' touchend click', function(e) {
-		e.stopPropagation();
-		e.preventDefault();
-		if ($(this).data('clicks') > 1) {
-			window.location = $(this).attr('href');
-		}
-	});
-	$('.nav-bar').bind('touchend click', function(e) {
-		e.stopPropagation();
-		if (!$(e.target).parents('.nav-bar li .flyout') || $(e.target) != $('.nav-bar li .flyout')) {
-			e.preventDefault();
-		}
-	});
-	$('body').bind('touchend', function(e) {
-		if (!$(e.target).parents('.nav-bar li .flyout') || $(e.target) != $('.nav-bar li .flyout')) {
-			$('.nav-bar li .flyout').hide();
-		}
-	});
-	*/
-
-	/* DISABLED BUTTONS ------------- */
-	/* Gives elements with a class of 'disabled' a return: false; */
-
-
-});
+})(jQuery, this);

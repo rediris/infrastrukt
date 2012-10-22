@@ -1,18 +1,13 @@
 <?php
-/**
- * Page
- *
- * Loop container for page content
- *
- * @package WordPress
- * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
+
+/*
+ * Template Name: Full Page Template
  */
 
 get_header(); ?>
 
     <!-- Main Content -->
-    <div class="nine columns" role="content">
+    <div class="twelve columns" role="content">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -25,5 +20,4 @@ get_header(); ?>
     </div>
     <!-- End Main Content -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

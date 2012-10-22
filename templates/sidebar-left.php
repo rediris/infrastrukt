@@ -1,15 +1,11 @@
 <?php
-/**
- * Single
- *
- * Loop container for single post content
- *
- * @package WordPress
- * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
+
+/*
+ * Template Name: Sidebar Left Template
  */
 
 get_header(); ?>
+<?php get_sidebar(); ?>
 
     <!-- Main Content -->
     <div class="nine columns" role="content">
@@ -17,7 +13,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', 'single' ); ?>
+				<?php get_template_part( 'content', 'page' ); ?>
 			<?php endwhile; ?>
 			
 		<?php endif; ?>
@@ -25,5 +21,4 @@ get_header(); ?>
     </div>
     <!-- End Main Content -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
