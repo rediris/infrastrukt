@@ -10,6 +10,9 @@
  * @since Foundation, for WordPress 1.0
  */
 
+error_reporting(E_ALL);
+
+
 /**
  * Initiate Foundation, for WordPress
  */
@@ -99,31 +102,22 @@ function foundation_page_menu() {
  * Navigation Menu Adjustments
  */
 
-// Add Parent Class to <li>
-add_filter('wp_nav_menu_objects', function ($items) {
-    $hasSub = function ($menu_item_id, &$items) {
-        foreach ($items as $item) {
-            if ($item->menu_item_parent && $item->menu_item_parent==$menu_item_id) {
-                return true;
-            }
-        }
-        return false;
-    };
-
-    foreach ($items as &$item) {
-        if ($hasSub($item->ID, &$items)) {
-            $item->classes[] = 'has-flyout';
-        }
-    }
-    return $items;    
-});
 
 // Add class to navigation sub-menu
 class foundation_navigation extends Walker_Nav_Menu {
-  function start_lvl(&$output, $depth) {
-    $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"flyout\">\n";
-  }
+
+function start_lvl(&$output, $depth) {
+	$indent = str_repeat("\t", $depth);
+	$output .= "\n$indent<ul class=\"flyout\">\n";
+}
+
+function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+	$id_field = $this->db_fields['id'];
+	if ( !empty( $children_elements[ $element->$id_field ] ) ) {
+		$element->classes[] = 'has-flyout';
+	}
+		Walker_Nav_Menu::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+	}
 }
 
 // Add a class to the wp_page_menu fallback

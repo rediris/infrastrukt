@@ -30,7 +30,7 @@
 		<p><?php wp_link_pages(); ?></p>
 
 		<p><?php _e('Posted Under:', 'foundation' );?> <?php the_category(', '); ?></p>
-		<p><?php the_tags(); ?></p>
+		<?php the_tags('<span class="radius standard label">','</span><span class="label">','</span>'); ?>
 
 		<?php get_template_part('author-box'); ?>
 		<?php comments_template(); ?>

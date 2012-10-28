@@ -1,4 +1,4 @@
-# Foundation, for WordPress 3.0
+# Foundation, for WordPress
 
 Foundation, for WordPress, is a blank starter theme built on [ZURB's Foundation Framework](http://foundation.zurb.com/).
 
