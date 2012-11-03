@@ -10,9 +10,6 @@
  * @since Foundation, for WordPress 1.0
  */
 
-error_reporting(E_ALL);
-
-
 /**
  * Initiate Foundation, for WordPress
  */
