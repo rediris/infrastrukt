@@ -108,7 +108,7 @@ class foundation_navigation extends Walker_Nav_Menu {
 
 function start_lvl(&$output, $depth) {
 	$indent = str_repeat("\t", $depth);
-	$output .= "\n$indent<ul class=\"flyout\">\n";
+	$output .= "\n$indent<a href=\"#\" class=\"flyout-toggle\"><span> </span></a><ul class=\"flyout\">\n";
 }
 
 function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
