@@ -4,10 +4,6 @@ Foundation, for WordPress, is a blank starter theme built on [ZURB's Foundation 
 
 It features clean semantic code, smart use of WordPress functions and the WordPress Shortcode API.
 
-## Demonstration
-
-See it live: [Foundation, for WordPress](http://fwp.drewsymo.com)
-
 ## Download
 
 Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, [download the archive](https://github.com/drewsymo/Foundation/zipball/master). 
