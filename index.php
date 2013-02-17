@@ -12,7 +12,7 @@
 get_header(); ?>
 
     <!-- Main Content -->
-    <div class="nine columns" role="content">
+    <div class="nine columns" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
