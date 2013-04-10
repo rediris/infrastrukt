@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
+ * @since Foundation, for WordPress 4.0
  */
 ?>
 
@@ -41,6 +41,12 @@
 		<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'nav-bar', 'fallback_cb' => 'foundation_page_menu', 'container' => 'nav', 'container_class' => 'large-12 columns', 'walker' => new foundation_navigation() ) ); ?>
 
 	</header>
+
+	<section class="row">
+		<div class="site-header-image large-12 columns">
+			<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>">
+		</div>
+	</div>
 
 <!-- Begin Page -->
 <div class="row">
