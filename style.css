@@ -57,7 +57,7 @@ article .th {margin-bottom:10px; margin-bottom:1em;}
    Typography
 ----------------------------------------- */
 
-body,h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans', sans-serif;}
+body,h1,h2,h3,h4,h5,h6,p {font-family: 'Open Sans', sans-serif;}
 h1,h2,h3,h4,h5,h6 {font-weight:300;}
 
 .site-title .subheader {margin-bottom:0;}
@@ -67,6 +67,8 @@ h1,h2,h3,h4,h5,h6 {font-weight:300;}
 ----------------------------------------- */
 
 .site-header {border-bottom:1px solid #ddd;padding-bottom:1rem;margin-bottom: 1.875em;}
+.sidebar ul li {list-style:none;}
+.top-bar-section ul li>a {border-left: 1px solid #333; border-right: none;}
 
 /* -----------------------------------------
    Page Name 1
