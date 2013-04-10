@@ -36,8 +36,10 @@ function foundation_setup() {
 
 	// Custom Header
 	add_theme_support( 'custom-header', array(
-		'width'         => 980,
-		'height'        => 60,
+		'width'         => 100,
+		'default-text-color' => '#fff',
+		'header-text'   => true,
+		'height'        => 200,
 		'default-image' => get_template_directory_uri() . '/images/header.jpg',
 		'uploads'       => true,
 	) );
@@ -56,8 +58,9 @@ function foundation_assets() {
 		wp_deregister_script('jquery');
 
 		// Load JavaScripts
-		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array(), '4.0', true );
-		wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/vendor/custom.modernizr.js', '2.1.0' );
+		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array('zepto'), '4.0', true );
+		wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/vendor/custom.modernizr.js', null, '2.1.0');
+		wp_enqueue_script( 'zepto', get_template_directory_uri().'/js/vendor/zepto.js', null, '2.1.0', true);
 
 		// Load Stylesheets
 		wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css' );
@@ -74,17 +77,14 @@ function foundation_assets() {
 add_action( 'wp_enqueue_scripts', 'foundation_assets' );
 
 /**
- * Enqueue Zepto JS with jQuery Fallback
+ * Initialise Foundation JS
  */
 
-function zeptojs () {
-	echo "document.write('<script src=' +"
-	echo "('__proto__' in {} ? '".get_template_directory_uri()."/js/vendor/zepto' : '".get_template_directory_uri()."/js/vendor/jquery') +"
-	echo "'.js><\/script>')"
+function foundationjs () {
+    echo '<script>$(document).foundation();</script>';
 }
 
-add_action('wp_footer', 'zeptojs');
-
+add_action('wp_footer', 'foundationjs',100);
 
 /**
  * Register Navigation Menus
@@ -130,13 +130,13 @@ class foundation_navigation extends Walker_Nav_Menu {
 
 function start_lvl(&$output, $depth) {
 	$indent = str_repeat("\t", $depth);
-	$output .= "\n$indent<a href=\"#\" class=\"flyout-toggle\"><span> </span></a><ul class=\"flyout\">\n";
+	$output .= "\n$indent<ul class=\"dropdown\">\n";
 }
 
 function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 	$id_field = $this->db_fields['id'];
 	if ( !empty( $children_elements[ $element->$id_field ] ) ) {
-		$element->classes[] = 'has-flyout';
+		$element->classes[] = 'has-dropdown';
 	}
 		Walker_Nav_Menu::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
 	}
