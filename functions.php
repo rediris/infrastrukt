@@ -7,7 +7,7 @@
  *
  * @package WordPress
  * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
+ * @since Foundation, for WordPress 4.0
  */
 
 /**
@@ -34,6 +34,14 @@ function foundation_setup() {
 		'default-color' => 'FFFFFF',
 	) );
 
+	// Custom Header
+	add_theme_support( 'custom-header', array(
+		'width'         => 980,
+		'height'        => 60,
+		'default-image' => get_template_directory_uri() . '/images/header.jpg',
+		'uploads'       => true,
+	) );
+
 }
 add_action( 'after_setup_theme', 'foundation_setup' );
 
@@ -44,16 +52,16 @@ add_action( 'after_setup_theme', 'foundation_setup' );
 function foundation_assets() {
 
 	if (!is_admin()) {
-	
-		//Load jquery
-		wp_enqueue_script('jquery');
+
+		wp_deregister_script('jquery');
 
 		// Load JavaScripts
-		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/javascripts/foundation.min.js', array(), '1.0', true );
-		wp_enqueue_script( 'app', get_template_directory_uri().'/javascripts/app.js', array('foundation'), '1.0', true );
+		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array(), '4.0', true );
+		wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/vendor/custom.modernizr.js', '2.1.0' );
 
 		// Load Stylesheets
-		wp_enqueue_style( 'foundation', get_template_directory_uri().'/stylesheets/foundation.min.css' );
+		wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css' );
+		wp_enqueue_style( 'foundation', get_template_directory_uri().'/css/foundation.min.css' );
 		wp_enqueue_style( 'app', get_stylesheet_uri(), array('foundation') );
 
 		// Load Google Fonts API
@@ -62,7 +70,21 @@ function foundation_assets() {
 	}
 
 }
+
 add_action( 'wp_enqueue_scripts', 'foundation_assets' );
+
+/**
+ * Enqueue Zepto JS with jQuery Fallback
+ */
+
+function zeptojs () {
+	echo "document.write('<script src=' +"
+	echo "('__proto__' in {} ? '".get_template_directory_uri()."/js/vendor/zepto' : '".get_template_directory_uri()."/js/vendor/jquery') +"
+	echo "'.js><\/script>')"
+}
+
+add_action('wp_footer', 'zeptojs');
+
 
 /**
  * Register Navigation Menus
@@ -85,7 +107,7 @@ function foundation_page_menu() {
 
 	$args = array(
 	'sort_column' => 'menu_order, post_title',
-	'menu_class'  => 'twelve columns',
+	'menu_class'  => 'large-12 columns',
 	'include'     => '',
 	'exclude'     => '',
 	'echo'        => true,
@@ -177,7 +199,7 @@ function foundation_widgets() {
 			'id' => 'foundation_sidebar_footer_one',
 			'name' => __( 'Sidebar Footer One', 'foundation' ),
 			'description' => __( 'This sidebar is located in column one of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="three columns">',
+			'before_widget' => '<div class="large-3 columns">',
 			'after_widget' => '</div>',
 			'before_title' => '<h5>',
 			'after_title' => '</h5>',
@@ -188,7 +210,7 @@ function foundation_widgets() {
 			'id' => 'foundation_sidebar_footer_two',
 			'name' => __( 'Sidebar Footer Two', 'foundation' ),
 			'description' => __( 'This sidebar is located in column two of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="three columns">',
+			'before_widget' => '<div class="large-3 columns">',
 			'after_widget' => '</div>',
 			'before_title' => '<h5>',
 			'after_title' => '</h5>',
@@ -199,7 +221,7 @@ function foundation_widgets() {
 			'id' => 'foundation_sidebar_footer_three',
 			'name' => __( 'Sidebar Footer Three', 'foundation' ),
 			'description' => __( 'This sidebar is located in column three of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="three columns">',
+			'before_widget' => '<div class="large-3 columns">',
 			'after_widget' => '</div>',
 			'before_title' => '<h5>',
 			'after_title' => '</h5>',
@@ -210,7 +232,7 @@ function foundation_widgets() {
 			'id' => 'foundation_sidebar_footer_four',
 			'name' => __( 'Sidebar Footer Four', 'foundation' ),
 			'description' => __( 'This sidebar is located in column four of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="three columns">',
+			'before_widget' => '<div class="large-3 columns">',
 			'after_widget' => '</div>',
 			'before_title' => '<h5>',
 			'after_title' => '</h5>',

@@ -6,12 +6,12 @@
  *
  * @package WordPress
  * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
+ * @since Foundation, for WordPress 4.0
  */
 ?>
 
 <!-- Sidebar -->
-<aside class="three columns">
+<aside class="large-3 columns">
 
 <?php if ( dynamic_sidebar('Sidebar Right') ) : elseif( current_user_can( 'edit_theme_options' ) ) : ?>
 
