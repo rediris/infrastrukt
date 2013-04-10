@@ -46,9 +46,9 @@ img.size-full {
 
 .author-box h5 {margin-top:0px;}
 .author-box .author_gravatar {margin-right:10px;}
-.author-box p {font-size:14px; font-size:1.4rem;}
+.author-box p {font-size:14px; font-size:1.4em;}
 
-article .th {margin-bottom:10px; margin-bottom:1rem;}
+article .th {margin-bottom:10px; margin-bottom:1em;}
 
 .alignleft {float:left;}
 .alignright {float:right;}
@@ -65,6 +65,8 @@ h1,h2,h3,h4,h5,h6 {font-weight:300;}
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
+
+.site-header {border-bottom:1px solid #ddd;padding-bottom:1rem;margin-bottom: 1.875em;}
 
 /* -----------------------------------------
    Page Name 1
