@@ -142,13 +142,6 @@ function display_element( $element, &$children_elements, $max_depth, $depth=0, $
 	}
 }
 
-// Add a class to the wp_page_menu fallback
-function foundation_page_menu_class($ulclass) {
-	return preg_replace('/<ul>/', '<ul class="nav-bar">', $ulclass, 1);
-}
-
-add_filter('wp_page_menu','foundation_page_menu_class');
-
 /**
  * Create pagination
  */
