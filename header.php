@@ -34,22 +34,15 @@
 	<header>
 
 		<nav class="top-bar">
-			<ul class="title-area">
-				<li class="name">
-					<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				</li>
-				<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-			</ul>
-
 			<section class="top-bar-section">
-				<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'left', 'container' => '', 'fallback_cb' => 'foundation_page_menu', 'walker' => new foundation_navigation() ) ); ?>
+				<?php wp_nav_menu( array( 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'theme_location' => 'header-menu', 'menu_class' => 'left', 'container' => '', 'fallback_cb' => 'foundation_page_menu', 'walker' => new foundation_navigation() ) ); ?>
 			</section>
 		</nav>
 
 		<header class="site-header">
 			<div class="row">
 				<div class="large-12 columns">
-					<h2 class="subheader"><?php bloginfo('description'); ?></h2>
+					<h2><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> <small><?php bloginfo('description'); ?></small></h2>
 				</div>
 			</div>
 		</header>
