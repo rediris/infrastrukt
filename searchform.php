@@ -17,8 +17,8 @@
 				<div class="large-8 mobile-three columns">
 					<input type="text" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'foundation' ); ?>" />
 				</div>
-				<div class="large-8 mobile-one columns">
-					<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'foundation' ); ?>" />
+				<div class="large-4 mobile-one columns">
+					<input type="submit" class="button prefix" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'foundation' ); ?>" />
 				</div>
 			</div>
 		</div>
