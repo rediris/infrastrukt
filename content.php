@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
+ * @since Foundation, for WordPress 4.0
  */
 ?>
 
@@ -20,7 +20,7 @@
 	</header>
 
 	<?php if ( has_post_thumbnail()) : ?>
-	<a href="<?php the_permalink(); ?>" class="th" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail(); ?></a>
+		<a href="<?php the_permalink(); ?>" class="th" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail(); ?></a>
 	<?php endif; ?>
 
 	<?php the_excerpt(); ?>

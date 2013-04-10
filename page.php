@@ -6,13 +6,13 @@
  *
  * @package WordPress
  * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
+ * @since Foundation, for WordPress 4.0
  */
 
 get_header(); ?>
 
     <!-- Main Content -->
-    <div class="nine columns" role="main">
+    <div class="large-9 columns" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
