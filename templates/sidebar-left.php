@@ -8,7 +8,7 @@ get_header(); ?>
 <?php get_sidebar(); ?>
 
     <!-- Main Content -->
-    <div class="nine columns" role="content">
+    <div class="large-9 columns" role="content">
 
 		<?php if ( have_posts() ) : ?>
 
