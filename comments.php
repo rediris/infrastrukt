@@ -23,8 +23,6 @@ if ( post_password_required() )
 
 <div>
 
-	<?php // You can start editing here -- including this comment! ?>
-
 	<?php if ( have_comments() ) : ?>
 	<hr>
 		<h4 class="comments-title">
@@ -56,8 +54,10 @@ if ( post_password_required() )
 
 	<?php endif; // have_comments() ?>
 
+	<?php if ( comments_open() ) : ?>
 	<div class="panel">
 		<?php comment_form(); ?>
 	</div>
+	<?php endif; ?>
 
 </div><!-- #comments .comments-area -->
