@@ -29,7 +29,7 @@
 
 		<p><?php wp_link_pages(); ?></p>
 
-		<p><?php _e('Posted Under:', 'foundation' );?> <?php the_category(', '); ?></p>
+		<h6><?php _e('Posted Under:', 'foundation' );?> <?php the_category(', '); ?></h6>
 		<?php the_tags('<span class="radius secondary label">','</span><span class="radius secondary label">','</span>'); ?>
 
 		<?php get_template_part('author-box'); ?>
