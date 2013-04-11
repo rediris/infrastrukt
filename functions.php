@@ -31,16 +31,13 @@ function foundation_setup() {
 
 	// Custom Background
 	add_theme_support( 'custom-background', array(
-		'default-color' => 'FFFFFF',
+		'default-color' => 'fff',
 	) );
 
 	// Custom Header
 	add_theme_support( 'custom-header', array(
-		'width'         => 100,
-		'default-text-color' => '#fff',
+		'default-text-color' => '#000',
 		'header-text'   => true,
-		'height'        => 200,
-		'default-image' => get_template_directory_uri() . '/images/header.jpg',
 		'uploads'       => true,
 	) );
 
@@ -267,6 +264,64 @@ function new_excerpt_more($more) {
 	return '... <br><br><a class="small button secondary" href="'. get_permalink($post->ID) . '">Continue Reading</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+/** 
+ * Comments Template
+ */
+
+if ( ! function_exists( 'foundation_comment' ) ) :
+
+function foundation_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
+	switch ( $comment->comment_type ) :
+		case 'pingback' :
+		case 'trackback' :
+		// Display trackbacks differently than normal comments.
+	?>
+	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+		<p><?php _e( 'Pingback:', 'foundation' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'foundation' ), '<span>', '</span>' ); ?></p>
+	<?php
+		break;
+		default :
+		global $post;
+	?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+		<article id="comment-<?php comment_ID(); ?>" class="comment">
+			<header>
+				<?php
+					echo "<span class='th alignleft' style='margin-right:1rem;'>";
+					echo get_avatar( $comment, 44 );
+					echo "</span>";
+					printf( '<span class="label">%2$s</span> %1$s',
+						get_comment_author_link(),
+						( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post Author', 'foundation' ) . '</span>' : ''
+					);
+					printf( '<br><a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+						esc_url( get_comment_link( $comment->comment_ID ) ),
+						get_comment_time( 'c' ),
+						sprintf( __( '%1$s at %2$s', 'foundation' ), get_comment_date(), get_comment_time() )
+					);
+				?>
+			</header>
+
+			<?php if ( '0' == $comment->comment_approved ) : ?>
+				<p><?php _e( 'Your comment is awaiting moderation.', 'foundation' ); ?></p>
+			<?php endif; ?>
+
+			<section>
+				<?php comment_text(); ?>
+			</section><!-- .comment-content -->
+
+			<div class="reply">
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'foundation' ), 'after' => ' &darr; <br><br>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+
+			</div>
+		</article>
+	<?php
+		break;
+	endswitch;
+}
+endif;
 
 /**
  * Retrieve Shortcodes

@@ -17,6 +17,7 @@ Text Domain: foundation
 :: Images
 :: Posts
 :: Typography
+:: Header
 :: Shared Styles
 :: Page Name 1
 :: Page Name 2
@@ -52,24 +53,29 @@ article .th {margin-bottom:10px; margin-bottom:1em;}
 
 .alignleft {float:left;}
 .alignright {float:right;}
+.aligncenter {margin:0 auto;text-align:center;}
 
 /* -----------------------------------------
    Typography
 ----------------------------------------- */
 
 body,h1,h2,h3,h4,h5,h6,p {font-family: 'Open Sans', sans-serif;}
-h1,h2,h3,h4,h5,h6 {font-weight:300;}
+h1,h2,h3,h4,h5,h6,a:link {font-weight:300;}
 
 .site-title .subheader {margin-bottom:0;}
 
 /* -----------------------------------------
-   Shared Styles
+   Header
 ----------------------------------------- */
 
-.site-header {border-bottom:1px solid #ddd;padding-bottom:1rem;margin-bottom: 1.875em;}
+.site-header {border-bottom:1px solid #ddd;padding:1.5rem 0 1rem 0;margin:-1.875em 0 1.875em 0;}
 .sidebar ul li {list-style:none;}
-.top-bar-section ul li>a {border-left: 1px solid #333; border-right: none;}
+.top-bar-section ul li>a {border-left:1px solid #333;border-right:none;}
 
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+  
 /* -----------------------------------------
    Page Name 1
 ----------------------------------------- */
