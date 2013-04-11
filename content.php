@@ -24,9 +24,7 @@
 	<?php endif; ?>
 
 	<?php the_excerpt(); ?>
-
-	<a class="button small secondary" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'foundation' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read Post &rarr;</a>
-
+	
 	<hr>
 
 </article>

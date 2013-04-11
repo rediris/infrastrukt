@@ -2,7 +2,7 @@
 
 Foundation, for WordPress, is a blank starter theme built on [ZURB's Foundation Framework](http://foundation.zurb.com/) v4.
 
-It features clean semantic code, smart use of WordPress functions and the WordPress Shortcode API.
+It features clean semantic code, support for custom headers and backgrounds and the WordPress Shortcode API.
 
 ## Download
 
