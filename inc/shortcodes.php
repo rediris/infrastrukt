@@ -82,7 +82,7 @@ function foundation_shortcode_alert( $atts, $content = null ) {
 		'type' => ''
 		), $atts ) );
 
-	return '<div class="alert-box ' . esc_attr($type) . '">' . do_shortcode($content) . ' <a href="" class="close">&times;</a> </div>';
+	return '<div data-alert class="alert-box ' . esc_attr($type) . '">' . do_shortcode($content) . ' <a href="" class="close">&times;</a> </div>';
 }
 
 add_shortcode( 'alert', 'foundation_shortcode_alert' );
@@ -100,63 +100,6 @@ function foundation_shortcode_panel( $atts, $content = null ) {
 }
 
 add_shortcode( 'panel', 'foundation_shortcode_panel' );
-
-// Tabs [tabs] [tab][/tab] [/tabs]
-
-function foundation_shortcode_tabs( $atts, $content ){
-extract(shortcode_atts(array(
-'type' => ''
-), $atts));
-
-$GLOBALS['tab_count'] = 0;
-
-do_shortcode( $content );
-
-$i = 0;
-
-if( is_array( $GLOBALS['tabs'] ) ){
-foreach( $GLOBALS['tabs'] as $tab ){
-
-	$i++;
-
-	// Remove whitespace for #id
-	$title = $tab[title];
-	$title = str_replace(' ', '', $title);
-
-	// Set the active tab
-	if ($i == 1) {
-
-		$tabs[] = '<dd class="active"><a href="#'.$title.'">'.$tab['title'].'</a></dd>';
-		$panes[] = '<li class="active" id="'.$title.'Tab"><h3>'.$tab['title'].'</h3>'.$tab['content'].'</li>';
-	}
-	else {
-
-		$tabs[] = '<dd><a class="" href="#'.$title.'">'.$tab['title'].'</a></dd>';
-		$panes[] = '<li id="'.$title.'Tab"><h3>'.$tab['title'].'</h3>'.$tab['content'].'</li>';
-
-	}
-}
-
-$return = "\n".'<dl class="tabs '.esc_attr($type).'">'.implode( "\n", $tabs ).'</dl>'."\n".'<ul class="tabs-content">'.implode( "\n", $panes ).'</ul>'."\n";
-
-}
-return $return;
-}
-add_shortcode( 'tabs', 'foundation_shortcode_tabs' );
-
-function foundation_shortcode_tab( $atts, $content ){
-extract(shortcode_atts(array(
-'title' => 'Tab %d'
-), $atts));
-
-	$x = $GLOBALS['tab_count'];
-	$GLOBALS['tabs'][$x] = array( 'title' => sprintf( $title, $GLOBALS['tab_count'] ), 'content' =>  $content );
-
-	$GLOBALS['tab_count']++;
-
-}
-
-add_shortcode( 'tab', 'foundation_shortcode_tab' );
 
 /**
  * Elements
@@ -206,5 +149,33 @@ function foundation_shortcode_reveal( $atts, $content = null ) {
 }
 
 add_shortcode( 'reveal', 'foundation_shortcode_reveal' );
+
+// Sections [sections type="tabs"] [section title="Section Title"]Content[/section] [/sections]
+
+function foundation_shortcode_sections( $atts, $content = null ) {
+
+	extract( shortcode_atts( array(
+		'type' => ''
+		), $atts ) );
+
+	return '<div class="section-container '. esc_attr($type) . '" data-section="'. esc_attr($type) . '">' . do_shortcode($content) . '</div>';
+
+}
+
+add_shortcode( 'sections', 'foundation_shortcode_sections' );
+
+// Section [section title="Section Title"]Content[/section]
+
+function foundation_shortcode_section( $atts, $content = null ) {
+
+	extract( shortcode_atts( array(
+		'title' => ''
+		), $atts ) );
+
+	return '<section><p class="title" data-section-title><a href="#">Section 1</a></p><div class="content" data-section-content>' . do_shortcode($content) . '</div></section>';
+
+}
+
+add_shortcode( 'section', 'foundation_shortcode_section' );
 
 ?>
