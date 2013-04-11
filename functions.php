@@ -293,9 +293,9 @@ function foundation_comment( $comment, $args, $depth ) {
 					echo "<span class='th alignleft' style='margin-right:1rem;'>";
 					echo get_avatar( $comment, 44 );
 					echo "</span>";
-					printf( '<span class="label">%2$s</span> %1$s',
+					printf( '%2$s %1$s',
 						get_comment_author_link(),
-						( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post Author', 'foundation' ) . '</span>' : ''
+						( $comment->user_id === $post->post_author ) ? '<span class="label">' . __( 'Post Author', 'foundation' ) . '</span>' : ''
 					);
 					printf( '<br><a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
