@@ -38,6 +38,7 @@ function foundation_setup() {
 	add_theme_support( 'custom-header', array(
 		'default-text-color' => '#000',
 		'header-text'   => true,
+		'height'		=> '200',
 		'uploads'       => true,
 	) );
 
