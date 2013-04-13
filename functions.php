@@ -345,4 +345,10 @@ add_action( 'wp_enqueue_scripts', 'foundation_comment_reply' );
 
 require( get_template_directory() . '/inc/shortcodes.php' );
 
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) )
+	$content_width = 640; /* pixels */
+
 ?>
