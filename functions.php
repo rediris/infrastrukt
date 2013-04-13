@@ -64,7 +64,7 @@ function foundation_assets() {
 
 		// Load Google Fonts API
 		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300' );
-	
+		
 	}
 
 }
@@ -327,6 +327,17 @@ function foundation_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 endif;
+
+/**
+* Comment-Reply Script 
+**/
+function foundation_comment_reply(){
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
+	}
+	
+add_action( 'wp_enqueue_scripts', 'foundation_comment_reply' );
 
 /**
  * Retrieve Shortcodes
