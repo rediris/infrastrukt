@@ -350,5 +350,59 @@ require( get_template_directory() . '/inc/shortcodes.php' );
  */
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
+/**
+* Additional Header options
+**/
 
+// add custom header options hook
+add_action('custom_header_options', 'foundation_image_options');
+ 
+/* Adds two new text fields, custom_option_one and custom_option_two to the Custom Header options screen */
+function foundation_image_options()
+{
+?>
+<table class="form-table">
+	<tbody>
+		<tr valign="top" class="hide-if-no-js">
+			<th scope="row"><?php _e( 'Custom Option One:' ); ?></th>
+			<td><input id="custom_option_one" name="custom_option_one" type="checkbox" value="1"  />
+
+			<label for="custom_option_one"><?php _e( 'option 1' ); ?></label></td>
+
+		</tr>
+		<tr valign="top" class="hide-if-no-js">
+			<th scope="row"><?php _e( 'Custom Option Two:' ); ?></th>
+			<td><input id="custom_option_two" name="custom_option_two" type="checkbox" value="1"  />
+
+			<label for="custom_option_two"><?php _e( 'option 2' ); ?></label></td>
+
+		</tr>
+	
+
+		
+	</tbody>
+</table>
+<?php
+} // end foundation_image_options
+
+
+	add_action('admin_head', 'foundation_custom_options');
+	function foundation_custom_options()
+	{
+		if ( isset( $_POST['custom_option_one'] ) && isset( $_POST['custom_option_two'] ) )
+		{
+			// validate the request itself by verifying the _wpnonce-custom-header-options nonce
+			// (note: this nonce was present in the normal Custom Header form already, so we didn't have to add our own)
+			check_admin_referer( 'custom-header-options', '_wpnonce-custom-header-options' );
+ 
+			// be sure the user has permission to save theme options (i.e., is an administrator)
+			if ( current_user_can('manage_options') ) {
+ 
+				// NOTE: Add your own validation methods here
+				set_theme_mod( 'custom_option_one', $_POST['custom_option_one'] );
+				set_theme_mod( 'custom_option_two', $_POST['custom_option_two'] );
+			}
+		}
+		return;
+	}
 ?>
