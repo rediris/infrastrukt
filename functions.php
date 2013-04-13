@@ -52,9 +52,6 @@ add_action( 'after_setup_theme', 'foundation_setup' );
 function foundation_assets() {
 
 	if (!is_admin()) {
-
-		wp_deregister_script('jquery');
-
 		// Load JavaScripts
 		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array('zepto'), '4.0', true );
 		wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/vendor/custom.modernizr.js', null, '2.1.0');
