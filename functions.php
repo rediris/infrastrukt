@@ -71,15 +71,6 @@ function foundation_assets() {
 
 add_action( 'wp_enqueue_scripts', 'foundation_assets' );
 
-/**
- * Initialise Foundation JS
- */
-
-function foundationjs () {
-    echo '<script>$(document).foundation();</script>';
-}
-
-add_action('wp_footer', 'foundationjs',100);
 
 /**
  * Register Navigation Menus
