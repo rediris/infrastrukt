@@ -14,6 +14,8 @@
  * Initiate Foundation, for WordPress
  */
 
+if ( ! function_exists( 'foundation_setup' ) ) :
+
 function foundation_setup() {
 
 	// Language Translations
@@ -45,9 +47,13 @@ function foundation_setup() {
 }
 add_action( 'after_setup_theme', 'foundation_setup' );
 
+endif;
+
 /**
  * Enqueue Scripts and Styles for Front-End
  */
+
+if ( ! function_exists( 'foundation_assets' ) ) :
 
 function foundation_assets() {
 
@@ -77,12 +83,16 @@ function foundation_assets() {
 
 add_action( 'wp_enqueue_scripts', 'foundation_assets' );
 
+endif;
 
 /**
  * Register Navigation Menus
  */
 
 // Register wp_nav_menus
+
+if ( ! function_exists( 'foundation_menus' ) ) :
+
 function foundation_menus() {
 
 	register_nav_menus(
@@ -93,6 +103,10 @@ function foundation_menus() {
 	
 }
 add_action( 'init', 'foundation_menus' );
+
+endif;
+
+if ( ! function_exists( 'foundation_page_menu' ) ) :
 
 // Create a graceful fallback to wp_page_menu
 function foundation_page_menu() {
@@ -112,10 +126,11 @@ function foundation_page_menu() {
 
 }
 
+endif;
+
 /**
  * Navigation Menu Adjustments
  */
-
 
 // Add class to navigation sub-menu
 class foundation_navigation extends Walker_Nav_Menu {
@@ -137,6 +152,8 @@ function display_element( $element, &$children_elements, $max_depth, $depth=0, $
 /**
  * Create pagination
  */
+
+if ( ! function_exists( 'foundation_pagination' ) ) :
 
 function foundation_pagination() {
 
@@ -162,9 +179,13 @@ echo $pagination;
 
 }
 
+endif;
+
 /**
  * Register Sidebars
  */
+
+if ( ! function_exists( 'foundation_widgets' ) ) :
 
 function foundation_widgets() {
 
@@ -227,9 +248,13 @@ function foundation_widgets() {
 
 add_action( 'widgets_init', 'foundation_widgets' );
 
+endif;
+
 /**
  * HTML5 IE Shim
  */
+
+if ( ! function_exists( 'foundation_shim' ) ) :
 
 function foundation_shim () {
     echo '<!--[if lt IE 9]>';
@@ -239,9 +264,13 @@ function foundation_shim () {
 
 add_action('wp_head', 'foundation_shim');
 
+endif;
+
 /**
  * Custom Avatar Classes
  */
+
+if ( ! function_exists( 'foundation_avatar_css' ) ) :
 
 function foundation_avatar_css($class) {
 	$class = str_replace("class='avatar", "class='author_gravatar left ", $class) ;
@@ -250,11 +279,15 @@ function foundation_avatar_css($class) {
 
 add_filter('get_avatar','foundation_avatar_css');
 
+endif;
+
 /**
  * Custom Post Excerpt
  */
 
-function improved_trim_excerpt($text) {
+if ( ! function_exists( 'foundation_excerpt' ) ) :
+
+function foundation_excerpt($text) {
         global $post;
         if ( '' == $text ) {
                 $text = get_the_content('');
@@ -274,7 +307,9 @@ function improved_trim_excerpt($text) {
 }
 
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'improved_trim_excerpt');
+add_filter('get_the_excerpt', 'foundation_excerpt');
+
+endif;
 
 /** 
  * Comments Template
@@ -338,6 +373,10 @@ endif;
  * Retrieve Shortcodes
  */
 
-require( get_template_directory() . '/inc/shortcodes.php' );
+$foundation_shortcodes = get_template_directory() . '/inc/shortcodes.php';
+
+if (file_exists($foundation_shortcodes)) {
+	require( $foundation_shortcodes );
+}
 
 ?>
