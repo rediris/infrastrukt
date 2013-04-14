@@ -10,7 +10,7 @@ Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, 
 
 ## Preview
 
-You can preview Foundation, for WordPress at the below link:
+You can preview Foundation, for WordPress at this link:
 [http://fwp.drewsymo.com/](http://fwp.drewsymo.com/)
 
 ## Authors
