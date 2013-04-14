@@ -373,7 +373,7 @@ endif;
  * Retrieve Shortcodes
  */
 
-$foundation_shortcodes = get_template_directory() . '/inc/shortcodes.php';
+$foundation_shortcodes = trailingslashit( get_template_directory() ) . 'inc/shortcodes.php';
 
 if (file_exists($foundation_shortcodes)) {
 	require( $foundation_shortcodes );
