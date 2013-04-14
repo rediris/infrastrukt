@@ -10,7 +10,8 @@ Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, 
 
 ## Preview
 
-Preview website coming soon. Stay tuned.
+You can preview Foundation, for WordPress at the below link:
+[http://fwp.drewsymo.com/](http://fwp.drewsymo.com/)
 
 ## Authors
 
@@ -20,5 +21,6 @@ Preview website coming soon. Stay tuned.
 
 **Drew Morris**
 
-+ [Twitter](http://twitter.com/drewsymo)
-+ [Blog](http://drewsymo.com)
++ [Blog](http://drewsymo.com/)
++ [Twitter](http://twitter.com/drewsymo/)
++ [Google+](https://plus.google.com/114153589610660530694/)
