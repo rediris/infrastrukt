@@ -4,9 +4,31 @@ Foundation, for WordPress, is a blank starter theme built on [ZURB's Foundation 
 
 It features clean semantic code, support for custom headers and backgrounds and the WordPress Shortcode API.
 
+[http://fwp.drewsymo.com/](Preview Foundation, for WordPress &rarr;)
+
 ## Download
 
 Clone the git repo - `git clone git://github.com/drewsymo/Foundation.git` - or, [download the archive](https://github.com/drewsymo/Foundation/zipball/master). 
+
+## Features
+
+Features you'll love:
+
++ Developer Friendly Markup
++ Foundation Shortcodes
++ Custom Background & Header
++ Child Theme Support
++ Custom Post Type Support
++ Widgetized Sidebars
++ Multi Level Navigation
+
+## Why Foundation, for WordPress?
+
+Three reasons to use Foundation, for WordPress:
+
++ Streamline your theme development with distraction-free code
++ Rapidly markup your pages and posts with ready-to-use Shortcodes
++ Quickly customise your theme appeareance with Custom Headers and Backgrounds
 
 ## Preview
 
