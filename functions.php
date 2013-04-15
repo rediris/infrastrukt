@@ -66,9 +66,6 @@ function foundation_assets() {
 
 		// Load JavaScripts
 		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array('zepto'), '4.0', true );
-
-		// Load JavaScripts
-		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array('zepto'), '4.0', true );
 		wp_enqueue_script('foundation-init', get_template_directory_uri().'/js/foundation-init.js', array(), false, true);
 		wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/vendor/custom.modernizr.js', null, '2.1.0');
 		wp_enqueue_script( 'zepto', get_template_directory_uri().'/js/vendor/zepto.js', null, '2.1.0', true);
@@ -89,8 +86,6 @@ add_action( 'wp_enqueue_scripts', 'foundation_assets' );
 
 
 endif;
-=======
->>>>>>> 4.s9.3
 
 /**
  * Register Navigation Menus
@@ -375,8 +370,7 @@ function foundation_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 endif;
-=======
-}
+
 
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'improved_trim_excerpt');
@@ -449,7 +443,6 @@ function foundation_comment_reply(){
 	}
 	
 add_action( 'wp_enqueue_scripts', 'foundation_comment_reply' );
->>>>>>> 4.s9.3
 
 /**
  * Retrieve Shortcodes
