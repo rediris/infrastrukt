@@ -54,6 +54,7 @@ function foundation_assets() {
 	if (!is_admin()) {
 		// Load JavaScripts
 		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array('zepto'), '4.0', true );
+		wp_enqueue_script('foundation-init', get_template_directory_uri().'/js/foundation-init.js', array(), false, true);
 		wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/vendor/custom.modernizr.js', null, '2.1.0');
 		wp_enqueue_script( 'zepto', get_template_directory_uri().'/js/vendor/zepto.js', null, '2.1.0', true);
 
