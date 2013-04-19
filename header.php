@@ -43,15 +43,20 @@
 			</section>
 		</nav>
 
-		<?php $header =  get_header_textcolor();
-		if ( $header !== "blank" ) : ?>
-		<header class="site-header" role="banner" <?php $header_image = get_header_image(); if ( ! empty( $header_image ) ) : ?> style="background:url('<?php echo esc_url( $header_image ); ?>');" <?php endif; ?>>
-			<div class="row">
-				<div class="large-12 columns">
-					<h2><a style="color:#<?php header_textcolor(); ?>;" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'description' ); ?></a></h2>
+		<?php $foundation_header_text =  get_header_textcolor();
+			  $foundation_header_image = get_header_image();
+			  if ($foundation_header_text !== "blank" && ! empty( $foundation_header_image)) : ?>
+
+			<header class="site-header" role="banner" <?php if ( ! empty( $foundation_header_image ) ) : ?> style="background:url('<?php echo esc_url( $header_image ); ?>');" <?php endif; ?>>
+				<div class="row">
+					<div class="large-12 columns">
+						<?php if ($foundation_header_text !== "blank") : ?>
+							<h2><a style="color:#<?php header_textcolor(); ?>;" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'description' ); ?></a></h2>
+						<?php endif; ?>
+					</div>
 				</div>
-			</div>
-		</header>
+			</header>
+
 		<?php endif; ?>
 
 <!-- Begin Page -->
