@@ -14,6 +14,8 @@
  * Initiate Foundation, for WordPress
  */
 
+if ( ! function_exists( 'foundation_setup' ) ) :
+
 function foundation_setup() {
 
 	// Language Translations
@@ -43,23 +45,31 @@ function foundation_setup() {
 	) );
 
 }
+
 add_action( 'after_setup_theme', 'foundation_setup' );
+
+endif;
 
 /**
  * Enqueue Scripts and Styles for Front-End
  */
 
+if ( ! function_exists( 'foundation_assets' ) ) :
+
 function foundation_assets() {
 
 	if (!is_admin()) {
 
+		/** 
+		 * Deregister jQuery in favour of ZeptoJS
+		 * jQuery will be used as a fallback if ZeptoJS is not compatible
+		 * @see foundation_compatibility & http://foundation.zurb.com/docs/javascript.html
+		 */
 		wp_deregister_script('jquery');
 
 		// Load JavaScripts
-		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array('zepto'), '4.0', true );
-		wp_enqueue_script('foundation-init', get_template_directory_uri().'/js/foundation-init.js', array(), false, true);
+		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', null, '4.0', true );
 		wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/vendor/custom.modernizr.js', null, '2.1.0');
-		wp_enqueue_script( 'zepto', get_template_directory_uri().'/js/vendor/zepto.js', null, '2.1.0', true);
 
 		// Load Stylesheets
 		wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css' );
@@ -75,24 +85,49 @@ function foundation_assets() {
 
 add_action( 'wp_enqueue_scripts', 'foundation_assets' );
 
-<<<<<<< HEAD
-
 endif;
-=======
+
 /**
  * Initialise Foundation JS
+ * @see: http://foundation.zurb.com/docs/javascript.html
  */
 
-function foundationjs () {
+if ( ! function_exists( 'foundation_js_init' ) ) :
+
+function foundation_js_init () {
     echo '<script>$(document).foundation();</script>';
 }
 
-add_action('wp_footer', 'foundationjs',100);
->>>>>>> Fixes
+add_action('wp_footer', 'foundation_js_init', 50);
+
+endif;
+
+/**
+ * ZeptoJS and jQuery Fallback
+ * @see: http://foundation.zurb.com/docs/javascript.html
+ */
+
+if ( ! function_exists( 'foundation_comptability' ) ) :
+
+function foundation_comptability () {
+
+echo "<script>";
+echo "document.write('<script src=' +";
+echo "('__proto__' in {} ? '" . get_template_directory_uri() . "/js/vendor/zepto" . "' : '" . get_template_directory_uri() . "/js/vendor/jquery" . "') +";
+echo "'.js><\/script>')";
+echo "</script>";
+
+}
+
+add_action('wp_footer', 'foundation_comptability', 10);
+
+endif;
 
 /**
  * Register Navigation Menus
  */
+
+if ( ! function_exists( 'foundation_menus' ) ) :
 
 // Register wp_nav_menus
 function foundation_menus() {
@@ -104,9 +139,13 @@ function foundation_menus() {
 	);
 	
 }
+
 add_action( 'init', 'foundation_menus' );
 
-// Create a graceful fallback to wp_page_menu
+endif;
+
+if ( ! function_exists( 'foundation_page_menu' ) ) :
+
 function foundation_page_menu() {
 
 	$args = array(
@@ -124,10 +163,11 @@ function foundation_page_menu() {
 
 }
 
+endif;
+
 /**
  * Navigation Menu Adjustments
  */
-
 
 // Add class to navigation sub-menu
 class foundation_navigation extends Walker_Nav_Menu {
@@ -149,6 +189,8 @@ function display_element( $element, &$children_elements, $max_depth, $depth=0, $
 /**
  * Create pagination
  */
+
+if ( ! function_exists( 'foundation_pagination' ) ) :
 
 function foundation_pagination() {
 
@@ -174,9 +216,13 @@ echo $pagination;
 
 }
 
+endif;
+
 /**
  * Register Sidebars
  */
+
+if ( ! function_exists( 'foundation_widgets' ) ) :
 
 function foundation_widgets() {
 
@@ -239,21 +285,13 @@ function foundation_widgets() {
 
 add_action( 'widgets_init', 'foundation_widgets' );
 
-/**
- * HTML5 IE Shim
- */
-
-function foundation_shim () {
-    echo '<!--[if lt IE 9]>';
-    echo '<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>';
-    echo '<![endif]-->';
-}
-
-add_action('wp_head', 'foundation_shim');
+endif;
 
 /**
  * Custom Avatar Classes
  */
+
+if ( ! function_exists( 'foundation_avatar_css' ) ) :
 
 function foundation_avatar_css($class) {
 	$class = str_replace("class='avatar", "class='author_gravatar left ", $class) ;
@@ -262,17 +300,15 @@ function foundation_avatar_css($class) {
 
 add_filter('get_avatar','foundation_avatar_css');
 
+endif;
+
 /**
  * Custom Post Excerpt
  */
 
-<<<<<<< HEAD
 if ( ! function_exists( 'foundation_excerpt' ) ) :
-function improved_trim_excerpt($text) {
 
-=======
 function foundation_excerpt($text) {
->>>>>>> Fixes
         global $post;
         if ( '' == $text ) {
                 $text = get_the_content('');
@@ -284,7 +320,7 @@ function foundation_excerpt($text) {
                 $words = explode(' ', $text, $excerpt_length + 1);
                 if (count($words)> $excerpt_length) {
                         array_pop($words);
-                        array_push($words, '<br><br><a href="'.get_permalink($post->ID) .'" class="button secondary small">Continue Reading</a>');
+                        array_push($words, '<br><br><a href="'.get_permalink($post->ID) .'" class="button secondary small">' . __('Continue Reading', 'foundation') . '</a>');
                         $text = implode(' ', $words);
                 }
         }
@@ -294,67 +330,7 @@ function foundation_excerpt($text) {
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'foundation_excerpt');
 
-/** 
- * Comments Template
- */
-
-if ( ! function_exists( 'foundation_comment' ) ) :
-
-function foundation_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
-		// Display trackbacks differently than normal comments.
-	?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:', 'foundation' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'foundation' ), '<span>', '</span>' ); ?></p>
-	<?php
-		break;
-		default :
-		global $post;
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<header>
-				<?php
-					echo "<span class='th alignleft' style='margin-right:1rem;'>";
-					echo get_avatar( $comment, 44 );
-					echo "</span>";
-					printf( '%2$s %1$s',
-						get_comment_author_link(),
-						( $comment->user_id === $post->post_author ) ? '<span class="label">' . __( 'Post Author', 'foundation' ) . '</span>' : ''
-					);
-					printf( '<br><a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-						esc_url( get_comment_link( $comment->comment_ID ) ),
-						get_comment_time( 'c' ),
-						sprintf( __( '%1$s at %2$s', 'foundation' ), get_comment_date(), get_comment_time() )
-					);
-				?>
-			</header>
-
-			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p><?php _e( 'Your comment is awaiting moderation.', 'foundation' ); ?></p>
-			<?php endif; ?>
-
-			<section>
-				<?php comment_text(); ?>
-			</section><!-- .comment-content -->
-
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'foundation' ), 'after' => ' &darr; <br><br>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-
-			</div>
-		</article>
-	<?php
-		break;
-	endswitch;
-}
 endif;
-
-
-remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'improved_trim_excerpt');
 
 /** 
  * Comments Template
@@ -413,82 +389,16 @@ function foundation_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 endif;
-
-/**
-* Comment-Reply Script 
-**/
-function foundation_comment_reply(){
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
-		}
-	}
-	
-add_action( 'wp_enqueue_scripts', 'foundation_comment_reply' );
 
 /**
  * Retrieve Shortcodes
+ * @see: http://fwp.drewsymo.com/shortcodes/
  */
 
-require( get_template_directory() . '/inc/shortcodes.php' );
+$foundation_shortcodes = trailingslashit( get_template_directory() ) . 'inc/shortcodes.php';
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
-/**
-* Additional Header options
-**/
+if (file_exists($foundation_shortcodes)) {
+	require( $foundation_shortcodes );
+}
 
-// add custom header options hook
-add_action('custom_header_options', 'foundation_image_options');
- 
-/* Adds two new text fields, custom_option_one and custom_option_two to the Custom Header options screen */
-function foundation_image_options()
-{
-?>
-<table class="form-table">
-	<tbody>
-		<tr valign="top" class="hide-if-no-js">
-			<th scope="row"><?php _e( 'Custom Option One:' ); ?></th>
-			<td><input id="custom_option_one" name="custom_option_one" type="checkbox" value="1"  />
-
-			<label for="custom_option_one"><?php _e( 'option 1' ); ?></label></td>
-
-		</tr>
-		<tr valign="top" class="hide-if-no-js">
-			<th scope="row"><?php _e( 'Custom Option Two:' ); ?></th>
-			<td><input id="custom_option_two" name="custom_option_two" type="checkbox" value="1"  />
-
-			<label for="custom_option_two"><?php _e( 'option 2' ); ?></label></td>
-
-		</tr>
-	
-
-		
-	</tbody>
-</table>
-<?php
-} // end foundation_image_options
-
-
-	add_action('admin_head', 'foundation_custom_options');
-	function foundation_custom_options()
-	{
-		if ( isset( $_POST['custom_option_one'] ) && isset( $_POST['custom_option_two'] ) )
-		{
-			// validate the request itself by verifying the _wpnonce-custom-header-options nonce
-			// (note: this nonce was present in the normal Custom Header form already, so we didn't have to add our own)
-			check_admin_referer( 'custom-header-options', '_wpnonce-custom-header-options' );
- 
-			// be sure the user has permission to save theme options (i.e., is an administrator)
-			if ( current_user_can('manage_options') ) {
- 
-				// NOTE: Add your own validation methods here
-				set_theme_mod( 'custom_option_one', $_POST['custom_option_one'] );
-				set_theme_mod( 'custom_option_two', $_POST['custom_option_two'] );
-			}
-		}
-		return;
-	}
 ?>
