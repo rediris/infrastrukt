@@ -391,6 +391,21 @@ function foundation_comment( $comment, $args, $depth ) {
 endif;
 
 /**
+ * Remove Class from Sticky Post
+ */
+
+if ( ! function_exists( 'foundation_remove_sticky' ) ) :
+
+function foundation_remove_sticky($classes) {
+  $classes = array_diff($classes, array("sticky"));
+  return $classes;
+}
+
+add_filter('post_class','foundation_remove_sticky');
+
+endif;
+
+/**
  * Retrieve Shortcodes
  * @see: http://fwp.drewsymo.com/shortcodes/
  */
