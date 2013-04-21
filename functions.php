@@ -18,6 +18,9 @@ if ( ! function_exists( 'foundation_setup' ) ) :
 
 function foundation_setup() {
 
+	// Content Width
+	if ( ! isset( $content_width ) ) $content_width = 900;
+
 	// Language Translations
 	load_theme_textdomain( 'foundation', get_template_directory() . '/languages' );
 
@@ -70,6 +73,7 @@ function foundation_assets() {
 		// Load JavaScripts
 		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', null, '4.0', true );
 		wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/vendor/custom.modernizr.js', null, '2.1.0');
+		if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
 		// Load Stylesheets
 		wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css' );
