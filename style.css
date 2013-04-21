@@ -82,17 +82,17 @@ h1,h2,h3,h4,h5,h6,a:link {font-weight:300;}
 .gallery-caption { }
 .bypostauthor{ }
 .site-content .gallery {
-	margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
 .gallery-caption {
 }
 .site-content .gallery a img {
-	border: none;
-	height: auto;
-	max-width: 90%;
+  border: none;
+  height: auto;
+  max-width: 90%;
 }
 .site-content .gallery dd {
-	margin: 0;
+  margin: 0;
 }
 .site-content .gallery-columns-4 .gallery-item {
 }
@@ -102,7 +102,7 @@ h1,h2,h3,h4,h5,h6,a:link {font-weight:300;}
 embed,
 iframe,
 object {
-	max-width: 100%;
+  max-width: 100%;
 }
 /* -----------------------------------------
    Page Name 1
@@ -111,5 +111,3 @@ object {
 /* -----------------------------------------
    Page Name 2
 ----------------------------------------- */
-
-
