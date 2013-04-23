@@ -410,6 +410,34 @@ add_filter('post_class','foundation_remove_sticky');
 endif;
 
 /**
+ * Custom Foundation Title Tag
+ * @see http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
+ */
+
+function foundation_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'foundation' ), max( $paged, $page ) );
+
+	return $title;
+}
+
+add_filter( 'wp_title', 'foundation_title', 10, 2 );
+
+/**
  * Retrieve Shortcodes
  * @see: http://fwp.drewsymo.com/shortcodes/
  */
