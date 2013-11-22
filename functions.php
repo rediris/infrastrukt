@@ -57,27 +57,28 @@ endif;
  * Enqueue Scripts and Styles for Front-End
  */
 
-if ( ! function_exists( 'foundation_assets' ) ) :
+if ( ! function_exists( 'infrascruct_assets' ) ) :
 
-function foundation_assets() {
+function infrascruct_assets() {
 
 	if (!is_admin()) {
-
 		/** 
-		 * Deregister jQuery in favour of ZeptoJS
-		 * jQuery will be used as a fallback if ZeptoJS is not compatible
-		 * @see foundation_compatibility & http://foundation.zurb.com/docs/javascript.html
+		 * DEREGISTER JQUERY
 		 */
 		wp_deregister_script('jquery');
 
-		// Load JavaScripts
-		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', null, '4.0', true );
-		wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/vendor/custom.modernizr.js', null, '2.1.0');
+		/** 
+		 * LOAD JS FROM CDN, IF POSSIBLE
+		 */
+		wp_enqueue_script( 'jquery-cdn', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', null, '1.11.1', true );
+		wp_enqueue_script( 'foundation-all', get_template_directory_uri().'/lib/foundation/5.0.0/js/foundation.all.min.js', array('jquery-cdn'), '5.0.0', true );
+		wp_enqueue_script( 'infrascruct-js', get_template_directory_uri().'/js/script.js', array('foundation-all'), '1.0', true);
+		wp_enqueue_script( 'modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', null, '2.6.2');
 		if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
 		// Load Stylesheets
-		wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css' );
-		wp_enqueue_style( 'foundation', get_template_directory_uri().'/css/foundation.min.css' );
+		wp_enqueue_style( 'normalize', '//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css' );
+		wp_enqueue_style( 'foundation', get_template_directory_uri().'/lib/foundation/5.0.0/css/foundation.min.css' );
 		wp_enqueue_style( 'app', get_stylesheet_uri(), array('foundation') );
 
 		// Load Google Fonts API
@@ -87,7 +88,7 @@ function foundation_assets() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'foundation_assets' );
+add_action( 'wp_enqueue_scripts', 'infrascruct_assets' );
 
 endif;
 
@@ -103,27 +104,6 @@ function foundation_js_init () {
 }
 
 add_action('wp_footer', 'foundation_js_init', 50);
-
-endif;
-
-/**
- * ZeptoJS and jQuery Fallback
- * @see: http://foundation.zurb.com/docs/javascript.html
- */
-
-if ( ! function_exists( 'foundation_comptability' ) ) :
-
-function foundation_comptability () {
-
-echo "<script>";
-echo "document.write('<script src=' +";
-echo "('__proto__' in {} ? '" . get_template_directory_uri() . "/js/vendor/zepto" . "' : '" . get_template_directory_uri() . "/js/vendor/jquery" . "') +";
-echo "'.js><\/script>')";
-echo "</script>";
-
-}
-
-add_action('wp_footer', 'foundation_comptability', 10);
 
 endif;
 
