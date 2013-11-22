@@ -10,7 +10,8 @@
  */
 
 get_header(); ?>
-
+<!-- Begin Page -->
+<div class="row">
     <!-- Main Content -->
     <div class="large-9 columns" role="main">
 
@@ -26,4 +27,6 @@ get_header(); ?>
     <!-- End Main Content -->
 
 <?php get_sidebar(); ?>
+</div>
+<!-- End Page -->
 <?php get_footer(); ?>
