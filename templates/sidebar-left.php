@@ -5,8 +5,9 @@
  */
 
 get_header(); ?>
+<!-- Begin Page -->
+<div class="row">
 <?php get_sidebar(); ?>
-
     <!-- Main Content -->
     <div class="large-9 columns" role="content">
 
@@ -20,5 +21,6 @@ get_header(); ?>
 
     </div>
     <!-- End Main Content -->
-
+</div>
+<!-- End Page -->
 <?php get_footer(); ?>
