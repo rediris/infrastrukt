@@ -5,8 +5,8 @@
  * Setup the header for our theme
  *
  * @package WordPress
- * @subpackage Infrastruct for WordPress
- * @since Infrastruct for WordPress 1.0
+ * @subpackage Infrastrukt for WordPress
+ * @since Infrastrukt for WordPress 1.0
  */
 ?>
 
