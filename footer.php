@@ -5,8 +5,8 @@
  * Displays content shown in the footer section
  *
  * @package WordPress
- * @subpackage Infrastruct for WordPress
- * @since Infrastruct for WordPress 1.0
+ * @subpackage Infrastrukt for WordPress
+ * @since Infrastrukt for WordPress 1.0
  */
 ?>
 
