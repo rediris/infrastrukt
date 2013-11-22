@@ -6,12 +6,12 @@
  * Core functionality and initial theme setup
  *
  * @package WordPress
- * @subpackage Infrastruct for WordPress
- * @since Infrastruct for WordPress 1.0
+ * @subpackage Infrastrukt for WordPress
+ * @since Infrastrukt for WordPress 1.0
  */
 
 /**
- * Initiate Infrastruct for WordPress
+ * Initiate Infrastrukt for WordPress
  */
 
 if ( ! function_exists( 'foundation_setup' ) ) :
@@ -57,9 +57,9 @@ endif;
  * Enqueue Scripts and Styles for Front-End
  */
 
-if ( ! function_exists( 'infrascruct_assets' ) ) :
+if ( ! function_exists( 'infrastrukt_assets' ) ) :
 
-function infrascruct_assets() {
+function infrastrukt_assets() {
 
 	if (!is_admin()) {
 		/** 
@@ -88,7 +88,7 @@ function infrascruct_assets() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'infrascruct_assets' );
+add_action( 'wp_enqueue_scripts', 'infrastrukt_assets' );
 
 endif;
 
