@@ -6,12 +6,12 @@
  * Setup theme shortcodes
  *
  * @package WordPress
- * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
+ * @subpackage Infrastruct for WordPress
+ * @since Infrastruct for WordPress 1.0
  */
 
 /**
- * Initialise Foundation, for WordPress Shortcodes
+ * Initialise Infrastruct for WordPress Shortcodes
  */
 
 // Allow shortcodes in widgets

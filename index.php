@@ -5,8 +5,8 @@
  * Standard loop for the front-page
  *
  * @package WordPress
- * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 4.0
+ * @subpackage Infrastruct for WordPress
+ * @since Infrastruct for WordPress 1.0
  */
 
 get_header(); ?>
