@@ -48,6 +48,3 @@
 		</div>
 	</header>
 	<?php endif; ?>
-
-<!-- Begin Page -->
-<div class="row">
