@@ -70,19 +70,20 @@ function infrascruct_assets() {
 		/** 
 		 * LOAD JS FROM CDN, IF POSSIBLE
 		 */
-		wp_enqueue_script( 'jquery-cdn', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', null, '1.11.1', true );
-		wp_enqueue_script( 'foundation-all', get_template_directory_uri().'/lib/foundation/5.0.0/js/foundation.all.min.js', array('jquery-cdn'), '5.0.0', true );
+		wp_enqueue_script( 'jquery-cdn', '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', array(), '2.0.3', true );
+		wp_enqueue_script( 'jquery-migrate-cdn', 'http://code.jquery.com/jquery-migrate-1.2.1.min.js', array('jquery-cdn'), '1.2.1', true );
+		wp_enqueue_script( 'foundation-all', get_template_directory_uri().'/lib/foundation/5.0.0/js/foundation.all.min.js', array('jquery-migrate-cdn'), '5.0.0', true );
 		wp_enqueue_script( 'infrascruct-js', get_template_directory_uri().'/js/script.js', array('foundation-all'), '1.0', true);
-		wp_enqueue_script( 'modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', null, '2.6.2');
+		wp_enqueue_script( 'modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2');
 		if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
 		// Load Stylesheets
-		wp_enqueue_style( 'normalize', '//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css' );
-		wp_enqueue_style( 'foundation', get_template_directory_uri().'/lib/foundation/5.0.0/css/foundation.min.css' );
-		wp_enqueue_style( 'app', get_stylesheet_uri(), array('foundation') );
+		wp_enqueue_style( 'normalize', '//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css', array(), '2.1.3', 'all' );
+		wp_enqueue_style( 'foundation', get_template_directory_uri().'/lib/foundation/5.0.0/css/foundation.min.css', array('normalize'), '5.0.0', 'all' );
+		wp_enqueue_style( 'app', get_stylesheet_uri(), array('foundation'), '1.0', 'all' );
 
 		// Load Google Fonts API
-		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300' );
+		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300', array('app'), '1.0', 'all' );
 	
 	}
 
