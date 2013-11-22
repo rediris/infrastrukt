@@ -6,12 +6,12 @@
  * Core functionality and initial theme setup
  *
  * @package WordPress
- * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 4.0
+ * @subpackage Infrastruct for WordPress
+ * @since Infrastruct for WordPress 1.0
  */
 
 /**
- * Initiate Foundation, for WordPress
+ * Initiate Infrastruct for WordPress
  */
 
 if ( ! function_exists( 'foundation_setup' ) ) :

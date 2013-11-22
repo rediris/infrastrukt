@@ -5,8 +5,8 @@
  * Custom template for search form
  *
  * @package WordPress
- * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 4.0
+ * @subpackage Infrastruct for WordPress
+ * @since Infrastruct for WordPress 1.0
  */
 ?>
 
