@@ -11,25 +11,22 @@
 ?>
 
 <!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
-
+<!--[if lte IE 8]><html <?php body_class('no-js lt-ie9'); ?> <?php language_attributes(); ?> xmlns:fb="http://ogp.me/ns/fb#"> <![endif]-->
+<!--[if IE 9]><html <?php body_class('no-js ie9'); ?> <?php language_attributes(); ?> xmlns:fb="http://ogp.me/ns/fb#"> <![endif]-->
+<!--[if gt IE 9]><!--> <html <?php body_class('no-js'); ?> <?php language_attributes(); ?> xmlns:fb='http://ogp.me/ns/fb#'> <!--<![endif]-->
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-<!-- Set the viewport width to device width for mobile -->
-<meta name="viewport" content="width=device-width" />
-
-<title><?php wp_title(); ?></title>
-
+<meta charset="<?php bloginfo( 'charset' ); ?>" >
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title><?php wp_title('|',true,'right'); ?></title>
+<link rel="profile" href="http://gmpg.org/xfn/11" >
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" >
+<title><?php wp_title('|',true,'right'); ?></title>
 <?php wp_head(); ?>
-
 </head>
 
-<body <?php body_class(); ?>>
+<body>
 
 	<nav class="top-bar">
 		<ul class="title-area">
