@@ -27,17 +27,26 @@
 </head>
 
 <body>
-
-	<nav class="top-bar" data-topbar>
+<?php
+/**
+ * SETUP TOP BAR CUSTOMIZATION INCLUDE
+ */
+$infrastrukt_topbar = trailingslashit( get_template_directory() ) . 'inc/topbar.php';
+if (file_exists($infrastrukt_topbar)):
+	require( $infrastrukt_topbar );
+endif;
+?>
+<div class="nav-wrapper <?php echo $topbar_classes;?>">
+	<nav class="top-bar" data-topbar data-options="is_hover:<?php echo $topbar_hover;?>">
 		<ul class="title-area">
 			<li class="name"><h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo('name'); ?></a></h1></li>
-			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span><?php echo $topbar_menu_title; ?></span></a></li>
 		</ul>
 		<section class="top-bar-section">
 			<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'left', 'container' => '', 'fallback_cb' => 'foundation_page_menu', 'walker' => new foundation_navigation() ) ); ?>
 		</section>
 	</nav>
-
+</div><!--/.nav-wrapper-->
 	<?php $header =  get_header_textcolor();
 	if ( $header !== "blank" ) : ?>
 	<header class="site-header" <?php $header_image = get_header_image(); if ( ! empty( $header_image ) ) : ?> style="background:url('<?php echo esc_url( $header_image ); ?>');" <?php endif; ?>>

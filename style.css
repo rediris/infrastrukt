@@ -74,6 +74,7 @@ h1,h2,h3,h4,h5,h6,a:link {font-weight:300;}
 .sidebar ul li {list-style:none;}
 .top-bar-section ul li>a {border-left:1px solid #333;border-right:none;}
 
+.logged-in.admin-bar .nav-wrapper.fixed {top:28px;}
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
