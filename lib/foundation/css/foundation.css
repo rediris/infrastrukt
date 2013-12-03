@@ -3598,22 +3598,10 @@ a.th {
     top: 50%;
     margin-top: -5px; } }
 
-p.lead {
-  font-size: 1.21875rem;
-  line-height: 1.6; }
-
-.subheader {
-  line-height: 1.4;
-  color: #6f6f6f;
-  font-weight: 300;
-  margin-top: 0.2rem;
-  margin-bottom: 0.5rem; }
-
 /* Typography resets */
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
   margin: 0;
-  padding: 0;
-  direction: ltr; }
+  padding: 0; }
 
 /* Default Link Styles */
 a {
@@ -3633,6 +3621,9 @@ p {
   line-height: 1.6;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
+  p.lead {
+    font-size: 1.21875rem;
+    line-height: 1.6; }
   p aside {
     font-size: 0.875rem;
     line-height: 1.35;
@@ -3671,6 +3662,12 @@ h5 {
 h6 {
   font-size: 1rem; }
 
+.subheader {
+  line-height: 1.4;
+  color: #6f6f6f;
+  font-weight: 300;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem; }
 
 hr {
   border: solid #dddddd;
@@ -4200,34 +4197,16 @@ meta.foundation-mq-topbar {
   .no-js .top-bar-section .has-dropdown:hover > .dropdown {
     display: block; } }
 
-.off-canvas-wrap, .inner-wrap, nav.tab-bar, .left-off-canvas-menu, .left-off-canvas-menu *, .right-off-canvas-menu, .move-right a.exit-off-canvas, .move-left a.exit-off-canvas {
-  -webkit-backface-visibility: hidden; }
-
-.off-canvas-wrap, .inner-wrap {
-  position: relative;
-  width: 100%; }
-
-.left-off-canvas-menu, .right-off-canvas-menu {
-  width: 250px;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  position: absolute;
-  overflow-y: auto;
-  background: #333333;
-  z-index: 1001;
-  box-sizing: content-box; }
-
-section.left-small, section.right-small {
-  width: 2.8125rem;
-  height: 2.8125rem;
-  position: absolute;
-  top: 0; }
-
 .off-canvas-wrap {
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  width: 100%;
   overflow: hidden; }
 
 .inner-wrap {
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  width: 100%;
   *zoom: 1;
   -webkit-transition: -webkit-transform 500ms ease;
   -moz-transition: -moz-transform 500ms ease;
@@ -4241,6 +4220,7 @@ section.left-small, section.right-small {
     clear: both; }
 
 nav.tab-bar {
+  -webkit-backface-visibility: hidden;
   background: #333333;
   color: white;
   height: 2.8125rem;
@@ -4255,11 +4235,19 @@ nav.tab-bar {
     font-size: 1.125rem; }
 
 section.left-small {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  position: absolute;
+  top: 0;
   border-right: solid 1px #1a1a1a;
   box-shadow: 1px 0 0 #4d4d4d;
   left: 0; }
 
 section.right-small {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  position: absolute;
+  top: 0;
   border-left: solid 1px #4d4d4d;
   box-shadow: -1px 0 0 #1a1a1a;
   right: 0; }
@@ -4306,13 +4294,35 @@ a.menu-icon {
     box-shadow: 0 10px 0 1px #b3b3b3, 0 16px 0 1px #b3b3b3, 0 22px 0 1px #b3b3b3; }
 
 .left-off-canvas-menu {
+  -webkit-backface-visibility: hidden;
+  width: 250px;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  overflow-y: auto;
+  background: #333333;
+  z-index: 1001;
+  box-sizing: content-box;
   -webkit-transform: translate3d(-100%, 0, 0);
   -moz-transform: translate3d(-100%, 0, 0);
   -ms-transform: translate3d(-100%, 0, 0);
   -o-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0); }
+  .left-off-canvas-menu * {
+    -webkit-backface-visibility: hidden; }
 
 .right-off-canvas-menu {
+  -webkit-backface-visibility: hidden;
+  width: 250px;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  overflow-y: auto;
+  background: #333333;
+  z-index: 1001;
+  box-sizing: content-box;
   -webkit-transform: translate3d(100%, 0, 0);
   -moz-transform: translate3d(100%, 0, 0);
   -ms-transform: translate3d(100%, 0, 0);
@@ -4346,6 +4356,7 @@ ul.off-canvas-list {
   -o-transform: translate3d(250px, 0, 0);
   transform: translate3d(250px, 0, 0); }
 .move-right a.exit-off-canvas {
+  -webkit-backface-visibility: hidden;
   transition: background 300ms ease;
   cursor: pointer;
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
@@ -4368,6 +4379,7 @@ ul.off-canvas-list {
   -o-transform: translate3d(-250px, 0, 0);
   transform: translate3d(-250px, 0, 0); }
 .move-left a.exit-off-canvas {
+  -webkit-backface-visibility: hidden;
   transition: background 300ms ease;
   cursor: pointer;
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
