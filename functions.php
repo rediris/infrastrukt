@@ -520,4 +520,14 @@ function infrastrukt_customize($wp_customize) {
 add_action('customize_register', 'infrastrukt_customize');
 endif;
 
+/**
+ * JQUERY LOADER
+ */
+
+$jquery_loader = trailingslashit( get_template_directory() ) . 'inc/jquery.php';
+
+if (file_exists($jquery_loader)) {
+	require( $jquery_loader );
+}
+
 ?>
