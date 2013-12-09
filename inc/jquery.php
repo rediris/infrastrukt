@@ -54,24 +54,18 @@ function infrastrukt_jquery_cdn_options_init(){
 			    </option>
            	</select>
            	<?php if($options['jquery_version']){ $jquery_version = $options['jquery_version']; } ?>
-           	<?php /*if(!$options['jquery_version']){ $jquery_version = "1.7.1"; }*/ ?>
+           	<?php /*if(!$options['jquery_version']){ $jquery_version = "1.6.4"; }*/ ?>
            	
            	<label for="infrastrukt_jquery_cdn[jquery_version]">Select Version:</label> 
            		<select name="infrastrukt_jquery_cdn[jquery_version]">
 					<option value="2.0.3"  <?php if($options['jquery_version'] == "2.0.3") { echo "selected"; } ?>>2.0.3</option>
            			<option value="2.0.2"  <?php if($options['jquery_version'] == "2.0.2") { echo "selected"; } ?>>2.0.2</option>
-           			<option value="2.0.1"  <?php if($options['jquery_version'] == "2.0.1") { echo "selected"; } ?>>2.0.1</option>
-           			<option value="2.0.0"  <?php if($options['jquery_version'] == "2.0.0") { echo "selected"; } ?>>2.0.0</option>
            			<option value="1.10.2" <?php if($options['jquery_version'] == "1.10.2"){ echo "selected"; } ?>>1.10.2</option>
            			<option value="1.10.1" <?php if($options['jquery_version'] == "1.10.1"){ echo "selected"; } ?>>1.10.1</option>
            			<option value="1.9.1"  <?php if($options['jquery_version'] == "1.9.1") { echo "selected"; } ?>>1.9.1</option>
-           			<option value="1.9.0"  <?php if($options['jquery_version'] == "1.9.0") { echo "selected"; } ?>>1.9.0</option>
            			<option value="1.8.3"  <?php if($options['jquery_version'] == "1.8.3") { echo "selected"; } ?>>1.8.3</option>
-           			<option value="1.8.2"  <?php if($options['jquery_version'] == "1.8.2") { echo "selected"; } ?>>1.8.2</option>
-           			<option value="1.8.1"  <?php if($options['jquery_version'] == "1.8.1") { echo "selected"; } ?>>1.8.1</option>
-           			<option value="1.8.0"  <?php if($options['jquery_version'] == "1.8.0") { echo "selected"; } ?>>1.8.0</option>
            			<option value="1.7.2"  <?php if($options['jquery_version'] == "1.7.2") { echo "selected"; } ?>>1.7.2</option>
-           			<option value="1.7.1"  <?php if($options['jquery_version'] == "1.7.1") { echo "selected"; } ?>>1.7.1</option>
+           			<option value="1.6.4"  <?php if($options['jquery_version'] == "1.6.4") { echo "selected"; } ?>>1.6.4</option>
            		</select>
             <p class="submit">
             <button type="submit" class="button-primary"><?php _e('Save Changes') ?></button>
@@ -103,7 +97,7 @@ function infrastrukt_jquery_cdn_options_init(){
     	}
 
     	if($options['jquery_cdn'] == "5"){
-			$jquery = get_template_directory_uri() . '/lib/jquery/' . $jquery_version . '/jquery.min.js';
+			$jquery = get_template_directory_uri() . '/lib/jquery/jquery-' . $jquery_version . '.min.js';
     	}
     }
     		
