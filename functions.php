@@ -96,7 +96,7 @@ function infrastrukt_css() {
 		wp_enqueue_style( 'app', get_stylesheet_uri(), array('foundation'), '1.0', 'all' );
 
 		// Load Google Fonts API
-		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700', array('app'), '1.0', 'all' );
+		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700', array('app'), '1.0', 'all' );
 	}
 
 }

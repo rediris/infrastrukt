@@ -12,16 +12,16 @@
 
 $topbar_classes = get_theme_mod( 'topbar_position' );
 $topbar_menu_title = get_theme_mod( 'set_menu_title' );
-if (get_theme_mod( 'contain_to_grid' ) == 1) :
+if (get_theme_mod( 'contain_to_grid' ) == 1):
 	if ($topbar_classes == '' || $topbar_classes == null):
 		$topbar_classes = 'contain-to-grid';
-	else :
+	else:
 		$topbar_classes = $topbar_classes . ' contain-to-grid';
 	endif;
 endif;
 if (get_theme_mod( 'clickable_menu' ) == 1): 
 	$topbar_hover = 'false';
-else: 
+else:
 	$topbar_hover = 'true';
 endif;
 ?>
