@@ -1702,11 +1702,15 @@ button, .button {
     .button-group > * > button, .button-group > * .button {
       border-right: 1px solid;
       border-color: rgba(255, 255, 255, 0.5); }
+    .button-group > *:last-child button, .button-group > *:last-child .button {
+      border-right: 0; }
     .button-group > *:first-child {
       margin-left: 0; }
   .button-group.radius > * > button, .button-group.radius > * .button {
     border-right: 1px solid;
     border-color: rgba(255, 255, 255, 0.5); }
+  .button-group.radius > *:last-child button, .button-group.radius > *:last-child .button {
+    border-right: 0; }
   .button-group.radius > *:first-child, .button-group.radius > *:first-child > a, .button-group.radius > *:first-child > button, .button-group.radius > *:first-child > .button {
     -moz-border-radius-bottomleft: 3px;
     -moz-border-radius-topleft: 3px;
@@ -1724,6 +1728,8 @@ button, .button {
   .button-group.round > * > button, .button-group.round > * .button {
     border-right: 1px solid;
     border-color: rgba(255, 255, 255, 0.5); }
+  .button-group.round > *:last-child button, .button-group.round > *:last-child .button {
+    border-right: 0; }
   .button-group.round > *:first-child, .button-group.round > *:first-child > a, .button-group.round > *:first-child > button, .button-group.round > *:first-child > .button {
     -moz-border-radius-bottomleft: 1000px;
     -moz-border-radius-topleft: 1000px;
@@ -1743,6 +1749,8 @@ button, .button {
     .button-group.even-2 li > button, .button-group.even-2 li .button {
       border-right: 1px solid;
       border-color: rgba(255, 255, 255, 0.5); }
+    .button-group.even-2 li:last-child button, .button-group.even-2 li:last-child .button {
+      border-right: 0; }
     .button-group.even-2 li button, .button-group.even-2 li .button {
       width: 100%; }
   .button-group.even-3 li {
@@ -1750,6 +1758,8 @@ button, .button {
     .button-group.even-3 li > button, .button-group.even-3 li .button {
       border-right: 1px solid;
       border-color: rgba(255, 255, 255, 0.5); }
+    .button-group.even-3 li:last-child button, .button-group.even-3 li:last-child .button {
+      border-right: 0; }
     .button-group.even-3 li button, .button-group.even-3 li .button {
       width: 100%; }
   .button-group.even-4 li {
@@ -1757,6 +1767,8 @@ button, .button {
     .button-group.even-4 li > button, .button-group.even-4 li .button {
       border-right: 1px solid;
       border-color: rgba(255, 255, 255, 0.5); }
+    .button-group.even-4 li:last-child button, .button-group.even-4 li:last-child .button {
+      border-right: 0; }
     .button-group.even-4 li button, .button-group.even-4 li .button {
       width: 100%; }
   .button-group.even-5 li {
@@ -1764,6 +1776,8 @@ button, .button {
     .button-group.even-5 li > button, .button-group.even-5 li .button {
       border-right: 1px solid;
       border-color: rgba(255, 255, 255, 0.5); }
+    .button-group.even-5 li:last-child button, .button-group.even-5 li:last-child .button {
+      border-right: 0; }
     .button-group.even-5 li button, .button-group.even-5 li .button {
       width: 100%; }
   .button-group.even-6 li {
@@ -1771,6 +1785,8 @@ button, .button {
     .button-group.even-6 li > button, .button-group.even-6 li .button {
       border-right: 1px solid;
       border-color: rgba(255, 255, 255, 0.5); }
+    .button-group.even-6 li:last-child button, .button-group.even-6 li:last-child .button {
+      border-right: 0; }
     .button-group.even-6 li button, .button-group.even-6 li .button {
       width: 100%; }
   .button-group.even-7 li {
@@ -1778,6 +1794,8 @@ button, .button {
     .button-group.even-7 li > button, .button-group.even-7 li .button {
       border-right: 1px solid;
       border-color: rgba(255, 255, 255, 0.5); }
+    .button-group.even-7 li:last-child button, .button-group.even-7 li:last-child .button {
+      border-right: 0; }
     .button-group.even-7 li button, .button-group.even-7 li .button {
       width: 100%; }
   .button-group.even-8 li {
@@ -1785,6 +1803,8 @@ button, .button {
     .button-group.even-8 li > button, .button-group.even-8 li .button {
       border-right: 1px solid;
       border-color: rgba(255, 255, 255, 0.5); }
+    .button-group.even-8 li:last-child button, .button-group.even-8 li:last-child .button {
+      border-right: 0; }
     .button-group.even-8 li button, .button-group.even-8 li .button {
       width: 100%; }
 
