@@ -144,37 +144,10 @@ function foundation_shortcode_reveal( $atts, $content = null ) {
 		'style' => ''
 		), $atts ) );
 
-	return '<div id="' . esc_attr($name) . '" class="reveal-modal ' . esc_attr($style) . '">' . do_shortcode($content) . '</div>';
+	return '<div id="' . esc_attr($name) . '" class="reveal-modal ' . esc_attr($style) . '" data-reveal>' . do_shortcode($content) . '</div>';
 
 }
 
 add_shortcode( 'reveal', 'foundation_shortcode_reveal' );
-
-// Sections [sections type="tabs"] [section title="Section Title"]Content[/section] [/sections]
-
-function foundation_shortcode_sections( $atts, $content = null ) {
-
-	extract( shortcode_atts( array(
-		'type' => ''
-		), $atts ) );
-
-	return '<div class="section-container '. esc_attr($type) . '" data-section="'. esc_attr($type) . '">' . do_shortcode($content) . '</div>';
-
-}
-
-add_shortcode( 'sections', 'foundation_shortcode_sections' );
-
-// Section [section title="Section Title"]Content[/section]
-
-function foundation_shortcode_section( $atts, $content = null ) {
-
-	extract( shortcode_atts( array(
-		'title' => ''
-		), $atts ) );
-
-	return '<section><p class="title" data-section-title><a href="#"> . esc_attr($title) . </a></p><div class="content" data-section-content>' . do_shortcode($content) . '</div></section>';
-}
-
-add_shortcode( 'section', 'foundation_shortcode_section' );
 
 ?>
