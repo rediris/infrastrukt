@@ -327,7 +327,13 @@ select {
     margin-left: 75% !important; }
   .small-offset-10 {
     position: relative;
-    margin-left: 83.33333% !important; } }
+    margin-left: 83.33333% !important; }
+  .column.small-reset-order, .columns.small-reset-order {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+    float: left; } }
 
 @media only screen and (min-width:40.063em) {
   .column.medium-centered, .columns.medium-centered {
@@ -507,6 +513,12 @@ select {
   .medium-offset-10 {
     position: relative;
     margin-left: 83.33333% !important; }
+  .column.medium-reset-order, .columns.medium-reset-order {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+    float: left; }
   .push-1 {
     position: relative;
     left: 8.33333%;
@@ -773,365 +785,101 @@ select {
     margin-left: 75% !important; }
   .large-offset-10 {
     position: relative;
-    margin-left: 83.33333% !important; } }
-
-@media only screen and (min-width:90.063em) {
-  .column.xlarge-centered, .columns.xlarge-centered {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    float: none; }
-  .column.xlarge-uncentered, .columns.xlarge-uncentered {
+    margin-left: 83.33333% !important; }
+  .column.large-reset-order, .columns.large-reset-order {
     margin-left: 0;
     margin-right: 0;
+    left: auto;
+    right: auto;
     float: left; }
-  .column.xlarge-uncentered.opposite, .columns.xlarge-uncentered.opposite {
-    float: right; }
-  .xlarge-push-1 {
+  .push-1 {
     position: relative;
     left: 8.33333%;
     right: auto; }
-  .xlarge-pull-1 {
+  .pull-1 {
     position: relative;
     right: 8.33333%;
     left: auto; }
-  .xlarge-push-2 {
+  .push-2 {
     position: relative;
     left: 16.66667%;
     right: auto; }
-  .xlarge-pull-2 {
+  .pull-2 {
     position: relative;
     right: 16.66667%;
     left: auto; }
-  .xlarge-push-3 {
+  .push-3 {
     position: relative;
     left: 25%;
     right: auto; }
-  .xlarge-pull-3 {
+  .pull-3 {
     position: relative;
     right: 25%;
     left: auto; }
-  .xlarge-push-4 {
+  .push-4 {
     position: relative;
     left: 33.33333%;
     right: auto; }
-  .xlarge-pull-4 {
+  .pull-4 {
     position: relative;
     right: 33.33333%;
     left: auto; }
-  .xlarge-push-5 {
+  .push-5 {
     position: relative;
     left: 41.66667%;
     right: auto; }
-  .xlarge-pull-5 {
+  .pull-5 {
     position: relative;
     right: 41.66667%;
     left: auto; }
-  .xlarge-push-6 {
+  .push-6 {
     position: relative;
     left: 50%;
     right: auto; }
-  .xlarge-pull-6 {
+  .pull-6 {
     position: relative;
     right: 50%;
     left: auto; }
-  .xlarge-push-7 {
+  .push-7 {
     position: relative;
     left: 58.33333%;
     right: auto; }
-  .xlarge-pull-7 {
+  .pull-7 {
     position: relative;
     right: 58.33333%;
     left: auto; }
-  .xlarge-push-8 {
+  .push-8 {
     position: relative;
     left: 66.66667%;
     right: auto; }
-  .xlarge-pull-8 {
+  .pull-8 {
     position: relative;
     right: 66.66667%;
     left: auto; }
-  .xlarge-push-9 {
+  .push-9 {
     position: relative;
     left: 75%;
     right: auto; }
-  .xlarge-pull-9 {
+  .pull-9 {
     position: relative;
     right: 75%;
     left: auto; }
-  .xlarge-push-10 {
+  .push-10 {
     position: relative;
     left: 83.33333%;
     right: auto; }
-  .xlarge-pull-10 {
+  .pull-10 {
     position: relative;
     right: 83.33333%;
     left: auto; }
-  .xlarge-push-11 {
+  .push-11 {
     position: relative;
     left: 91.66667%;
     right: auto; }
-  .xlarge-pull-11 {
+  .pull-11 {
     position: relative;
     right: 91.66667%;
-    left: auto; }
-  .column, .columns {
-    position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-    float: left; }
-  .xlarge-1 {
-    position: relative;
-    width: 8.33333%; }
-  .xlarge-2 {
-    position: relative;
-    width: 16.66667%; }
-  .xlarge-3 {
-    position: relative;
-    width: 25%; }
-  .xlarge-4 {
-    position: relative;
-    width: 33.33333%; }
-  .xlarge-5 {
-    position: relative;
-    width: 41.66667%; }
-  .xlarge-6 {
-    position: relative;
-    width: 50%; }
-  .xlarge-7 {
-    position: relative;
-    width: 58.33333%; }
-  .xlarge-8 {
-    position: relative;
-    width: 66.66667%; }
-  .xlarge-9 {
-    position: relative;
-    width: 75%; }
-  .xlarge-10 {
-    position: relative;
-    width: 83.33333%; }
-  .xlarge-11 {
-    position: relative;
-    width: 91.66667%; }
-  .xlarge-12 {
-    position: relative;
-    width: 100%; }
-  [class*="column"] + [class*="column"]:last-child {
-    float: right; }
-  [class*="column"] + [class*="column"].end {
-    float: left; }
-  .xlarge-offset-0 {
-    position: relative;
-    margin-left: 0% !important; }
-  .xlarge-offset-1 {
-    position: relative;
-    margin-left: 8.33333% !important; }
-  .xlarge-offset-2 {
-    position: relative;
-    margin-left: 16.66667% !important; }
-  .xlarge-offset-3 {
-    position: relative;
-    margin-left: 25% !important; }
-  .xlarge-offset-4 {
-    position: relative;
-    margin-left: 33.33333% !important; }
-  .xlarge-offset-5 {
-    position: relative;
-    margin-left: 41.66667% !important; }
-  .xlarge-offset-6 {
-    position: relative;
-    margin-left: 50% !important; }
-  .xlarge-offset-7 {
-    position: relative;
-    margin-left: 58.33333% !important; }
-  .xlarge-offset-8 {
-    position: relative;
-    margin-left: 66.66667% !important; }
-  .xlarge-offset-9 {
-    position: relative;
-    margin-left: 75% !important; }
-  .xlarge-offset-10 {
-    position: relative;
-    margin-left: 83.33333% !important; } }
-
-@media only screen and (min-width:120.063em) {
-  .column.xxlarge-centered, .columns.xxlarge-centered {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    float: none; }
-  .column.xxlarge-uncentered, .columns.xxlarge-uncentered {
-    margin-left: 0;
-    margin-right: 0;
-    float: left; }
-  .column.xxlarge-uncentered.opposite, .columns.xxlarge-uncentered.opposite {
-    float: right; }
-  .xxlarge-push-1 {
-    position: relative;
-    left: 8.33333%;
-    right: auto; }
-  .xxlarge-pull-1 {
-    position: relative;
-    right: 8.33333%;
-    left: auto; }
-  .xxlarge-push-2 {
-    position: relative;
-    left: 16.66667%;
-    right: auto; }
-  .xxlarge-pull-2 {
-    position: relative;
-    right: 16.66667%;
-    left: auto; }
-  .xxlarge-push-3 {
-    position: relative;
-    left: 25%;
-    right: auto; }
-  .xxlarge-pull-3 {
-    position: relative;
-    right: 25%;
-    left: auto; }
-  .xxlarge-push-4 {
-    position: relative;
-    left: 33.33333%;
-    right: auto; }
-  .xxlarge-pull-4 {
-    position: relative;
-    right: 33.33333%;
-    left: auto; }
-  .xxlarge-push-5 {
-    position: relative;
-    left: 41.66667%;
-    right: auto; }
-  .xxlarge-pull-5 {
-    position: relative;
-    right: 41.66667%;
-    left: auto; }
-  .xxlarge-push-6 {
-    position: relative;
-    left: 50%;
-    right: auto; }
-  .xxlarge-pull-6 {
-    position: relative;
-    right: 50%;
-    left: auto; }
-  .xxlarge-push-7 {
-    position: relative;
-    left: 58.33333%;
-    right: auto; }
-  .xxlarge-pull-7 {
-    position: relative;
-    right: 58.33333%;
-    left: auto; }
-  .xxlarge-push-8 {
-    position: relative;
-    left: 66.66667%;
-    right: auto; }
-  .xxlarge-pull-8 {
-    position: relative;
-    right: 66.66667%;
-    left: auto; }
-  .xxlarge-push-9 {
-    position: relative;
-    left: 75%;
-    right: auto; }
-  .xxlarge-pull-9 {
-    position: relative;
-    right: 75%;
-    left: auto; }
-  .xxlarge-push-10 {
-    position: relative;
-    left: 83.33333%;
-    right: auto; }
-  .xxlarge-pull-10 {
-    position: relative;
-    right: 83.33333%;
-    left: auto; }
-  .xxlarge-push-11 {
-    position: relative;
-    left: 91.66667%;
-    right: auto; }
-  .xxlarge-pull-11 {
-    position: relative;
-    right: 91.66667%;
-    left: auto; }
-  .column, .columns {
-    position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-    float: left; }
-  .xxlarge-1 {
-    position: relative;
-    width: 8.33333%; }
-  .xxlarge-2 {
-    position: relative;
-    width: 16.66667%; }
-  .xxlarge-3 {
-    position: relative;
-    width: 25%; }
-  .xxlarge-4 {
-    position: relative;
-    width: 33.33333%; }
-  .xxlarge-5 {
-    position: relative;
-    width: 41.66667%; }
-  .xxlarge-6 {
-    position: relative;
-    width: 50%; }
-  .xxlarge-7 {
-    position: relative;
-    width: 58.33333%; }
-  .xxlarge-8 {
-    position: relative;
-    width: 66.66667%; }
-  .xxlarge-9 {
-    position: relative;
-    width: 75%; }
-  .xxlarge-10 {
-    position: relative;
-    width: 83.33333%; }
-  .xxlarge-11 {
-    position: relative;
-    width: 91.66667%; }
-  .xxlarge-12 {
-    position: relative;
-    width: 100%; }
-  [class*="column"] + [class*="column"]:last-child {
-    float: right; }
-  [class*="column"] + [class*="column"].end {
-    float: left; }
-  .xxlarge-offset-0 {
-    position: relative;
-    margin-left: 0% !important; }
-  .xxlarge-offset-1 {
-    position: relative;
-    margin-left: 8.33333% !important; }
-  .xxlarge-offset-2 {
-    position: relative;
-    margin-left: 16.66667% !important; }
-  .xxlarge-offset-3 {
-    position: relative;
-    margin-left: 25% !important; }
-  .xxlarge-offset-4 {
-    position: relative;
-    margin-left: 33.33333% !important; }
-  .xxlarge-offset-5 {
-    position: relative;
-    margin-left: 41.66667% !important; }
-  .xxlarge-offset-6 {
-    position: relative;
-    margin-left: 50% !important; }
-  .xxlarge-offset-7 {
-    position: relative;
-    margin-left: 58.33333% !important; }
-  .xxlarge-offset-8 {
-    position: relative;
-    margin-left: 66.66667% !important; }
-  .xxlarge-offset-9 {
-    position: relative;
-    margin-left: 75% !important; }
-  .xxlarge-offset-10 {
-    position: relative;
-    margin-left: 83.33333% !important; } }
+    left: auto; } }
 
 .accordion {
   *zoom: 1;
@@ -1572,6 +1320,8 @@ select {
       margin: 0; }
 
 button, .button {
+  border-style: solid;
+  border-width: 0px;
   cursor: pointer;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -2910,13 +2660,13 @@ label.error {
   top: 10px;
   float: none;
   text-align: center;
-  display: inline-block; }
+  display: block; }
   .orbit-bullets li {
-    display: block;
+    display: inline-block;
     width: 0.5625rem;
     height: 0.5625rem;
     background: #cccccc;
-    float: left;
+    float: none;
     margin-right: 6px;
     -webkit-border-radius: 1000px;
     border-radius: 1000px; }
@@ -3578,6 +3328,7 @@ table {
   line-height: 0;
   display: inline-block;
   border: solid 4px white;
+  max-width: 100%;
   -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
   -webkit-transition: all 200ms ease-out;
@@ -3589,10 +3340,6 @@ table {
   .th.radius {
     -webkit-border-radius: 3px;
     border-radius: 3px; }
-
-a.th {
-  display: inline-block;
-  max-width: 100%; }
 
 /* Tooltips */
 .has-tip {
@@ -3754,17 +3501,19 @@ meta.foundation-mq-topbar {
       margin-top: -16px;
       padding-left: 40px; }
       .top-bar .toggle-topbar.menu-icon a {
-        text-indent: -48px;
-        width: 34px;
         height: 34px;
         line-height: 33px;
         padding: 0;
-        color: white; }
-        .top-bar .toggle-topbar.menu-icon a span {
+        padding-right: 25px;
+        color: white;
+        position: relative; }
+        .top-bar .toggle-topbar.menu-icon a::after {
+          content: "";
           position: absolute;
           right: 0;
           display: block;
           width: 16px;
+          top: 0;
           height: 0;
           -webkit-box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white;
           box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white; }
@@ -3876,6 +3625,10 @@ meta.foundation-mq-topbar {
           color: white;
           line-height: 22.5px;
           display: block; }
+      .top-bar-section .dropdown li.has-form {
+        padding: 8px 15px; }
+      .top-bar-section .dropdown li .button {
+        top: auto; }
     .top-bar-section .dropdown label {
       padding: 8px 15px 2px;
       margin-bottom: 0;
@@ -3958,7 +3711,8 @@ meta.foundation-mq-topbar {
       content: "\00bb";
       top: 1rem;
       margin-top: -2px;
-      right: 5px; }
+      right: 5px;
+      line-height: 1.2; }
     .top-bar-section .dropdown {
       left: 0;
       top: auto;
@@ -4034,7 +3788,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
   color: #222222;
@@ -4478,25 +4232,21 @@ ul.off-canvas-list {
 .csstransforms.no-csstransforms3d .left-off-canvas-menu {
   -webkit-transform: translate(-100%, 0);
   -moz-transform: translate(-100%, 0);
-  -ms-transform: translate(-100%, 0);
   -o-transform: translate(-100%, 0);
   transform: translate(-100%, 0); }
 .csstransforms.no-csstransforms3d .right-off-canvas-menu {
   -webkit-transform: translate(100%, 0);
   -moz-transform: translate(100%, 0);
-  -ms-transform: translate(100%, 0);
   -o-transform: translate(100%, 0);
   transform: translate(100%, 0); }
 .csstransforms.no-csstransforms3d .move-left > .inner-wrap {
   -webkit-transform: translate(-250px, 0);
   -moz-transform: translate(-250px, 0);
-  -ms-transform: translate(-250px, 0);
   -o-transform: translate(-250px, 0);
   transform: translate(-250px, 0); }
 .csstransforms.no-csstransforms3d .move-right > .inner-wrap {
   -webkit-transform: translate(250px, 0);
   -moz-transform: translate(250px, 0);
-  -ms-transform: translate(250px, 0);
   -o-transform: translate(250px, 0);
   transform: translate(250px, 0); }
 
