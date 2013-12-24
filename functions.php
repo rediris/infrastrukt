@@ -71,7 +71,7 @@ function infrastrukt_js() {
 		 * LOAD JS FROM CDN, IF POSSIBLE
 		 */
 		//wp_enqueue_script( 'jquery-cdn', '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', array(), '2.0.3', true );
-		wp_enqueue_script( 'jquery-migrate-cdn', '//code.jquery.com/jquery-migrate-1.2.1.min.js', array('jquery-cdn'), '1.2.1', true );
+		wp_enqueue_script( 'jquery-migrate-cdn', '//code.jquery.com/jquery-migrate-1.2.1.min.js', array('jquery'), '1.2.1', true );
 		wp_enqueue_script( 'fastclick', get_template_directory_uri().'/lib/fastclick/0.6.9/fastclick.js', array('jquery-migrate-cdn'), '0.6.9', true );
 		wp_enqueue_script( 'foundation', get_template_directory_uri().'/lib/foundation/js/foundation.min.js', array('fastclick'), '5', true );
 		wp_enqueue_script( 'infrastrukt-js', get_template_directory_uri().'/js/infrastrukt.js', array('foundation'), '1.0', true);
