@@ -29,7 +29,7 @@ function infrastrukt_loader_options_init(){
             .inline {display:inline;}
             .hide {display:none;}
         </style>
-        <h1>Resource Loader</h1>
+        <h1>Infrastrukt Resource Loader</h1>
         <form id="options-form" method="post" action="options.php">
             <fieldset>
                 <?php settings_fields('infrastrukt_loader_options'); ?>
@@ -203,8 +203,8 @@ jQuery(function($){
                 if (!is_admin()){
                     global $jquery;
                     global $jquery_version;
-                    //global $jquery_migrate_version;
-                    //global $jqueryMigrate;
+                    global $jquery_migrate_version;
+                    global $jqueryMigrate;
                     global $jquery_dependency;
                     global $jquery_in_footer;
                     wp_deregister_script('jquery');
