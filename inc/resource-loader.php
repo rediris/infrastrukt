@@ -10,7 +10,7 @@
  * @since Infrastrukt for WordPress 1.0
  */
 
-function infrastrukt_loader_options_init(){
+    function infrastrukt_loader_options_init(){
         register_setting( 'infrastrukt_loader_options', 'infrastrukt_loader' );
     }
     add_action('admin_init', 'infrastrukt_loader_options_init' );
@@ -28,22 +28,50 @@ function infrastrukt_loader_options_init(){
         <style>
             .inline {display:inline;}
             .hide {display:none;}
+            fieldset {margin-bottom:1rem;}
+            label {display:inline-block;}
+            label.lib {min-width:92px;}
+            label.version {margin-left:1rem;}
+            select {max-width:150px;overflow:hidden;text-overflow:ellipsis;}
+            select.cdn {min-width:150px;}
         </style>
         <h1>Infrastrukt Resource Loader</h1>
         <form id="options-form" method="post" action="options.php">
+            <?php settings_fields('infrastrukt_loader_options'); ?>
+            <?php $options = get_option('infrastrukt_loader'); ?>
+            <fieldset id="modernizrOptions">
+                <?php if($options['modernizr']){ $modernizr = $options['modernizr']; } ?>
+                <label for="infrastrukt_loader[modernizr]" class="lib">Modernizr:</label>
+                <select type="select" name="infrastrukt_loader[modernizr]" class="cdn">
+                    <option value="infrastrukt" <?php if($options['modernizr'] == "infrastrukt"){ echo "selected"; } ?>>
+                        Local (Infrastrukt)
+                    </option>
+                    <option value="cdnjs" <?php if($options['modernizr'] == "cdnjs"){ echo "selected"; } ?>>
+                        CDNJS
+                    </option>
+                    <option value="none" <?php if($options['modernizr'] == "none"){ echo "selected"; } ?>>
+                        None
+                    </option>
+                </select>
+                <?php if($options['modernizr_version']){ $modernizr_version = $options['modernizr_version']; } ?>
+                <label for="infrastrukt_loader[modernizr_version]" class="version">Version:</label> 
+                <select name="infrastrukt_loader[modernizr_version]" class="version">
+                    <option value="2.7.1"  <?php if($options['modernizr_version'] == "2.7.1") { echo "selected"; } ?>>2.7.1</option>
+                    <option value="2.7.0"  <?php if($options['modernizr_version'] == "2.7.0") { echo "selected"; } ?>>2.7.0</option>
+                    <option value="2.6.2"  <?php if($options['modernizr_version'] == "2.6.2") { echo "selected"; } ?>>2.6.2</option>
+                </select>
+            </fieldset>
             <fieldset>
-                <?php settings_fields('infrastrukt_loader_options'); ?>
-                <?php $options = get_option('infrastrukt_loader'); ?>
-                <label for="infrastrukt_loader[jquery_cdn]">jQuery:</label>
-                <select type="select" name="infrastrukt_loader[jquery_cdn]" id="infrastruktjquerySelect">
+                <label for="infrastrukt_loader[jquery_cdn]" class="lib">jQuery:</label>
+                <select type="select" name="infrastrukt_loader[jquery_cdn]" id="infrastruktjquerySelect" class="cdn">
                     <option value="infrastrukt" <?php if($options['jquery_cdn'] == "infrastrukt"){ echo "selected"; } ?>>
-                        Local (Infrastrukt Theme)
+                        Local (Infrastrukt)
                     </option>
                     <option value="wp" <?php if($options['jquery_cdn'] == "wp"){ echo "selected"; } ?>>
                         Local (Wordpress)
                     </option>
                     <option value="microsoft" <?php if($options['jquery_cdn'] == "microsoft"){ echo "selected"; } ?>>
-                        Microsoft jQuery CDN
+                        Microsoft CDN
                     </option>
                     <option value="cdnjs" <?php if($options['jquery_cdn'] == "cdnsj"){ echo "selected"; } ?>>
                         CDNJS
@@ -52,7 +80,7 @@ function infrastrukt_loader_options_init(){
                         jQuery CDN
                     </option>
                     <option value="google" <?php if($options['jquery_cdn'] == "google"){ echo "selected"; } ?>>
-                        Google AJAX API jQuery CDN
+                        Google CDN
                     </option>
                     <option value="none" <?php if($options['jquery_cdn'] == "none"){ echo "selected"; } ?>>
                         None (not recommended)
@@ -66,8 +94,8 @@ function infrastrukt_loader_options_init(){
                 ?>
                 <div id="jqueryOptions" class="inline <?php echo $selectedClass ?>">
                     <?php if($options['jquery_version']){ $jquery_version = $options['jquery_version']; } ?>
-                    <label for="infrastrukt_loader[jquery_version]">Version:</label> 
-                    <select name="infrastrukt_loader[jquery_version]">
+                    <label for="infrastrukt_loader[jquery_version]" class="version">Version:</label> 
+                    <select name="infrastrukt_loader[jquery_version]" class="version">
                         <option value="2.0.3"  <?php if($options['jquery_version'] == "2.0.3") { echo "selected"; } ?>>2.0.3</option>
                         <option value="2.0.2"  <?php if($options['jquery_version'] == "2.0.2") { echo "selected"; } ?>>2.0.2</option>
                         <option value="1.10.2" <?php if($options['jquery_version'] == "1.10.2"){ echo "selected"; } ?>>1.10.2</option>
@@ -81,13 +109,13 @@ function infrastrukt_loader_options_init(){
             </fieldset>
             <fieldset id="jqueryMigrate" class="<?php echo $selectedClass ?>">
                 <?php if($options['jquery_migrate']){ $jquery_migrate = $options['jquery_migrate']; } ?>
-                <label for="infrastrukt_loader[jquery_migrate]">jQuery Migrate</label>
-                <select type="select" name="infrastrukt_loader[jquery_migrate]">
+                <label for="infrastrukt_loader[jquery_migrate]" class="lib">jQuery Migrate</label>
+                <select type="select" name="infrastrukt_loader[jquery_migrate]" class="cdn">
                     <option value="infrastrukt" <?php if($options['jquery_migrate'] == "infrastrukt"){ echo "selected"; } ?>>
-                        Local (Infrastrukt Theme)
+                        Local (Infrastrukt)
                     </option>
                     <option value="microsoft" <?php if($options['jquery_migrate'] == "microsoft"){ echo "selected"; } ?>>
-                        Microsoft jQuery CDN
+                        Microsoft CDN
                     </option>
                     <option value="cdnjs" <?php if($options['jquery_migrate'] == "cdnjs"){ echo "selected"; } ?>>
                         CDNJS
@@ -100,8 +128,8 @@ function infrastrukt_loader_options_init(){
                     </option>
                 </select>
                 <?php if($options['jquery_migrate_version']){ $jquery_migrate_version = $options['jquery_migrate_version']; } ?>
-                <label for="infrastrukt_loader[jquery_migrate_version]">Version:</label> 
-                <select name="infrastrukt_loader[jquery_migrate_version]">
+                <label for="infrastrukt_loader[jquery_migrate_version]" class="version">Version:</label> 
+                <select name="infrastrukt_loader[jquery_migrate_version]" class="version">
                     <option value="1.2.1"  <?php if($options['jquery_migrate_version'] == "1.2.1") { echo "selected"; } ?>>1.2.1</option>
                     <option value="1.1.1"  <?php if($options['jquery_migrate_version'] == "1.1.1") { echo "selected"; } ?>>1.1.1</option>
                 </select>
@@ -112,28 +140,6 @@ function infrastrukt_loader_options_init(){
                 <?php if($jquery_position['jquery_position']){ $jquery_position = $options['jquery_position']; } ?>
                 <input type="radio" name="infrastrukt_loader[jquery_position]" value="top" <?php if($options['jquery_position'] == "top") { echo "checked"; } ?>>Top (WordPress default)
                 <input type="radio" name="infrastrukt_loader[jquery_position]" value="bottom" <?php if($options['jquery_position'] == "bottom") { echo "checked"; } ?>>Bottom
-            </fieldset>
-            <fieldset id="modernizrOptions">
-                <?php if($options['modernizr']){ $modernizr = $options['modernizr']; } ?>
-                <label for="infrastrukt_loader[modernizr]">Modernizr:</label>
-                <select type="select" name="infrastrukt_loader[modernizr]">
-                    <option value="infrastrukt" <?php if($options['modernizr'] == "infrastrukt"){ echo "selected"; } ?>>
-                        Local (Infrastrukt Theme)
-                    </option>
-                    <option value="cdnjs" <?php if($options['modernizr'] == "cdnjs"){ echo "selected"; } ?>>
-                        CDNJS
-                    </option>
-                    <option value="none" <?php if($options['modernizr'] == "none"){ echo "selected"; } ?>>
-                        None
-                    </option>
-                </select>
-                <?php if($options['modernizr_version']){ $modernizr_version = $options['modernizr_version']; } ?>
-                <label for="infrastrukt_loader[modernizr_version]">Version:</label> 
-                <select name="infrastrukt_loader[modernizr_version]">
-                    <option value="2.7.1"  <?php if($options['modernizr_version'] == "2.7.1") { echo "selected"; } ?>>2.7.1</option>
-                    <option value="2.7.0"  <?php if($options['modernizr_version'] == "2.7.0") { echo "selected"; } ?>>2.7.0</option>
-                    <option value="2.6.2"  <?php if($options['modernizr_version'] == "2.6.2") { echo "selected"; } ?>>2.6.2</option>
-                </select>
             </fieldset>
             <fieldset>
                 <p class="submit">
@@ -177,20 +183,11 @@ jQuery(function($){
         $jquery_in_footer = false;
         $jquery_dependency = array('modernizr');
     }
-    
-    // JQUERY CDN OPTIONS
-    if($options['jquery_cdn'] == "0" || !$options['jquery_cdn']){ 
-        $options['jquery_cdn'] = "wp";
-    }
 
-    if($options['jquery_migrate'] == "0" || !$options['jquery_migrate']){ 
-        $options['jquery_migrate'] = "none";
-    }
-
+    // MODERNIZR
     if($options['modernizr'] == "0" || !$options['modernizr']){ 
         $options['modernizr'] = "infrastrukt";
     }
-    // MODERNIZR
     if($options['modernizr'] != "none"){
         if($options['modernizr'] == "infrastrukt"){
             $modernizr = get_template_directory_uri() . '/lib/modernizr/' . $modernizr_version . '/modernizr.min.js';
@@ -207,6 +204,15 @@ jQuery(function($){
             }
         }
         add_action('init', 'infrastrukt_modernizr_init');
+    }
+
+    // JQUERY CDN OPTIONS
+    if($options['jquery_cdn'] == "0" || !$options['jquery_cdn']){ 
+        $options['jquery_cdn'] = "wp";
+    }
+
+    if($options['jquery_migrate'] == "0" || !$options['jquery_migrate']){ 
+        $options['jquery_migrate'] = "none";
     }
     
     if($options['jquery_cdn'] != "wp"){
