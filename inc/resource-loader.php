@@ -36,31 +36,31 @@ function infrastrukt_loader_options_init(){
                 <?php $options = get_option('infrastrukt_loader'); ?>
                 <label for="infrastrukt_loader[jquery_cdn]">jQuery:</label>
                 <select type="select" name="infrastrukt_loader[jquery_cdn]" id="infrastruktjquerySelect">
-                    <option value="1" <?php if($options['jquery_cdn'] == "1"){ echo "selected"; } ?>>
-                        Google AJAX API jQuery CDN
+                    <option value="infrastrukt" <?php if($options['jquery_cdn'] == "infrastrukt"){ echo "selected"; } ?>>
+                        Local (Infrastrukt Theme)
                     </option>
-                    <option value="2" <?php if($options['jquery_cdn'] == "2"){ echo "selected"; } ?>>
-                        jQuery CDN
+                    <option value="wp" <?php if($options['jquery_cdn'] == "wp"){ echo "selected"; } ?>>
+                        Local (Wordpress)
                     </option>
-                    <option value="3" <?php if($options['jquery_cdn'] == "3"){ echo "selected"; } ?>>
+                    <option value="microsoft" <?php if($options['jquery_cdn'] == "microsoft"){ echo "selected"; } ?>>
                         Microsoft jQuery CDN
                     </option>
-                    <option value="4" <?php if($options['jquery_cdn'] == "4"){ echo "selected"; } ?>>
+                    <option value="cdnjs" <?php if($options['jquery_cdn'] == "cdnsj"){ echo "selected"; } ?>>
                         CDNJS
                     </option>
-                    <option value="5" <?php if($options['jquery_cdn'] == "5"){ echo "selected"; } ?>>
-                        Local jQuery (Infrastrukt Theme)
+                    <option value="jquery" <?php if($options['jquery_cdn'] == "jquery"){ echo "selected"; } ?>>
+                        jQuery CDN
                     </option>
-                    <option value="6" <?php if($options['jquery_cdn'] == "6"){ echo "selected"; } ?>>
-                        Local jQuery (Wordpress)
+                    <option value="google" <?php if($options['jquery_cdn'] == "google"){ echo "selected"; } ?>>
+                        Google AJAX API jQuery CDN
                     </option>
-                    <option value="7" <?php if($options['jquery_cdn'] == "7"){ echo "selected"; } ?>>
+                    <option value="none" <?php if($options['jquery_cdn'] == "none"){ echo "selected"; } ?>>
                         None (not recommended)
                     </option>
                 </select>
                 
-                <?php // HIDE EXTRA OPTIONS FOR SELECTIONS 6 & 7 ABOVE
-                if($options['jquery_cdn'] == "6" || $options['jquery_cdn'] == "7"){
+                <?php // HIDE EXTRA OPTIONS FOR SELECTIONS LOCAL WP OR NONE
+                if($options['jquery_cdn'] == "none" || $options['jquery_cdn'] == "wp"){
                     $selectedClass = 'hide';
                 }
                 ?>
@@ -83,19 +83,19 @@ function infrastrukt_loader_options_init(){
                 <?php if($options['jquery_migrate']){ $jquery_migrate = $options['jquery_migrate']; } ?>
                 <label for="infrastrukt_loader[jquery_migrate]">jQuery Migrate</label>
                 <select type="select" name="infrastrukt_loader[jquery_migrate]">
-                    <option value="1" <?php if($options['jquery_migrate'] == "1"){ echo "selected"; } ?>>
-                        jQuery CDN
-                    </option>
-                    <option value="2" <?php if($options['jquery_migrate'] == "2"){ echo "selected"; } ?>>
-                        Microsoft jQuery CDN
-                    </option>
-                    <option value="3" <?php if($options['jquery_migrate'] == "3"){ echo "selected"; } ?>>
-                        CDNJS
-                    </option>
-                    <option value="4" <?php if($options['jquery_migrate'] == "4"){ echo "selected"; } ?>>
+                    <option value="infrastrukt" <?php if($options['jquery_migrate'] == "infrastrukt"){ echo "selected"; } ?>>
                         Local (Infrastrukt Theme)
                     </option>
-                    <option value="5" <?php if($options['jquery_migrate'] == "5"){ echo "selected"; } ?>>
+                    <option value="microsoft" <?php if($options['jquery_migrate'] == "microsoft"){ echo "selected"; } ?>>
+                        Microsoft jQuery CDN
+                    </option>
+                    <option value="cdnjs" <?php if($options['jquery_migrate'] == "cdnjs"){ echo "selected"; } ?>>
+                        CDNJS
+                    </option>
+                    <option value="jquery" <?php if($options['jquery_migrate'] == "jquery"){ echo "selected"; } ?>>
+                        jQuery CDN
+                    </option>
+                    <option value="none" <?php if($options['jquery_migrate'] == "none"){ echo "selected"; } ?>>
                         None
                     </option>
                 </select>
@@ -113,6 +113,28 @@ function infrastrukt_loader_options_init(){
                 <input type="radio" name="infrastrukt_loader[jquery_position]" value="top" <?php if($options['jquery_position'] == "top") { echo "checked"; } ?>>Top (WordPress default)
                 <input type="radio" name="infrastrukt_loader[jquery_position]" value="bottom" <?php if($options['jquery_position'] == "bottom") { echo "checked"; } ?>>Bottom
             </fieldset>
+            <fieldset id="modernizrOptions">
+                <?php if($options['modernizr']){ $modernizr = $options['modernizr']; } ?>
+                <label for="infrastrukt_loader[modernizr]">Modernizr:</label>
+                <select type="select" name="infrastrukt_loader[modernizr]">
+                    <option value="infrastrukt" <?php if($options['modernizr'] == "infrastrukt"){ echo "selected"; } ?>>
+                        Local (Infrastrukt Theme)
+                    </option>
+                    <option value="cdnjs" <?php if($options['modernizr'] == "cdnjs"){ echo "selected"; } ?>>
+                        CDNJS
+                    </option>
+                    <option value="none" <?php if($options['modernizr'] == "none"){ echo "selected"; } ?>>
+                        None
+                    </option>
+                </select>
+                <?php if($options['modernizr_version']){ $modernizr_version = $options['modernizr_version']; } ?>
+                <label for="infrastrukt_loader[modernizr_version]">Version:</label> 
+                <select name="infrastrukt_loader[modernizr_version]">
+                    <option value="2.7.1"  <?php if($options['modernizr_version'] == "2.7.1") { echo "selected"; } ?>>2.7.1</option>
+                    <option value="2.7.0"  <?php if($options['modernizr_version'] == "2.7.0") { echo "selected"; } ?>>2.7.0</option>
+                    <option value="2.6.2"  <?php if($options['modernizr_version'] == "2.6.2") { echo "selected"; } ?>>2.6.2</option>
+                </select>
+            </fieldset>
             <fieldset>
                 <p class="submit">
                     <button type="submit" class="button-primary"><?php _e('Save Changes') ?></button>
@@ -123,7 +145,7 @@ function infrastrukt_loader_options_init(){
 jQuery(function($){
     $('#infrastruktjquerySelect').on('change', function(){
         $t = $(this);
-        if ($( "#infrastruktjquerySelect option:selected" ).val() == "6" || $( "#infrastruktjquerySelect option:selected" ).val() == "7") {
+        if ($( "#infrastruktjquerySelect option:selected" ).val() == "wp" || $( "#infrastruktjquerySelect option:selected" ).val() == "none") {
             console.log('Hide additional jQuery options…');
             $('#jqueryOptions,#jqueryMigrate,#jqueryLoadPosition').addClass('hide');
         } else {
@@ -144,6 +166,8 @@ jQuery(function($){
     $jquery_version = $options['jquery_version'];
     $jquery_migrate = $options['jquery_migrate'];
     $jquery_migrate_version = $options['jquery_migrate_version'];
+    $modernizr = $options['modernizr'];
+    $modernizr_version = $options['modernizr_version'];
 
     // JQUERY LOAD POSITION
     if($options['jquery_position'] == 'bottom'){
@@ -156,49 +180,70 @@ jQuery(function($){
     
     // JQUERY CDN OPTIONS
     if($options['jquery_cdn'] == "0" || !$options['jquery_cdn']){ 
-        $options['jquery_cdn'] = "1";
+        $options['jquery_cdn'] = "wp";
     }
 
     if($options['jquery_migrate'] == "0" || !$options['jquery_migrate']){ 
-        $options['jquery_migrate'] = "1";
+        $options['jquery_migrate'] = "none";
+    }
+
+    if($options['modernizr'] == "0" || !$options['modernizr']){ 
+        $options['modernizr'] = "infrastrukt";
+    }
+    // MODERNIZR
+    if($options['modernizr'] != "none"){
+        if($options['modernizr'] == "infrastrukt"){
+            $modernizr = get_template_directory_uri() . '/lib/modernizr/' . $modernizr_version . '/modernizr.min.js';
+        }
+        if($options['modernizr'] == "cdnjs"){
+            $modernizr = '//cdnjs.cloudflare.com/ajax/libs/modernizr/' . $modernizr_version . '/modernizr.min.js';
+        }
+
+        function infrastrukt_modernizr_init(){
+            if (!is_admin()){
+                global $modernizr;
+                global $modernizr_version;
+                wp_enqueue_script('modernizr',$modernizr, null, $modernizr_version, false);
+            }
+        }
+        add_action('init', 'infrastrukt_modernizr_init');
     }
     
-    if($options['jquery_cdn'] != "6"){
-        if($options['jquery_cdn'] == "1"){
+    if($options['jquery_cdn'] != "wp"){
+        if($options['jquery_cdn'] == "google"){
             $jquery = '//ajax.googleapis.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js';
         }
 
-        if($options['jquery_cdn'] == "2"){
+        if($options['jquery_cdn'] == "jquery"){
             $jquery = '//code.jquery.com/jquery-' . $jquery_version . '.min.js';
         }
 
-        if($options['jquery_cdn'] == "3"){
+        if($options['jquery_cdn'] == "microsoft"){
             $jquery = '//ajax.aspnetcdn.com/ajax/jquery/jquery-' . $jquery_version . '.min.js';
         }
 
-        if($options['jquery_cdn'] == "4"){
+        if($options['jquery_cdn'] == "cdnjs"){
             $jquery = '//cdnjs.cloudflare.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js';
         }
 
-        if($options['jquery_cdn'] == "5"){
+        if($options['jquery_cdn'] == "infrastrukt"){
             $jquery = get_template_directory_uri() . '/lib/jquery/jquery-' . $jquery_version . '.min.js';
         }
         // JQUERY MIGRATE
-        if($options['jquery_migrate'] == "1"){
+        if($options['jquery_migrate'] == "jquery"){
             $jqueryMigrate = '//code.jquery.com/jquery-migrate-' . $jquery_migrate_version . '.min.js';
         }
-        if($options['jquery_migrate'] == "2"){
+        if($options['jquery_migrate'] == "microsoft"){
             $jqueryMigrate = '//ajax.aspnetcdn.com/ajax/jquery.migrate/jquery-migrate-' . $jquery_migrate_version . '.min.js';
         }
-        if($options['jquery_migrate'] == "3"){
+        if($options['jquery_migrate'] == "cdnjs"){
             $jqueryMigrate = '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/' . $jquery_migrate_version . '/jquery-migrate.min.js';
         }
-        if($options['jquery_migrate'] == "4"){
+        if($options['jquery_migrate'] == "infrastrukt"){
             $jqueryMigrate = get_template_directory_uri() . '/lib/jquery/jquery-migrate-' . $jquery_migrate_version . '.min.js';
         }
 
-        if($options['jquery_cdn'] == "1" || $options['jquery_cdn'] == "2"
-           || $options['jquery_cdn'] == "3" || $options['jquery_cdn'] == "4" || $options['jquery_cdn'] == "5"){
+        if($options['jquery_cdn'] != "none"){
             function infrastrukt_loader_init(){
                 if (!is_admin()){
                     global $jquery;
@@ -210,14 +255,15 @@ jQuery(function($){
                     wp_deregister_script('jquery');
                     wp_enqueue_script('jquery',$jquery, $jquery_dependency, $jquery_version, $jquery_in_footer);
                     //wp_enqueue_script( 'jquery' );
-                    
+                    if($options['jquery_migrate'] != "none"){
                     wp_enqueue_script( 'jquery-migrate-cdn', $jqueryMigrate, array('jquery'), $jquery_migrate_version,$jquery_in_footer );
+                    }
                 }
             }
             add_action('init', 'infrastrukt_loader_init');
         }
         
-        if($options['jquery_cdn'] == "7"){
+        if($options['jquery_cdn'] == "none"){
             function infrastrukt_loader_init(){
                 if (!is_admin()){
                     wp_deregister_script('jquery');
