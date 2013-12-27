@@ -1,4 +1,4 @@
-/*
+
 Theme Name: Infrastrukt
 Theme URI: https://github.com/rediris/Infrastrukt
 Author: Roman Edirisinghe
@@ -73,8 +73,17 @@ h1,h2,h3,h4,h5,h6,a:link {font-weight:300;}
 .site-header {border-bottom: 1px solid #ddd;padding: 1rem 0 1rem 0;margin: 0 0 1rem 0;}
 .sidebar ul li {list-style:none;}
 .top-bar-section ul li>a {border-left:1px solid #333;border-right:none;}
+/* DISABLE WEIRD UNDERLINE UNDER MENU TITLE */
+.top-bar.expanded .toggle-topbar a span {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.logged-in.admin-bar .nav-wrapper.fixed {/*top:28px;*/}
 
-.logged-in.admin-bar .nav-wrapper.fixed {top:28px;}
+@media screen and (max-width: 600px) {
+  #wpadminbar {position: fixed;}
+}
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
@@ -111,4 +120,4 @@ object {
 
 /* -----------------------------------------
    Page Name 2
------------------------------------------ */
+----------------------------------------- 
