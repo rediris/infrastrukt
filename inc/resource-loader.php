@@ -1,7 +1,7 @@
 <?php
 
 /**
- * RESOURCE LOADER
+ * INFRASTRUKT RESOURCE LOADER
  *
  * borrowed liberally from @http://plugins.svn.wordpress.org/wp-jquery-cdn/trunk/
  *
@@ -152,13 +152,13 @@ jQuery(function($){
     $('#infrastruktjquerySelect').on('change', function(){
         $t = $(this);
         if ($( "#infrastruktjquerySelect option:selected" ).val() == "wp" || $( "#infrastruktjquerySelect option:selected" ).val() == "none") {
-            console.log('Hide additional jQuery options…');
+            // window.console && console.log('Hide additional jQuery options…');
             $('#jqueryOptions,#jqueryMigrate,#jqueryLoadPosition').addClass('hide');
         } else {
-            console.log('Show additional jQuery options…');
+            // window.console && console.log('Show additional jQuery options…');
             $('#jqueryOptions,#jqueryMigrate,#jqueryLoadPosition').removeClass('hide');
         }
-        //console.log('something new selected…');
+        // window.console && console.log('something new selected…');
     });
 });
 </script>
@@ -167,13 +167,13 @@ jQuery(function($){
 
     } // end function infrastrukt_loader()
 
-    $options = get_option('infrastrukt_loader');
-    $jquery_position = $options['jquery_position'];
-    $jquery_version = $options['jquery_version'];
-    $jquery_migrate = $options['jquery_migrate'];
+    $options                = get_option('infrastrukt_loader');
+    $jquery_position        = $options['jquery_position'];
+    $jquery_version         = $options['jquery_version'];
+    $jquery_migrate         = $options['jquery_migrate'];
     $jquery_migrate_version = $options['jquery_migrate_version'];
-    $modernizr = $options['modernizr'];
-    $modernizr_version = $options['modernizr_version'];
+    $modernizr              = $options['modernizr'];
+    $modernizr_version      = $options['modernizr_version'];
 
     // JQUERY LOAD POSITION
     if($options['jquery_position'] == 'bottom'){
