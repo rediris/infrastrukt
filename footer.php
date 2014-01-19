@@ -38,7 +38,7 @@
                 foreach($foundation_sidebars as $sidebar)
                 {
 ?>
-                <div class="large-<?php echo $col_width;?> columns">
+                <div id="<?php echo $sidebar;?>" class="large-<?php echo $col_width;?> columns">
                         <?php dynamic_sidebar($sidebar); ?>
                 </div>
 <?php
