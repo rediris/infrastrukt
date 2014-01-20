@@ -147,7 +147,9 @@
                 </p>
             </fieldset>
         </form>
-<script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
 jQuery(function($){
     $('#infrastruktjquerySelect').on('change', function(){
         $t = $(this);
@@ -161,6 +163,7 @@ jQuery(function($){
         // window.console && console.log('something new selected…');
     });
 });
+/* ]]> */
 </script>
 
 <?php
