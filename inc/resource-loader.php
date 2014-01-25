@@ -96,8 +96,10 @@
                     <?php if($options['jquery_version']){ $jquery_version = $options['jquery_version']; } ?>
                     <label for="infrastrukt_loader[jquery_version]" class="version">Version:</label> 
                     <select name="infrastrukt_loader[jquery_version]" class="version">
+                        <option value="2.1.0"  <?php if($options['jquery_version'] == "2.1.0") { echo "selected"; } ?>>2.1.0</option>
                         <option value="2.0.3"  <?php if($options['jquery_version'] == "2.0.3") { echo "selected"; } ?>>2.0.3</option>
                         <option value="2.0.2"  <?php if($options['jquery_version'] == "2.0.2") { echo "selected"; } ?>>2.0.2</option>
+                        <option value="1.11.0" <?php if($options['jquery_version'] == "1.11.0"){ echo "selected"; } ?>>1.11.0</option>
                         <option value="1.10.2" <?php if($options['jquery_version'] == "1.10.2"){ echo "selected"; } ?>>1.10.2</option>
                         <option value="1.10.1" <?php if($options['jquery_version'] == "1.10.1"){ echo "selected"; } ?>>1.10.1</option>
                         <option value="1.9.1"  <?php if($options['jquery_version'] == "1.9.1") { echo "selected"; } ?>>1.9.1</option>
