@@ -24,9 +24,8 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" >
 <?php wp_head(); ?>
 </head>
+
 <body>
-<div class="off-canvas-wrap">
-<div class="inner-wrap">
 <?php
 /**
  * SETUP TOP BAR CUSTOMIZATION INCLUDE

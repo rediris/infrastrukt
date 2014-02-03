@@ -55,9 +55,9 @@
 
 <?php } ?>
 
-</footer><!-- End Footer -->
-</div><!--.inner-wrap-->
-</div><!--.off-canvas-wrap-->
+</footer>
+<!-- End Footer -->
+
 <?php wp_footer(); ?>
 
 </body>
