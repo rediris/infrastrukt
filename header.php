@@ -48,7 +48,7 @@ endif;
 </div><!--/.nav-wrapper-->
 <?php $header =  get_header_textcolor();
 if ( $header !== "blank" ) : ?>
-<header class="site-header" <?php $header_image = get_header_image(); if ( ! empty( $header_image ) ) : ?> style="background:url('<?php echo esc_url( $header_image ); ?>');" <?php endif; ?>>
+<header class="site-header" <?php $header_image = get_header_image(); if ( ! empty( $header_image ) ) : ?> style="background-image:url('<?php echo esc_url( $header_image ); ?>');" <?php endif; ?>>
 	<div class="row">
 		<div class="large-12 columns">
 			<h2><a style="color:#<?php header_textcolor(); ?>;" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'description' ); ?></a></h2>
