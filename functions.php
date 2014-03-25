@@ -11,7 +11,63 @@
  */
 
 /**
- * Initiate Infrastrukt for WordPress
+ * WordPress Globals
+ */
+global $wp_version;
+
+/**
+ * Modify output of change custom background callback (see theme.php)
+ * via @https://code.tutsplus.com/articles/modifying-custom-background-feature-for-any-html-element-you-want--wp-25901
+ */
+if ( ! function_exists( 'change_custom_background_cb' ) ) :
+
+function change_custom_background_cb() {
+    $background = get_background_image();
+    $color = get_background_color();
+ 
+    if ( ! $background && ! $color )
+        return;
+ 
+    $style = $color ? "background-color: #$color;" : '';
+ 
+    if ( $background ) {
+        $image = " background-image: url('$background');";
+ 
+        $repeat = get_theme_mod( 'background_repeat', 'repeat' );
+ 
+        if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
+            $repeat = 'repeat';
+ 
+        $repeat = " background-repeat: $repeat;";
+ 
+        $position = get_theme_mod( 'background_position_x', 'left' );
+ 
+        if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
+            $position = 'left';
+ 
+        $position = " background-position: top $position;";
+ 
+        $attachment = get_theme_mod( 'background_attachment', 'scroll' );
+ 
+        if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
+            $attachment = 'scroll';
+ 
+        $attachment = " background-attachment: $attachment;";
+ 
+        $style .= $image . $repeat . $position . $attachment;
+    }
+?>
+<style type="text/css" id="custom-background-css">
+.custom-background { <?php echo trim( $style ); ?> }
+</style>
+<?php
+}
+
+endif;
+
+
+/**
+ * Initialize Infrastrukt for WordPress
  */
 
 if ( ! function_exists( 'foundation_setup' ) ) :
@@ -35,9 +91,12 @@ function foundation_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
 	// Custom Background
-	add_theme_support( 'custom-background', array(
-		'default-color' => 'fff',
-	) );
+	if ( version_compare( $wp_version, '3.4', '>=' ) ) {
+	    add_theme_support( 'custom-background', array( 'wp-head-callback' => 'change_custom_background_cb','default-color' => 'fff' ) );
+	}
+	else {
+	    add_custom_background('change_custom_background_cb');
+	}
 
 	// Custom Header
 	add_theme_support( 'custom-header', array(
