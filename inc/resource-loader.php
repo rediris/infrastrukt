@@ -41,6 +41,7 @@
             <?php $options = get_option('infrastrukt_loader'); ?>
             <fieldset id="modernizrOptions">
                 <?php if($options['modernizr']){ $modernizr = $options['modernizr']; } ?>
+                <?php if(!$options['modernizr']){ $modernizr = "infrastrukt"; } ?>
                 <label for="infrastrukt_loader[modernizr]" class="lib">Modernizr:</label>
                 <select type="select" name="infrastrukt_loader[modernizr]" class="cdn">
                     <option value="infrastrukt" <?php if($options['modernizr'] == "infrastrukt"){ echo "selected"; } ?>>
@@ -54,6 +55,7 @@
                     </option>
                 </select>
                 <?php if($options['modernizr_version']){ $modernizr_version = $options['modernizr_version']; } ?>
+                <?php if(!$options['modernizr_version']){ $modernizr_version = "2.7.1"; } ?>
                 <label for="infrastrukt_loader[modernizr_version]" class="version">Version:</label> 
                 <select name="infrastrukt_loader[modernizr_version]" class="version">
                     <option value="2.7.1"  <?php if($options['modernizr_version'] == "2.7.1") { echo "selected"; } ?>>2.7.1</option>
@@ -62,6 +64,8 @@
                 </select>
             </fieldset>
             <fieldset>
+                <?php if($options['jquery_cdn']){ $modernizr = $options['jquery_cdn']; } ?>
+                <?php if(!$options['jquery_cdn']){ $jquery_cdn = "wp"; } ?>
                 <label for="infrastrukt_loader[jquery_cdn]" class="lib">jQuery:</label>
                 <select type="select" name="infrastrukt_loader[jquery_cdn]" id="infrastruktjquerySelect" class="cdn">
                     <option value="infrastrukt" <?php if($options['jquery_cdn'] == "infrastrukt"){ echo "selected"; } ?>>
@@ -86,7 +90,6 @@
                         None (not recommended)
                     </option>
                 </select>
-                
                 <?php // HIDE EXTRA OPTIONS FOR SELECTIONS LOCAL WP OR NONE
                 if($options['jquery_cdn'] == "none" || $options['jquery_cdn'] == "wp"){
                     $selectedClass = 'hide';
@@ -94,6 +97,7 @@
                 ?>
                 <div id="jqueryOptions" class="inline <?php echo $selectedClass ?>">
                     <?php if($options['jquery_version']){ $jquery_version = $options['jquery_version']; } ?>
+                    <?php if(!$options['jquery_version']){ $jquery_version = "1.11.0"; } ?>
                     <label for="infrastrukt_loader[jquery_version]" class="version">Version:</label> 
                     <select name="infrastrukt_loader[jquery_version]" class="version">
                         <option value="2.1.0"  <?php if($options['jquery_version'] == "2.1.0") { echo "selected"; } ?>>2.1.0</option>
@@ -111,6 +115,7 @@
             </fieldset>
             <fieldset id="jqueryMigrate" class="<?php echo $selectedClass ?>">
                 <?php if($options['jquery_migrate']){ $jquery_migrate = $options['jquery_migrate']; } ?>
+                <?php if(!$options['jquery_migrate']){ $jquery_migrate = "infrastrukt"; } ?>
                 <label for="infrastrukt_loader[jquery_migrate]" class="lib">jQuery Migrate</label>
                 <select type="select" name="infrastrukt_loader[jquery_migrate]" class="cdn">
                     <option value="infrastrukt" <?php if($options['jquery_migrate'] == "infrastrukt"){ echo "selected"; } ?>>
@@ -130,6 +135,7 @@
                     </option>
                 </select>
                 <?php if($options['jquery_migrate_version']){ $jquery_migrate_version = $options['jquery_migrate_version']; } ?>
+                <?php if(!$options['jquery_migrate_version']){ $jquery_migrate_version = "1.2.1"; } ?>
                 <label for="infrastrukt_loader[jquery_migrate_version]" class="version">Version:</label> 
                 <select name="infrastrukt_loader[jquery_migrate_version]" class="version">
                     <option value="1.2.1"  <?php if($options['jquery_migrate_version'] == "1.2.1") { echo "selected"; } ?>>1.2.1</option>
@@ -140,6 +146,7 @@
                 <p>Load jQuery in top or bottom of page?</p>
                 <?php $jquery_position = $options['jquery_position']; ?>
                 <?php if($jquery_position['jquery_position']){ $jquery_position = $options['jquery_position']; } ?>
+                <?php if(!$options['jquery_position']){ $jquery_position = "top"; } ?>
                 <input type="radio" name="infrastrukt_loader[jquery_position]" value="top" <?php if($options['jquery_position'] == "top") { echo "checked"; } ?>>Top (WordPress default)
                 <input type="radio" name="infrastrukt_loader[jquery_position]" value="bottom" <?php if($options['jquery_position'] == "bottom") { echo "checked"; } ?>>Bottom
             </fieldset>
