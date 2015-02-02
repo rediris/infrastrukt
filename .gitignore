@@ -6,3 +6,7 @@ Icon?
 Thumbs.db
 .espressostorage
 *.esproj
+node_modules
+/bower_components
+.temp
+*debug.log
