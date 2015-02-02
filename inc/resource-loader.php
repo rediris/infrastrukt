@@ -57,13 +57,15 @@
                         None
                     </option>
                 </select>
-                <?php if($options['modernizr_version']){ 
+                <?php 
+                $currentModernizr = "2.8.3";
+                if($options['modernizr_version']){ 
                     $modernizr_version = $options['modernizr_version']; 
                 } else {
-                    $modernizr_version = "2.8.3";
+                    $modernizr_version = $currentModernizr;
                 }?>
                 <label for="infrastrukt_loader[modernizr_version]" class="version">Version:</label> 
-                <select name="infrastrukt_loader[modernizr_version]" class="version">
+                <select type="select" name="infrastrukt_loader[modernizr_version]" class="version">
                     <option value="2.8.3"  <?php if($options['modernizr_version'] == "2.8.3") { echo "selected"; } ?>>2.8.3</option>
                     <option value="2.8.2"  <?php if($options['modernizr_version'] == "2.8.2") { echo "selected"; } ?>>2.8.2</option>
                     <option value="2.7.1"  <?php if($options['modernizr_version'] == "2.7.1") { echo "selected"; } ?>>2.7.1</option>
@@ -214,13 +216,10 @@ jQuery(function($){
     }
 
     // MODERNIZR
-    if($options['modernizr'] == "0" || $options['modernizr'] == "null" || !$options['modernizr']){ 
+    if($options['modernizr'] == "0" || $options['modernizr'] == null || !$options['modernizr']){ 
         $options['modernizr'] = "infrastrukt";
-    }
-    if($options['modernizr_version'] == "0" || $options['modernizr_version'] == "null" || !$options['modernizr_version']){ 
-        $options['modernizr_version'] = "2.8.3";
-    }
-    if($options['modernizr'] != "none"){
+        $modernizr_version = $currentModernizr;
+    } else {
         if($options['modernizr'] == "infrastrukt"){
             $modernizr = get_template_directory_uri() . '/lib/modernizr/' . $modernizr_version . '/modernizr.min.js';
         }
@@ -237,6 +236,7 @@ jQuery(function($){
         }
         add_action('init', 'infrastrukt_modernizr_init');
     }
+
 
     // JQUERY CDN OPTIONS
     if($options['jquery_cdn'] == "0" || !$options['jquery_cdn']){ 
