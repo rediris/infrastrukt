@@ -42,7 +42,7 @@
             <fieldset id="modernizrOptions">
                 <?php if($options['modernizr']){ 
                     $modernizr = $options['modernizr'];
-                } else {
+                } else { 
                     $modernizr = "infrastrukt";
                 } ?>
                 <label for="infrastrukt_loader[modernizr]" class="lib">Modernizr:</label>
@@ -214,7 +214,7 @@ jQuery(function($){
     }
 
     // MODERNIZR
-    if($options['modernizr'] == "0" || !$options['modernizr']){ 
+    if($options['modernizr'] == "0" || $options['modernizr'] == "null" || !$options['modernizr']){ 
         $options['modernizr'] = "infrastrukt";
     }
     if($options['modernizr'] != "none"){
