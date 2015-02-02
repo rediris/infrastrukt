@@ -40,8 +40,11 @@
             <?php settings_fields('infrastrukt_loader_options'); ?>
             <?php $options = get_option('infrastrukt_loader'); ?>
             <fieldset id="modernizrOptions">
-                <?php if($options['modernizr']){ $modernizr = $options['modernizr']; } ?>
-                <?php if(!$options['modernizr']){ $modernizr = "infrastrukt"; } ?>
+                <?php if($options['modernizr']){ 
+                    $modernizr = $options['modernizr'];
+                } else {
+                    $modernizr = "infrastrukt";
+                } ?>
                 <label for="infrastrukt_loader[modernizr]" class="lib">Modernizr:</label>
                 <select type="select" name="infrastrukt_loader[modernizr]" class="cdn">
                     <option value="infrastrukt" <?php if($options['modernizr'] == "infrastrukt"){ echo "selected"; } ?>>
@@ -54,10 +57,15 @@
                         None
                     </option>
                 </select>
-                <?php if($options['modernizr_version']){ $modernizr_version = $options['modernizr_version']; } ?>
-                <?php if(!$options['modernizr_version']){ $modernizr_version = "2.7.1"; } ?>
+                <?php if($options['modernizr_version']){ 
+                    $modernizr_version = $options['modernizr_version']; 
+                } else {
+                    $modernizr_version = "2.8.3";
+                }?>
                 <label for="infrastrukt_loader[modernizr_version]" class="version">Version:</label> 
                 <select name="infrastrukt_loader[modernizr_version]" class="version">
+                    <option value="2.8.3"  <?php if($options['modernizr_version'] == "2.8.3") { echo "selected"; } ?>>2.8.3</option>
+                    <option value="2.8.2"  <?php if($options['modernizr_version'] == "2.8.2") { echo "selected"; } ?>>2.8.2</option>
                     <option value="2.7.1"  <?php if($options['modernizr_version'] == "2.7.1") { echo "selected"; } ?>>2.7.1</option>
                     <option value="2.7.0"  <?php if($options['modernizr_version'] == "2.7.0") { echo "selected"; } ?>>2.7.0</option>
                     <option value="2.6.2"  <?php if($options['modernizr_version'] == "2.6.2") { echo "selected"; } ?>>2.6.2</option>
@@ -91,13 +99,16 @@
                     </option>
                 </select>
                 <?php // HIDE EXTRA OPTIONS FOR SELECTIONS LOCAL WP OR NONE
-                if($options['jquery_cdn'] == "none" || $options['jquery_cdn'] == "wp"){
-                    $selectedClass = 'hide';
-                }
+                    if($options['jquery_cdn'] == "none" || $options['jquery_cdn'] == "wp"){
+                        $selectedClass = 'hide';
+                    }
                 ?>
                 <div id="jqueryOptions" class="inline <?php echo $selectedClass ?>">
-                    <?php if($options['jquery_version']){ $jquery_version = $options['jquery_version']; } ?>
-                    <?php if(!$options['jquery_version']){ $jquery_version = "1.11.0"; } ?>
+                    <?php if($options['jquery_version']){ 
+                        $jquery_version = $options['jquery_version']; 
+                    } else {
+                        $jquery_version = "1.11.0";
+                    }?>
                     <label for="infrastrukt_loader[jquery_version]" class="version">Version:</label> 
                     <select name="infrastrukt_loader[jquery_version]" class="version">
                         <option value="2.1.0"  <?php if($options['jquery_version'] == "2.1.0") { echo "selected"; } ?>>2.1.0</option>
@@ -114,8 +125,11 @@
                 </div><!--#jqueryOptions-->
             </fieldset>
             <fieldset id="jqueryMigrate" class="<?php echo $selectedClass ?>">
-                <?php if($options['jquery_migrate']){ $jquery_migrate = $options['jquery_migrate']; } ?>
-                <?php if(!$options['jquery_migrate']){ $jquery_migrate = "infrastrukt"; } ?>
+                <?php if($options['jquery_migrate']){ 
+                    $jquery_migrate = $options['jquery_migrate']; 
+                } else {
+                    $jquery_migrate = "infrastrukt";
+                }?>
                 <label for="infrastrukt_loader[jquery_migrate]" class="lib">jQuery Migrate</label>
                 <select type="select" name="infrastrukt_loader[jquery_migrate]" class="cdn">
                     <option value="infrastrukt" <?php if($options['jquery_migrate'] == "infrastrukt"){ echo "selected"; } ?>>
@@ -134,8 +148,11 @@
                         None
                     </option>
                 </select>
-                <?php if($options['jquery_migrate_version']){ $jquery_migrate_version = $options['jquery_migrate_version']; } ?>
-                <?php if(!$options['jquery_migrate_version']){ $jquery_migrate_version = "1.2.1"; } ?>
+                <?php if($options['jquery_migrate_version']){ 
+                    $jquery_migrate_version = $options['jquery_migrate_version']; 
+                } else {
+                    $jquery_migrate_version = "1.2.1";
+                } ?>
                 <label for="infrastrukt_loader[jquery_migrate_version]" class="version">Version:</label> 
                 <select name="infrastrukt_loader[jquery_migrate_version]" class="version">
                     <option value="1.2.1"  <?php if($options['jquery_migrate_version'] == "1.2.1") { echo "selected"; } ?>>1.2.1</option>
