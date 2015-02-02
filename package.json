@@ -1,6 +1,6 @@
 {
   "name": "infrastrukt",
-  "version": "5.4.7",
+  "version": "5.5.0",
   "devDependencies": {
     "node-sass": "~0.7.0",
     "grunt": "~0.4.1",
