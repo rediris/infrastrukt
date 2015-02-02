@@ -217,6 +217,9 @@ jQuery(function($){
     if($options['modernizr'] == "0" || $options['modernizr'] == "null" || !$options['modernizr']){ 
         $options['modernizr'] = "infrastrukt";
     }
+    if($options['modernizr_version'] == "0" || $options['modernizr_version'] == "null" || !$options['modernizr_version']){ 
+        $options['modernizr_version'] = "2.8.3";
+    }
     if($options['modernizr'] != "none"){
         if($options['modernizr'] == "infrastrukt"){
             $modernizr = get_template_directory_uri() . '/lib/modernizr/' . $modernizr_version . '/modernizr.min.js';
