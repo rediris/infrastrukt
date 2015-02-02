@@ -1,7 +1,16 @@
 {
   "name": "infrastrukt",
   "dependencies": {
-    "fontawesome": "*",
-    "foundation": "*"
-  }
+    "font-awesome": "~4.2.0",
+    "foundation": "~5.5.0"
+  },
+  "homepage": "https://github.com/rediris/infrastrukt",
+  "description": "Infrastrukt",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
