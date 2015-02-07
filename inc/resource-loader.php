@@ -39,40 +39,6 @@
         <form id="options-form" method="post" action="options.php">
             <?php settings_fields('infrastrukt_loader_options'); ?>
             <?php $options = get_option('infrastrukt_loader'); ?>
-            <fieldset id="modernizrOptions">
-                <?php if($options['modernizr']){ 
-                    $modernizr = $options['modernizr'];
-                } else { 
-                    $modernizr = "infrastrukt";
-                } ?>
-                <label for="infrastrukt_loader[modernizr]" class="lib">Modernizr:</label>
-                <select type="select" name="infrastrukt_loader[modernizr]" class="cdn">
-                    <option value="infrastrukt" <?php if($options['modernizr'] == "infrastrukt"){ echo "selected"; } ?>>
-                        Local (Infrastrukt)
-                    </option>
-                    <option value="cdnjs" <?php if($options['modernizr'] == "cdnjs"){ echo "selected"; } ?>>
-                        CDNJS
-                    </option>
-                    <option value="none" <?php if($options['modernizr'] == "none"){ echo "selected"; } ?>>
-                        None
-                    </option>
-                </select>
-                <?php 
-                $currentModernizr = "2.8.3";
-                if($options['modernizr_version']){ 
-                    $modernizr_version = $options['modernizr_version']; 
-                } else {
-                    $modernizr_version = $currentModernizr;
-                }?>
-                <label for="infrastrukt_loader[modernizr_version]" class="version">Version:</label> 
-                <select type="select" name="infrastrukt_loader[modernizr_version]" class="version">
-                    <option value="2.8.3"  <?php if($options['modernizr_version'] == "2.8.3") { echo "selected"; } ?>>2.8.3</option>
-                    <option value="2.8.2"  <?php if($options['modernizr_version'] == "2.8.2") { echo "selected"; } ?>>2.8.2</option>
-                    <option value="2.7.1"  <?php if($options['modernizr_version'] == "2.7.1") { echo "selected"; } ?>>2.7.1</option>
-                    <option value="2.7.0"  <?php if($options['modernizr_version'] == "2.7.0") { echo "selected"; } ?>>2.7.0</option>
-                    <option value="2.6.2"  <?php if($options['modernizr_version'] == "2.6.2") { echo "selected"; } ?>>2.6.2</option>
-                </select>
-            </fieldset>
             <fieldset>
                 <?php if($options['jquery_cdn']){ $modernizr = $options['jquery_cdn']; } ?>
                 <?php if(!$options['jquery_cdn']){ $jquery_cdn = "wp"; } ?>
@@ -203,8 +169,6 @@ jQuery(function($){
     $jquery_version         = $options['jquery_version'];
     $jquery_migrate         = $options['jquery_migrate'];
     $jquery_migrate_version = $options['jquery_migrate_version'];
-    $modernizr              = $options['modernizr'];
-    $modernizr_version      = $options['modernizr_version'];
 
     // JQUERY LOAD POSITION
     if($options['jquery_position'] == 'bottom'){
@@ -214,29 +178,6 @@ jQuery(function($){
         $jquery_in_footer = false;
         $jquery_dependency = array('modernizr');
     }
-
-    // MODERNIZR
-    if($options['modernizr'] == "0" || $options['modernizr'] == null || !$options['modernizr']){ 
-        $options['modernizr'] = "infrastrukt";
-        $modernizr_version = $currentModernizr;
-    } else {
-        if($options['modernizr'] == "infrastrukt"){
-            $modernizr = get_template_directory_uri() . '/lib/modernizr/' . $modernizr_version . '/modernizr.min.js';
-        }
-        if($options['modernizr'] == "cdnjs"){
-            $modernizr = '//cdnjs.cloudflare.com/ajax/libs/modernizr/' . $modernizr_version . '/modernizr.min.js';
-        }
-
-        function infrastrukt_modernizr_init(){
-            if (!is_admin()){
-                global $modernizr;
-                global $modernizr_version;
-                wp_enqueue_script('modernizr',$modernizr, null, $modernizr_version, false);
-            }
-        }
-        add_action('init', 'infrastrukt_modernizr_init');
-    }
-
 
     // JQUERY CDN OPTIONS
     if($options['jquery_cdn'] == "0" || !$options['jquery_cdn']){ 
@@ -292,7 +233,6 @@ jQuery(function($){
                     global $jquery_in_footer;
                     wp_deregister_script('jquery');
                     wp_enqueue_script('jquery',$jquery, $jquery_dependency, $jquery_version, $jquery_in_footer);
-                    //wp_enqueue_script( 'jquery' );
                     if($options['jquery_migrate'] != "none"){
                     wp_enqueue_script( 'jquery-migrate-cdn', $jqueryMigrate, array('jquery'), $jquery_migrate_version,$jquery_in_footer );
                     }

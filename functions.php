@@ -124,6 +124,7 @@ function infrastrukt_js() {
 		/** 
 		 * LOAD JS
 		 */
+		wp_enqueue_script('modernizr', get_template_directory_uri().'/js/modernizr/modernizr.min.js', null, null, false);
 		wp_enqueue_script( 'infrastrukt-js', get_template_directory_uri().'/js/app.js', array('jquery'), '1.0', true);
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	}
