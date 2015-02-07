@@ -35,7 +35,8 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'js/modernizr/modernizr.min.js': ['.temp/js/modernizr/modernizr.js']
+          'js/modernizr/modernizr.min.js': ['.temp/js/modernizr/modernizr.js'],
+          '.temp/js/infrastrukt.min.js': ['js/infrastrukt.js']
         }
       }
     },
@@ -48,7 +49,7 @@ module.exports = function(grunt) {
         src: [
           '.temp/js/foundation/js/foundation.min.js',
           //'.temp/js/custom/*.js',
-          'js/infrastrukt.js'
+          '.temp/js/infrastrukt.min.js'
         ],
         dest: 'js/app.js'
       },
