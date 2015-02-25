@@ -55,7 +55,7 @@ module.exports = function(grunt) {
       },
       css: {
         src: [
-            'scss/theme/comment-block.scss',
+            'scss/theme/_comment-block.scss',
             '.temp/_style.scss'
         ],
         dest: 'style.css'
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
 
       sass: {
         files: 'scss/**/*.scss',
-        tasks: ['sass']
+        tasks: ['sass', 'copy' , 'uglify', 'concat']
       }
     }
   });
@@ -79,5 +79,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('build', ['sass', 'copy', 'uglify', 'concat']);
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['watch', 'build']);
 };

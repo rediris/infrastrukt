@@ -1,14 +1,13 @@
-/* -------------------------------------------------- 
-   Table of Contents
------------------------------------------------------
-:: Images
-:: Posts
-:: Typography
-:: Header
-:: Shared Styles
-:: Page Name 1
-:: Page Name 2
-*/
+* {
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
 
 /* -----------------------------------------
    Images
@@ -36,7 +35,7 @@ img.size-full {
    Posts
 ----------------------------------------- */
 
-.author-box h5 {margin-top:0px;}
+.author-box h5 {margin-top:0;}
 .author-box .author_gravatar {margin-right:10px;}
 .author-box p {font-size:14px; font-size:1.4rem;}
 
