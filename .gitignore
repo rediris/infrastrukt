@@ -6,3 +6,5 @@ Icon?
 Thumbs.db
 .espressostorage
 *.esproj
+node_modules
+.temp
