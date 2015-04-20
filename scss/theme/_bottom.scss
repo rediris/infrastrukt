@@ -1,10 +1,11 @@
 /* -----------------------------------------
-  Content Blocks
+   Bottom (Footers and such)
 ----------------------------------------- */
-.content-block {
+footer.footer {
   padding: $content-block-padding;
-}
+  
+  .inline-list {
+    margin-bottom: 0;
+  }
 
-.content-block:nth-child(2n) {
-  background-color: $secondary-color;
 }

@@ -1,0 +1,32 @@
+/* -----------------------------------------
+   Images
+----------------------------------------- */
+.widget img {
+  max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+img[class*="align"], img[class*="wp-image-"] {
+  height: auto; /* Make sure images with WordPress-added height and width >attributes are scaled correctly */
+}
+img.size-full {
+  max-width: 97.5%;
+  width: auto; /* Prevent stretching of full-size images with height and >>width attributes in IE8 */
+}
+.site-content .gallery {
+  margin-bottom: 1.5rem;
+}
+.site-content .gallery a img {
+  border: none;
+  height: auto;
+  max-width: 90%;
+}
+.site-content .gallery dd {
+  margin: 0;
+}
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}

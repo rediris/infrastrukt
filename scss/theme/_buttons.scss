@@ -1,0 +1,12 @@
+/* -----------------------------------------
+   Buttons
+----------------------------------------- */
+button,
+.button {
+  text-transform: uppercase;
+}
+nav.excerpt {
+  .button, button {
+    margin-bottom: 0;
+  }
+}

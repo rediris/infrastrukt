@@ -1,0 +1,16 @@
+/* -----------------------------------------
+   Author
+----------------------------------------- */
+.author_gravatar {
+  float: none !important; /* Override Foundation forcing this image to float left in the admin bar */
+}
+.author-box h5 {
+  margin-top: 0;
+}
+.author-box .author_gravatar {
+  margin-right: 10px;
+}
+.author-box p {
+  font-size: 14px;
+  font-size: 1.4rem;
+}

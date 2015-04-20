@@ -1,5 +1,4 @@
 <?php
-
 /**
  * INFRASTRUKT RESOURCE LOADER
  *
@@ -9,31 +8,30 @@
  * @subpackage Infrastrukt for WordPress
  * @since Infrastrukt for WordPress 1.0
  */
-
     function infrastrukt_loader_options_init(){
-        register_setting( 'infrastrukt_loader_options', 'infrastrukt_loader' );
+      register_setting( 'infrastrukt_loader_options', 'infrastrukt_loader' );
     }
+    
     add_action('admin_init', 'infrastrukt_loader_options_init' );
 
     function infrastrukt_loader_menu(){
-        add_menu_page('Resource Loader', 'Resource Loader', 'manage_options', 'infrastrukt-loader.php', 'infrastrukt_loader');
+      add_theme_page('Resource Loader', 'Resource Loader', 'manage_options', 'infrastrukt-loader', 'infrastrukt_loader');
     }
     add_action('admin_menu', 'infrastrukt_loader_menu');
 
     function infrastrukt_loader(){
         if(!current_user_can('manage_options')){
-            wp_die( __('You do not have sufficient permissions to access this page.') );
+          wp_die( __('You do not have sufficient permissions to access this page.', 'infrastrukt') );
         } ?>
-        <!-- <link rel="stylesheet" href="<?php //echo plugins_url(); ?>/wp-jquery-cdn/options.css" type="text/css" /> -->
         <style>
-            .inline {display:inline;}
-            .hide {display:none;}
-            fieldset {margin-bottom:1rem;}
-            label {display:inline-block;}
-            label.lib {min-width:92px;}
-            label.version {margin-left:1rem;}
-            select {max-width:150px;overflow:hidden;text-overflow:ellipsis;}
-            select.cdn {min-width:150px;}
+          .inline {display:inline;}
+          .hide {display:none;}
+          fieldset {margin-bottom:1rem;}
+          label {display:inline-block;}
+          label.lib {min-width:92px;}
+          label.version {margin-left:1rem;}
+          select {max-width:150px;overflow:hidden;text-overflow:ellipsis;}
+          select.cdn {min-width:150px;}
         </style>
         <h1>Infrastrukt Resource Loader</h1>
         <form id="options-form" method="post" action="options.php">
@@ -72,17 +70,23 @@
                     }?>
                     <label for="infrastrukt_loader[modernizr_version]" class="version">Version:</label> 
                     <select type="select" name="infrastrukt_loader[modernizr_version]" class="version">
-                        <option value="2.8.3"  <?php if($options['modernizr_version'] == "2.8.3") { echo "selected"; } ?>>2.8.3</option>
-                        <option value="2.8.2"  <?php if($options['modernizr_version'] == "2.8.2") { echo "selected"; } ?>>2.8.2</option>
-                        <option value="2.7.1"  <?php if($options['modernizr_version'] == "2.7.1") { echo "selected"; } ?>>2.7.1</option>
-                        <option value="2.7.0"  <?php if($options['modernizr_version'] == "2.7.0") { echo "selected"; } ?>>2.7.0</option>
-                        <option value="2.6.2"  <?php if($options['modernizr_version'] == "2.6.2") { echo "selected"; } ?>>2.6.2</option>
+                      <option value="2.8.3"  <?php if($options['modernizr_version'] == "2.8.3") { echo "selected"; } ?>>2.8.3</option>
+                      <option value="2.8.2"  <?php if($options['modernizr_version'] == "2.8.2") { echo "selected"; } ?>>2.8.2</option>
+                      <option value="2.7.1"  <?php if($options['modernizr_version'] == "2.7.1") { echo "selected"; } ?>>2.7.1</option>
+                      <option value="2.7.0"  <?php if($options['modernizr_version'] == "2.7.0") { echo "selected"; } ?>>2.7.0</option>
+                      <option value="2.6.2"  <?php if($options['modernizr_version'] == "2.6.2") { echo "selected"; } ?>>2.6.2</option>
                     </select>
                 </div>
             </fieldset>
             <fieldset>
-                <?php if($options['jquery_cdn']){ $modernizr = $options['jquery_cdn']; } ?>
-                <?php if(!$options['jquery_cdn']){ $jquery_cdn = "wp"; } ?>
+                <?php 
+                if(!$options['jquery_cdn']){
+                  $jquery_cdn = "wp";
+                }
+                if($options['jquery_cdn']){
+                  $jquery_cdn = $options['jquery_cdn'];
+                }
+                ?>
                 <label for="infrastrukt_loader[jquery_cdn]" class="lib">jQuery:</label>
                 <select type="select" name="infrastrukt_loader[jquery_cdn]" id="infrastruktJquerySelect" class="cdn">
                     <option value="infrastrukt" <?php if($options['jquery_cdn'] == "infrastrukt"){ echo "selected"; } ?>>
@@ -108,9 +112,9 @@
                     </option>
                 </select>
                 <?php // HIDE EXTRA OPTIONS FOR SELECTIONS LOCAL WP OR NONE
-                    if($options['jquery_cdn'] == "none" || $options['jquery_cdn'] == "wp"){
-                        $jquerySelectedClass = 'hide';
-                    }
+                  if($options['jquery_cdn'] == "none" || $options['jquery_cdn'] == "wp"){
+                      $jquerySelectedClass = 'hide';
+                  }
                 ?>
                 <div id="jqueryOptions" class="inline <?php echo $jquerySelectedClass ?>">
                     <?php if($options['jquery_version']){ 
@@ -178,7 +182,7 @@
             </fieldset>
             <fieldset>
                 <p class="submit">
-                    <button type="submit" class="button-primary"><?php _e('Save Changes') ?></button>
+                    <button type="submit" class="button-primary"><?php _e('Save Changes', 'infrastrukt') ?></button>
                 </p>
             </fieldset>
         </form>
@@ -189,25 +193,25 @@ jQuery(function($){
     $('#infrastruktJquerySelect').on('change', function(){
         $t = $(this);
         if ($( "#infrastruktJquerySelect option:selected" ).val() == "wp" || $( "#infrastruktJquerySelect option:selected" ).val() == "none") {
-            // window.console && console.log('Hide additional jQuery options…');
+            // window.console && console.log('Hide additional jQuery options');
             $('#jqueryOptions,#jqueryMigrate,#jqueryLoadPosition').addClass('hide');
         } else {
-            // window.console && console.log('Show additional jQuery options…');
+            // window.console && console.log('Show additional jQuery options');
             $('#jqueryOptions,#jqueryMigrate,#jqueryLoadPosition').removeClass('hide');
         }
-        // window.console && console.log('something new selected…');
+        // window.console && console.log('something new selected');
     });
 
     $('#infrastruktModernizrSelect').on('change', function(){
         $t = $(this);
         if ($( "#infrastruktModernizrSelect option:selected" ).val() == "infrastrukt" || $( "#infrastruktModernizrSelect option:selected" ).val() == "none") {
-            // window.console && console.log('Hide additional jQuery options…');
+            // window.console && console.log('Hide additional jQuery options');
             $('#modernizrVersionOptions').addClass('hide');
         } else {
-            // window.console && console.log('Show additional jQuery options…');
+            // window.console && console.log('Show additional jQuery options');
             $('#modernizrVersionOptions').removeClass('hide');
         }
-        // window.console && console.log('something new selected…');
+        // window.console && console.log('something new selected');
     });
 });
 /* ]]> */
@@ -235,98 +239,95 @@ jQuery(function($){
     }
 
     // MODERNIZR
-    if($options['modernizr'] == "0" || $options['modernizr'] == null || !$options['modernizr']){ 
+    if(!$options['modernizr']){ 
         $options['modernizr'] = "infrastrukt";
-        $modernizr_version = $currentModernizr;
-    } else {
-        if($options['modernizr'] == "infrastrukt"){
-            $modernizr = get_template_directory_uri() . '/js/modernizr/modernizr.min.js';
-        }
-        if($options['modernizr'] == "cdnjs"){
-            $modernizr = '//cdnjs.cloudflare.com/ajax/libs/modernizr/' . $modernizr_version . '/modernizr.min.js';
-        }
-
-        function infrastrukt_modernizr_init(){
-            if (!is_admin()){
-                global $modernizr;
-                global $modernizr_version;
-                wp_enqueue_script('modernizr',$modernizr, null, $modernizr_version, false);
-            }
-        }
-        add_action('init', 'infrastrukt_modernizr_init');
+    } 
+    if($options['modernizr'] == "infrastrukt"){
+        $modernizr = get_template_directory_uri() . '/js/modernizr/modernizr.min.js';
     }
-
+    if($options['modernizr'] == "cdnjs"){
+        $modernizr = '//cdnjs.cloudflare.com/ajax/libs/modernizr/' . $modernizr_version . '/modernizr.min.js';
+    }
+    if($options['modernizr'] != "none"){ 
+      function infrastrukt_modernizr_init(){
+        if (!is_admin()){
+          global $modernizr;
+          global $modernizr_version;
+          wp_enqueue_script('modernizr',$modernizr, null, $modernizr_version, false);
+        }
+      }
+      add_action('init', 'infrastrukt_modernizr_init');
+    }
 
     // JQUERY CDN OPTIONS
-    if($options['jquery_cdn'] == "0" || !$options['jquery_cdn']){ 
-        $options['jquery_cdn'] = "wp";
+    if(!$options['jquery_cdn']){ 
+      $options['jquery_cdn'] = "wp";
     }
 
-    if($options['jquery_migrate'] == "0" || !$options['jquery_migrate']){ 
-        $options['jquery_migrate'] = "none";
+    if(!$options['jquery_migrate']){ 
+      $options['jquery_migrate'] = "default";
     }
     
     if($options['jquery_cdn'] != "wp"){
-        if($options['jquery_cdn'] == "google"){
-            $jquery = '//ajax.googleapis.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js';
-        }
+      if($options['jquery_cdn'] == "google"){
+          $jquery = '//ajax.googleapis.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js';
+      }
 
-        if($options['jquery_cdn'] == "jquery"){
-            $jquery = '//code.jquery.com/jquery-' . $jquery_version . '.min.js';
-        }
+      if($options['jquery_cdn'] == "jquery"){
+          $jquery = '//code.jquery.com/jquery-' . $jquery_version . '.min.js';
+      }
 
-        if($options['jquery_cdn'] == "microsoft"){
-            $jquery = '//ajax.aspnetcdn.com/ajax/jquery/jquery-' . $jquery_version . '.min.js';
-        }
+      if($options['jquery_cdn'] == "microsoft"){
+          $jquery = '//ajax.aspnetcdn.com/ajax/jquery/jquery-' . $jquery_version . '.min.js';
+      }
 
-        if($options['jquery_cdn'] == "cdnjs"){
-            $jquery = '//cdnjs.cloudflare.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js';
-        }
+      if($options['jquery_cdn'] == "cdnjs"){
+          $jquery = '//cdnjs.cloudflare.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js';
+      }
 
-        if($options['jquery_cdn'] == "infrastrukt"){
-            $jquery = get_template_directory_uri() . '/lib/jquery/jquery-' . $jquery_version . '.min.js';
-        }
-        // JQUERY MIGRATE
-        if($options['jquery_migrate'] == "jquery"){
-            $jqueryMigrate = '//code.jquery.com/jquery-migrate-' . $jquery_migrate_version . '.min.js';
-        }
-        if($options['jquery_migrate'] == "microsoft"){
-            $jqueryMigrate = '//ajax.aspnetcdn.com/ajax/jquery.migrate/jquery-migrate-' . $jquery_migrate_version . '.min.js';
-        }
-        if($options['jquery_migrate'] == "cdnjs"){
-            $jqueryMigrate = '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/' . $jquery_migrate_version . '/jquery-migrate.min.js';
-        }
-        if($options['jquery_migrate'] == "infrastrukt"){
-            $jqueryMigrate = get_template_directory_uri() . '/lib/jquery/jquery-migrate-' . $jquery_migrate_version . '.min.js';
-        }
+      if($options['jquery_cdn'] == "infrastrukt"){
+          $jquery = get_template_directory_uri() . '/lib/jquery/jquery-' . $jquery_version . '.min.js';
+      }
+      // JQUERY MIGRATE
+      if($options['jquery_migrate'] == "jquery"){
+          $jqueryMigrate = '//code.jquery.com/jquery-migrate-' . $jquery_migrate_version . '.min.js';
+      }
+      if($options['jquery_migrate'] == "microsoft"){
+          $jqueryMigrate = '//ajax.aspnetcdn.com/ajax/jquery.migrate/jquery-migrate-' . $jquery_migrate_version . '.min.js';
+      }
+      if($options['jquery_migrate'] == "cdnjs"){
+          $jqueryMigrate = '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/' . $jquery_migrate_version . '/jquery-migrate.min.js';
+      }
+      if($options['jquery_migrate'] == "infrastrukt"){
+          $jqueryMigrate = get_template_directory_uri() . '/lib/jquery/jquery-migrate-' . $jquery_migrate_version . '.min.js';
+      }
 
-        if($options['jquery_cdn'] != "none"){
-            function infrastrukt_loader_init(){
-                if (!is_admin()){
-                    global $jquery;
-                    global $jquery_version;
-                    global $jquery_migrate_version;
-                    global $jqueryMigrate;
-                    global $jquery_dependency;
-                    global $jquery_in_footer;
-                    wp_deregister_script('jquery');
-                    wp_enqueue_script('jquery',$jquery, $jquery_dependency, $jquery_version, $jquery_in_footer);
-                    //wp_enqueue_script( 'jquery' );
-                    if($options['jquery_migrate'] != "none"){
-                    wp_enqueue_script( 'jquery-migrate-cdn', $jqueryMigrate, array('jquery'), $jquery_migrate_version,$jquery_in_footer );
-                    }
-                }
+      if($options['jquery_cdn'] != "none"){
+        function infrastrukt_loader_init(){
+          if (!is_admin()){
+            global $jquery;
+            global $jquery_version;
+            global $jquery_migrate_version;
+            global $jqueryMigrate;
+            global $jquery_dependency;
+            global $jquery_in_footer;
+            wp_deregister_script('jquery');
+            wp_enqueue_script('jquery',$jquery, $jquery_dependency, $jquery_version, $jquery_in_footer);
+            if($options['jquery_migrate'] != "none"){
+              wp_enqueue_script( 'jquery-migrate-cdn', $jqueryMigrate, array('jquery'), $jquery_migrate_version,$jquery_in_footer );
             }
-            add_action('init', 'infrastrukt_loader_init');
+          }
         }
-        
-        if($options['jquery_cdn'] == "none"){
-            function infrastrukt_loader_init(){
-                if (!is_admin()){
-                    wp_deregister_script('jquery');
-                }
-            }
-            add_action('init', 'infrastrukt_loader_init');
+        add_action('init', 'infrastrukt_loader_init');
+      }
+      
+      if($options['jquery_cdn'] == "none"){
+        function infrastrukt_loader_init(){
+          if (!is_admin()){
+            wp_deregister_script('jquery');
+          }
         }
+        add_action('init', 'infrastrukt_loader_init');
+      }
     }  
 ?>

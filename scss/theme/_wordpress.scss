@@ -1,0 +1,26 @@
+/* -----------------------------------------
+   Wordpress
+----------------------------------------- */
+.wp-caption {
+  max-width: 100%;
+}
+.logged-in.admin-bar .nav-wrapper.fixed {
+  /*top:28px;*/
+}
+@media screen and (max-width:600px) {
+  #wpadminbar {
+    position: fixed;
+  }
+}
+.wp-caption-text {
+  text-align: center;
+}
+.sticky {
+  margin: auto;
+}
+.gallery-caption {
+  margin: auto;
+}
+.bypostauthor {
+  margin: auto;
+}

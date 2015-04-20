@@ -23,6 +23,7 @@ In the infrastrukt directory, run these commands:
 
 ### Grunt Tasks
 - `grunt build` (compiles SASS to CSS, minifies CSS and JS files)
+- `grunt` (default watch task, compiles SASS to CSS, minifies CSS and JS files)
 
 ### Adding Additional Dependencies
 - JavaScript library: `bower install -S [package]`

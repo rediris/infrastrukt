@@ -1,6 +1,6 @@
 <?php
 /**
- * Sidebar
+ * Sidebar Right
  *
  * Content for our sidebar, provides prompt for logged in users to create widgets
  *

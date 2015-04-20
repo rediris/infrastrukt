@@ -1,12 +1,6 @@
 <?php
-/**
- * Page
- *
- * Loop container for page content
- *
- * @package WordPress
- * @subpackage Infrastrukt for WordPress
- * @since Infrastrukt for WordPress 1.0
+/*
+ * Template Name: Full Width, Right Sidebar
  */
 get_header(); ?>
 <?php if ( have_posts() ) : ?>
@@ -14,4 +8,5 @@ get_header(); ?>
     <?php get_template_part( 'content', 'page' ); ?>
   <?php endwhile; ?>
 <?php endif; ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

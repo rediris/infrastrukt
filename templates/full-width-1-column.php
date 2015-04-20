@@ -1,12 +1,6 @@
 <?php
-/**
- * Page
- *
- * Loop container for page content
- *
- * @package WordPress
- * @subpackage Infrastrukt for WordPress
- * @since Infrastrukt for WordPress 1.0
+/*
+ * Template Name: Full Width, One Column
  */
 get_header(); ?>
 <?php if ( have_posts() ) : ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Content Single
+ * Content Single - Left Sidebar
  *
  * Loop content in single post template (single.php)
  *
@@ -11,7 +11,7 @@
 ?>
 <div class="content-block">
   <div class="row">
-    <div class="<?php echo infrastrukt_foundation_columns() ?>">
+    <div class="<?php echo infrastrukt_main_push() ?>">
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <header>
           <h1><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'infrastrukt' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
@@ -30,6 +30,9 @@
           <?php the_tags('<span class="radius secondary label">','</span><span class="radius secondary label">','</span>'); ?>
         </footer>
       </article>
+    </div><!--.columns-->
+    <div class="<?php echo infrastrukt_sidebar_pull() ?> sidebar">
+      <?php get_sidebar( 'left' ); ?>
     </div><!--.columns-->
   </div><!--.row-->
 </div><!--.content-block-->

@@ -2,13 +2,8 @@
   "name": "infrastrukt",
   "version": "5.5.0",
   "devDependencies": {
-    "node-sass": "~2.0.0-beta",
     "grunt": "~0.4.5",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-sass": "rediris/grunt-sass",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-autoprefixer": "^3.0.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-compress": "^0.13.0",
     "grunt-contrib-concat": "^0.5.0",
@@ -19,11 +14,14 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-reload": "~0.2.0",
+    "grunt-sass": "~0.18.1",
+    "js-beautify": "^1.5.4",
     "load-grunt-tasks": "^2.0.0",
-    "js-beautify": "^1.5.4"
+    "node-sass": "~2.1.1"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/rediris/infrastrukt.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rediris/infrastrukt.git"
   }
 }

@@ -1,0 +1,4 @@
+/* Mixins */
+@mixin transition ( $attr, $dur, $ease) {
+  transition: $attr $dur $ease;
+}

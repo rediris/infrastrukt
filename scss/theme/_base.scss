@@ -1,0 +1,11 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+embed, iframe, object {
+  max-width: 100%;
+}
