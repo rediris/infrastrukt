@@ -1,8 +1,9 @@
 {
   "name": "infrastrukt",
+  "version": "5.5.2",
   "dependencies": {
-    "font-awesome": "~4.2.0",
-    "foundation": "~5.5.0"
+    "font-awesome": "~4.4.0",
+    "foundation": "~5.5.2"
   },
   "homepage": "https://github.com/rediris/infrastrukt",
   "description": "Infrastrukt",
