@@ -5,6 +5,10 @@ button,
 .button {
   text-transform: uppercase;
 }
+button:hover,
+.button:hover {
+  background-color: scale-color($secondary-color, $lightness: 15%);
+}
 nav.excerpt {
   .button, button {
     margin-bottom: 0;
