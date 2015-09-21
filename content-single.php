@@ -9,7 +9,7 @@
  * @since Infrastrukt for WordPress 1.0
  */
 ?>
-<div class="content-block">
+<div id="content-block-<?php the_ID(); ?>" class="content-block content-block-<?php the_ID(); ?>">
   <div class="row">
     <div class="<?php echo infrastrukt_foundation_columns() ?>">
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -21,7 +21,7 @@
         <?php if ( has_post_thumbnail()) : ?>
         <a href="<?php the_permalink(); ?>" class="th" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail(); ?></a>
         <?php endif; ?>
-        
+
         <?php the_content(); ?>
 
         <footer>

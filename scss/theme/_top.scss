@@ -36,62 +36,72 @@
   outline: 0;
   box-shadow: none;
   margin: 0 auto;
-}
-/* https://developer.wordpress.org/resource/dashicons/ */
-.menu-toggle:before {
-  font-family: "dashicons";
-  content: "\f177";
+
+  &:before {
+    font-family: "dashicons";// https://developer.wordpress.org/resource/dashicons/
+    content: "\f177";
+  }
+
 }
 .sparkletown {
   padding: 1rem 0;
   @include transition(background-color, 300ms, ease-in);
-}
-.sparkletown.toggled-on {
-  background: $primary-color;
-  padding-bottom: 0;
-  @include transition(background-color, 300ms, ease-out);
-}
-.sparkletown.toggled-on .menu-toggle {
-  color: $primary-color;
-  background: white;
-  margin-bottom: 1rem;
-}
-.sparkletown nav.menu {
-  display: none;
-  font-size: 0; /* prevents inline-block space between child elements*/
-}
-.sparkletown.toggled-on nav.menu {
-  display: block;
-  @include transition(background-color, 300ms, ease-out);
-}
-.sparkletown nav.menu a {
-  display: block;
-  text-transform: uppercase;
-  font-size: 1rem;
-  color: white;
-  padding: 10px 0;
-  border-bottom: 1px solid white;
-}
-.sparkletown nav.menu a:first-child, .sparkletown nav.menu a:only-child {
-  border-top: 1px solid white;
-}
-.sparkletown nav.menu a:hover {
-  background-color: scale-color($primary-color, $lightness: -15%);
+
+  .menu {
+    display: none;
+    font-size: 0; /* prevents inline-block space between child elements*/
+
+    a {
+      display: block;
+      text-transform: uppercase;
+      font-size: 1rem;
+      color: white;
+      padding: 10px 0;
+      border-bottom: 1px solid white;
+
+      &:first-child, &:only-child {
+        border-top: 1px solid white;
+      }
+
+      &:hover {
+        background-color: scale-color($primary-color, $lightness: -15%);
+        @include transition(background-color, 300ms, ease-out);
+      }
+    }
+  }
+
+  &.toggled-on {
+    background: $primary-color;
+    padding-bottom: 0;
+    @include transition(background-color, 300ms, ease-out);
+
+    @media screen and (min-width:40em) {
+      padding-bottom: 1rem;
+    }
+
+    .menu {
+      display: block;
+      @include transition(background-color, 300ms, ease-out);
+    }
+
+    .menu-toggle {
+      color: $primary-color;
+      background: white;
+      margin-bottom: 1rem;
+    }
+  }
 }
 @media screen and (min-width:40em) {
-  .sparkletown.toggled-on {
-    padding-bottom: 1rem;
-  }
-  .sparkletown nav.menu {
-  }
-  .sparkletown nav.menu a, .sparkletown nav.menu a:first-child, .sparkletown nav.menu a:only-child {
+  .sparkletown .menu a,
+  .sparkletown .menu a:first-child,
+  .sparkletown .menu a:only-child {
     display: inline-block;
     padding: 5px 0;
     margin: 0 10px;
     border: 0;
     border-bottom: 3px solid transparent;
   }
-  .sparkletown nav.menu a:hover {
+  .sparkletown .menu a:hover {
     background: none;
     border-bottom: 3px solid white;
   }

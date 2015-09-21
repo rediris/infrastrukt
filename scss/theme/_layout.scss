@@ -3,8 +3,8 @@
 ----------------------------------------- */
 .content-block {
   padding: $content-block-padding;
-}
 
-.content-block:nth-child(2n) {
-  background-color: $ghost;
+  &:nth-child(2n) {
+    background-color: $vapor;
+  }
 }

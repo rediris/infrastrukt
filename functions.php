@@ -492,7 +492,7 @@ if ( ! function_exists( 'infrastrukt_comment' ) ) :
       <article id="comment-<?php comment_ID(); ?>" class="comment">
         <header>
           <?php
-            echo "<span class='th alignleft' style='margin-right:1rem;'>";
+            echo "<span class='th alignleft'>";
             echo get_avatar( $comment, 44 );
             echo "</span>";
             printf( '%2$s %1$s',

@@ -14,7 +14,7 @@
 
 </style>
 <?php endif; ?>
-<div id="content-block-<?php the_ID(); ?>" class="content-block">
+<div id="content-block-<?php the_ID(); ?>" class="content-block content-block-<?php the_ID(); ?>">
   <div class="row">
     <div class="<?php echo infrastrukt_foundation_columns() ?>">
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
