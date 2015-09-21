@@ -2,3 +2,9 @@
 @mixin transition ( $attr, $dur, $ease) {
   transition: $attr $dur $ease;
 }
+
+@mixin button ($bg, $color, $padding) {
+  background-color: $bg;
+  color: $color;
+  padding: $padding;
+}

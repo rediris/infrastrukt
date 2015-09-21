@@ -164,7 +164,7 @@ if ( ! function_exists( 'infrastrukt_js' ) ) :
   function infrastrukt_js() {
 
     if (!is_admin()) {
-      /** 
+      /**
        * LOAD JS
        */
       wp_enqueue_script( 'infrastrukt-js', get_template_directory_uri().'/js/app.js', array('jquery'), '1.0', true);
@@ -216,7 +216,7 @@ if ( ! function_exists( 'infrastrukt_menus' ) ) :
         'social'        => __( 'Social Menu', 'infrastrukt' )
       )
     );
-    
+
   }
 
   add_action( 'init', 'infrastrukt_menus' );
@@ -252,13 +252,13 @@ if ( ! function_exists( 'sparkletown_menu' ) ) :
 
   function sparkletown_menu() {
 
-    $cleanermenu = wp_nav_menu( array( 
+    $cleanermenu = wp_nav_menu( array(
       'theme_location'  => 'menu-one',  // we've registered a theme location in functions.php
       'container'       => false,       // this is usually a div outside the menu ul, we don't need it
       'items_wrap'      => '<nav id="%1$s" class="%2$s">%3$s</nav>', // replacing the ul with nav
       'echo'            => false, // don't display it just yet, instead we're storing it in the variable $cleanermenu
     ) );
-     
+
     // Find the closing bracket of each li and the opening of the link, then all instances of "li"
     $find = array('><a','li');
     // Replace the former with nothing (a.k.a. delete) and the latter with "a"
@@ -287,7 +287,7 @@ if ( ! function_exists( 'offcanvas_menu' ) ) :
       'echo'            => false,
       'walker'          => new infrastrukt_navigation()
     ) );
-    
+
     $find     = '<label></label>';
     $replace  = '<label>'. $menutext . '</label>';
     echo str_replace( $find, $replace, $ocmenu );
@@ -468,7 +468,7 @@ if ( ! function_exists( 'infrastrukt_excerpt' ) ) :
 
 endif;
 
-/** 
+/**
  * Comments Template
  */
 
@@ -547,7 +547,7 @@ endif;
  */
 get_template_part( 'shortcodes' );
 
-/** 
+/**
  * ADD ROOTS HEAD CLEANUP
  * @http://benword.com/how-to-hide-that-youre-using-wordpress/
  */
@@ -832,5 +832,12 @@ add_action( 'customize_register', 'copyright_customizer' );
  * INFRASTRUKT RESOURCE LOADER
  */
 require get_template_directory() . '/inc/resource-loader.php';
+
+// livereload for dev environment
+// via @http://robandlauren.com/2014/02/05/live-reload-grunt-wordpress/
+if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
+  wp_register_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
+  wp_enqueue_script('livereload');
+}
 
 ?>
