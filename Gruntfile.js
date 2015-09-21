@@ -7,73 +7,73 @@ module.exports = function(grunt) {
 
     sass: {
       options: {
-        includePaths: ['<%= temp %>/bower_components/foundation/scss']
+        includePaths: ['<%= temp %>/bower_components/foundation/scss'],
       },
       dist: {
         options: {
-          outputStyle: 'compressed'
+          outputStyle: 'compressed',
         },
         files: {
-          '<%= temp %>/css/_style.css': 'scss/style.scss'
-        }
-      }
+          '<%= temp %>/css/_style.css': 'scss/style.scss',
+        },
+      },
     },
 
     autoprefixer: {
       options: {
-        browsers: ['last 3 versions', '> 5%', 'Firefox ESR' , 'ie 9']
+        browsers: ['last 3 versions','> 5%','Firefox ESR','ie 9'],
       },
       target: {
-        expand    : true,
-        flatten   : true,
-        src       : '<%= temp %>/css/*.css',
-        dest      : '<%= temp %>/css/'
-      }
+        expand: true,
+        flatten: true,
+        src: '<%= temp %>/css/*.css',
+        dest: '<%= temp %>/css/',
+      },
     },
 
     copy: {
       scripts: {
-        expand  : true,
-        cwd     : '<%= temp %>/bower_components/',
-        src     : '**/*.js',
-        dest    : '<%= temp %>/js'
+        expand: true,
+        cwd: '<%= temp %>/bower_components/',
+        src: '**/*.js',
+        dest: '<%= temp %>/js',
       },
 
       maps: {
-        expand  : true,
-        cwd     : '<%= temp %>/bower_components/',
-        src     : '**/*.map',
-        dest    : '<%= temp %>/js'
-      }
+        expand: true,
+        cwd: '<%= temp %>/bower_components/',
+        src: '**/*.map',
+        dest: '<%= temp %>/js',
+      },
     },
 
     uglify: {
       dist: {
         files: {
-          'js/modernizr/modernizr.min.js'     : ['<%= temp %>/js/modernizr/modernizr.js'],
-          '<%= temp %>/js/infrastrukt.min.js' : ['js/infrastrukt.js']
-        }
-      }
+          'js/modernizr/modernizr.min.js': ['<%= temp %>/js/modernizr/modernizr.js'],
+          '<%= temp %>/js/infrastrukt.min.js': ['js/infrastrukt.js'],
+        },
+      },
     },
 
     concat: {
       js: {
         options: {
-          separator: ';'
+          separator: ';',
         },
         src: [
           '<%= temp %>/js/foundation/js/foundation.min.js',
-          '<%= temp %>/js/infrastrukt.min.js'
+          '<%= temp %>/js/infrastrukt.min.js',
         ],
-        dest: 'js/app.js'
+        dest: 'js/app.js',
       },
       css: {
         src: [
             'scss/theme/_comment-block.scss',
-            '<%= temp %>/css/_style.css'
+            '<%= temp %>/css/_style.css',
         ],
-        dest: 'style.css'
-      }
+        dest: 'style.css',
+      },
     },
 
     watch: {
@@ -81,9 +81,9 @@ module.exports = function(grunt) {
 
       sass: {
         files: 'scss/**/*.scss',
-        tasks: ['sass', 'copy' , 'uglify', 'concat']
-      }
-    }
+        tasks: ['sass','copy','uglify','concat'],
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-sass');
