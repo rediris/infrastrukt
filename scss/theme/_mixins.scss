@@ -4,7 +4,13 @@
 }
 
 @mixin button ($bg, $color, $padding) {
-  background-color: $bg;
-  color: $color;
-  padding: $padding;
+  @if $bg {
+    background-color: $bg;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $padding {
+    padding: $padding;
+  }
 }

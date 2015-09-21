@@ -68,6 +68,21 @@
         @include transition(background-color, 300ms, ease-out);
       }
     }
+    @media #{$medium-up} {
+      a,
+      a:first-child,
+      a:only-child {
+        display: inline-block;
+        padding: 5px 0;
+        margin: 0 10px;
+        border: 0;
+        border-bottom: 3px solid transparent;
+      }
+      a:hover {
+        background: none;
+        border-bottom: 3px solid white;
+      }
+    }
   }
 
   &.toggled-on {
@@ -75,7 +90,7 @@
     padding-bottom: 0;
     @include transition(background-color, 300ms, ease-out);
 
-    @media screen and (min-width:40em) {
+    @media #{$medium-up} {
       padding-bottom: 1rem;
     }
 
@@ -89,20 +104,5 @@
       background: white;
       margin-bottom: 1rem;
     }
-  }
-}
-@media screen and (min-width:40em) {
-  .sparkletown .menu a,
-  .sparkletown .menu a:first-child,
-  .sparkletown .menu a:only-child {
-    display: inline-block;
-    padding: 5px 0;
-    margin: 0 10px;
-    border: 0;
-    border-bottom: 3px solid transparent;
-  }
-  .sparkletown .menu a:hover {
-    background: none;
-    border-bottom: 3px solid white;
   }
 }
